@@ -1,0 +1,46 @@
+
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/login.css"/>
+</head>
+    <body>
+
+        <div class="contourGrey">
+            <br/><br/>
+
+            <form  th:action="@{/login}" method="POST" >
+                <div class="green">
+                    Pay My Buddy
+                </div>
+                <br/><br/>
+                <div align="center" th:if="${param.error}">
+                   <a style="font-size: 1em; color: #FF1C19;" >Username or password is invalid</a>
+                </div>
+                <br/>
+                <div class="put">
+                    <input  type="text" id="username" name="username"  placeholder=" ✉  Email" /> <br/>
+                    <input  type="password" id="password" name="password" placeholder=" ✱  Password" /> <br />
+                </div>
+                <div class="check">
+                    <label>
+                        <input  type="checkbox" value="remember-me"> Remenber me
+                    </label>
+                </div>
+                <div class="bleu">
+                    <input type="submit" name="Submit" value="Login" />
+                </div>
+            </form>
+        </div>
+    <!-- symbole du check: &#10004 -->
+    </body>
+</html>

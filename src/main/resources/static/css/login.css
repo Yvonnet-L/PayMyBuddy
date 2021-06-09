@@ -1,0 +1,81 @@
+body {
+    height: 100vh;
+    margin: 0;
+	/*background-color: rgb(100,100,100); */
+	color: grey;
+	font-family: Roboto medium, sans-serif;
+	font-size: 1.2em;
+
+}
+
+div.green {
+  position: relative;
+  display: flex;
+  top: 20px;
+  height: 30px;
+  width: 100px;
+  background-color: #7BC54F;
+  border: 1px solid #7BC54F;
+  border-radius: 5px;
+  color: white;
+  text-align: center;
+  margin: 0 auto;
+  justify-content: center;
+  padding-top: 4px;
+}
+
+
+
+div.contourGrey{
+    position: relative;
+    top: 30px;
+    border: 2px #CFCBCA solid;
+    border-radius: 5px;
+	width: 270px;
+	height: 330px;
+    margin: 0 auto;
+    display: flex;
+    text-align: center;
+    align-items: baseline;
+    justify-content: center;
+}
+
+div.put{
+     top: 30px;
+}
+
+div.put input{
+     border: 2px #E5E8E8 solid;
+     border-radius:5px;
+     width: 230px;
+     height: 35px;
+     margin: 0 auto;
+     display: flex;
+     align-items: baseline;
+     justify-content: center;
+     font-size= 0.7em;
+     font-height= bolt;
+ }
+
+div.check{
+     position: relative;
+     top: 10px;
+     border-radius:5px;
+     display: flex;
+     justify-content: center;
+     cursor: &#10004;
+     font-height= bolt;
+     opacity: 1.2;
+ }
+
+ div.bleu input{
+     height: 30px;
+     width: 100px;
+     background-color: #387DD5;
+     border: 1px solid #387DD5;
+     border-radius: 5px;
+     color: white;
+     text-align:center;
+     position: relative;
+      top: 30px;
+ }

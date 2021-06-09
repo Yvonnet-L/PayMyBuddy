@@ -1,0 +1,268 @@
+
+header h1
+{
+	margin: 0 ;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+	text-align:center;
+	color: #290;
+}
+body {
+
+}
+div.home {
+     border: 2px #CFCBCA solid;
+    height: 90vh;
+    width: 90%;
+    align-items: baseline;
+    justify-content: center;
+    margin-top: 5px;
+    margin-left: 5px;
+	background-color: #f8f8f8;
+
+}
+
+.error{
+    margin: 10 ;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: baseline;
+    text-align:center;
+    justify-content: center;
+    color: red;
+}
+
+div.titre{
+	width: 80%;
+    margin: 0 auto;
+    display: flex;
+    text-align:center;
+    align-items: baseline;
+    justify-content: center;
+}
+div.menuDeroulant{
+	width: 50%;
+    margin: 0 auto;
+    display: flex;
+    text-align:center;
+    align-items: baseline;
+    justify-content: center;
+}
+div.menu{
+    margin: auto;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: baseline;
+    text-align:right;
+    justify-content: center;
+}
+
+a{
+	padding-left: 16px;
+	color: orange;
+}
+
+.menu a:hover{
+    border-bottom: none;
+    color: #E67E22;
+}
+.button1
+{
+    background-color: #65a63e;
+    width: 130px;
+    height: 35px;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin:  2px 2px 2px 3px;
+    border-radius: 0.3rem;
+     font-weight: bold;
+}
+
+.button2
+{
+    background-color: #3498DB;
+    width: 140px;
+    height: 35px;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    align:right;
+    font-size: 14px;
+    margin:  2px 2px 2px 3px;
+    border-radius: 0.3rem;
+}
+.button1:hover
+{
+    background-color: #D5F5E3;
+    border-color: #65a63e solid 4px;
+     text-decoration: none;
+    color: #65a63e;
+}
+
+.button2:hover
+{
+    background-color: #E59866;
+    border-color: #3498DB;
+    text-decoration: none;
+    color: #3498DB;
+}
+div.navHome
+{
+    width: 100%;
+    height: auto;
+    margin: 0 auto 1px;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: baseline;
+    top: 0px;
+    /*background-color: #f8f8f8;*/
+}
+div.liensNavHome
+{
+	width: 85%;
+	align:right;
+    text-align: right;
+    text-position: relative;
+
+
+}
+div.navHome2
+{
+    width: 100%;
+    height: 30px;
+    margin: 0 auto;
+    display: flex;
+    align-items: baseline;
+    background-color: #E5E8E8;
+    position: left;
+    font-weight: bold;
+
+}
+
+
+.liensNavHome a{
+    position: relative;
+	margin-right: 0 px;
+	color: #676767;
+	text-decoration: none;
+}
+
+.liensNavHome a:hover{
+    border-bottom: none;
+    color: #0080ff;
+    text-decoration: none;
+}
+
+.navHome2 a{
+	padding-left: 20px;
+	padding-top: 5px;
+	color: #676767;
+	text-decoration: none;
+}
+
+.navHome2 a:hover{
+    border-bottom: none;
+    color: #0080ff;
+    text-decoration: none;
+}
+
+
+footer {
+    top: 15px
+    color: #F5CBA7
+}
+div.contenu{
+        background-color: #F6DDCC;
+    	width: 80%;
+    	height: 450px;
+        margin: 0 auto;
+        display: flex;
+        flex-flow: row wrap;
+        position: relative;
+        text-align:center;
+        justify-content: center;
+        font-weight: bold;
+}
+div.sendMoney {
+       width: 100%;
+       margin: 0 auto;
+       color: black;
+       display: flex;
+        position: relative;
+       text-align:center;
+       background-color: #E5E8E8;
+       align-items: baseline;
+       color: #27AE60;
+}
+
+
+ .input-euro {
+     position: relative;
+ }
+ .input-euro.right input {
+     padding-right:18px;
+     text-align:end;
+ }
+
+ .input-euro:before {
+     position: absolute;
+     top: 0;
+     content:"€";
+ }
+
+ .input-euro.right:before {
+     right: 5px;
+ }
+div.top{
+    background-color: #85929E;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    text-align: left;
+    position: relative;
+
+}
+
+
+ div.transactions [{
+    width: 100%;
+    height: 60%;
+    text-align:left;
+    position: relative;
+    color: #5D6D7E;
+ }
+
+div.topMyTransaction {
+    background-color: #65a63e;
+}
+
+div.topContenu {
+    width:95%;
+    display: flex;
+    flex-flow: row-reverse nowrap;
+}
+
+.tit{
+    width:20%;
+    display: flex;
+    color="black";
+    position: relative;
+    margin: 0 auto;
+    text-align: left;
+    background-color: #BB8FCE;
+}
+
+div.divButton{
+    width:80%;
+    display: flex;
+    position: relative;
+    margin: 0 auto;
+    text-align: right;
+}

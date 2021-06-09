@@ -1,0 +1,360 @@
+
+/* ----- DIV  1er niveau --------------------------- */
+body{
+    background-color: #f8f8f8 ;
+}
+
+div.home{
+    border: 2px #CFCBCA solid;
+    height: 90vh;
+    min-height: 500px;
+    width: 70%;
+    min-width: 550px;
+    margin: 0 auto 1px;
+    background-color: white;
+    border-radius: 0.5rem;
+}
+
+/* ----- DIV 2eme niveau --------------------------- */
+
+div.menu{
+    width: 100%;
+    height: auto;
+    margin: 0 auto 1px;
+    display: flex;
+    align-items: baseline;
+}
+
+div.subMenu{
+    width: 100%;
+    height: 36px;
+    margin: 0 auto;
+    align-items: baseline;
+    text-align: left;
+    padding-top: 7px;
+    padding-left: 7px;
+    background-color: #E5E8E8;
+}
+
+div.send{
+    width: 75%;
+    height: 30px;
+    margin: 0 auto 1px;
+    display: flex;
+    align-items: baseline;
+    margin-top: 5px;
+}
+
+div.createTrans{
+    width: 75%;
+    height: 17%;
+    min-height: 90px;
+    margin: 0 auto 1px;
+    background-color: #E5E8E8;
+}
+
+div.createTrans2{
+    margin: 0 auto 1px;
+    display: flex;
+    background-color: #E5E8E8;
+    padding-top: 15px;
+}
+
+div.createTrans3{
+    display: flex;
+    padding-top: 10px;
+}
+
+div.description
+{
+    width: 48%;
+    min-width: 250px;
+    height: auto;
+    margin: 0 auto 1px;
+
+}
+
+div.invisible
+{
+    width: 52%;
+}
+
+div.description input
+{
+    width: 250px;
+    text-align: left;
+    font-weight: bold;
+    margin-left: 7px;
+}
+
+div.consTrans{
+    width: 75%;
+    height: 50%;
+    margin: 0 auto 2px;
+}
+
+/* ----- DIV 3eme niveau --------------------------- */
+
+/*--- div de menu */
+
+div.greenButton
+{
+    width: 23%;
+    height: auto;
+    margin: 0 auto 1px;
+    text-align: left;
+
+
+}
+
+div.hrefs
+{
+    width: 75%;
+    height: auto;
+    margin: 0 auto 1px;
+    text-align: right;
+
+}
+
+.button1
+{
+    display:block;
+    background-color: #65a63e;
+    width: 130px;
+    line-height: 14px;
+    text-align:center;
+    vertical-align:middle;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    border-radius: 0.6rem;
+    font-weight: bold;
+    margin-left: 0px;
+
+}
+
+.button1:hover
+{
+    background-color: #D5F5E3;
+    border-color: #65a63e solid 4px;
+    text-decoration: none;
+    color: #65a63e;
+}
+
+a
+{
+    position: relative;
+    color: #676767;
+    text-decoration: none;
+    padding-left: 14px;
+    font-weight: bold;
+    margin: auto;
+}
+
+a:hover
+{
+    border-bottom: none;
+    color: #0080ff;
+    text-decoration: none;
+}
+
+/*--- div de send */
+
+div.send-a
+{
+    width: 50%;
+    height: a;
+    text-align: left;
+    margin-top: 0px;
+}
+
+div.send-b
+{
+    width: 50%;
+    height: auto;
+    margin: 0 auto 1px;
+    text-align: right;
+}
+
+div.send-a a
+{
+   padding-left: 1px;
+}
+
+
+.button2
+{
+    display :block;
+    background-color: #3498DB;
+    width: 140px;
+    line-height: 8px;
+    text-align:center;
+    vertical-align:middle;
+    padding: 8px;
+    color: white;
+    text-decoration: none;
+    border-radius: 0.6rem;
+    font-weight: bold;
+    font-size: 0.8em;
+    margin-right: 0px;
+   /* left: 94px; */
+}
+
+
+
+
+.button2:hover
+{
+    background-color: #D6EAF8;
+    border-color: #3498DB;
+    text-decoration: none;
+    color: #3498DB;
+}
+
+/*--- div de createTrans */
+
+div.trans-friends
+{
+    width: 48%;
+    min-width: 180px;
+    height: auto;
+    margin: 0 auto 1px;
+}
+
+
+div.trans-amount
+{
+    width: 24%;
+    text-align: left;
+
+}
+
+div.trans-button
+{
+    width: 30%;
+    margin-left: 0px;
+}
+
+.form-control
+{
+    width: 180px;
+    height: auto;
+    margin: 0 auto;
+    border: 2px #CFCBCA solid;
+    background-color: white;
+    border-radius: 0.2rem;
+    color: #676767;
+    font-weight: bold;
+}
+
+div.trans-amount input
+{
+    border: 2px #CFCBCA solid;
+    background-color: white;
+    border-radius: 0.2rem;
+    text-align: right;
+    color: color: #676767;;
+    font-weight: bold;
+    content:"€";
+    text-padding-right: 3px;
+}
+
+.button3
+{
+    display:block;
+    background-color: #65a63e;
+    width: 110px;
+    line-height: 8px;
+    text-align:center;
+    vertical-align:middle;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    border-radius: 0.6rem;
+    font-weight: bold;
+    font-size: 0.7em;
+    margin-left: 0px;
+}
+
+.button3:hover
+{
+    background-color: #D5F5E3;
+    border-color: #65a63e solid 4px;
+    text-decoration: none;
+    color: #65a63e;
+}
+
+/* -- Transaction List */
+
+.panel-heading
+{
+    background-color: white;
+    color: #676767;
+    padding-left: 2px;
+    height: 35px;
+    font-weight: bold;
+}
+
+.tableTrans
+{
+    background-color: white;
+}
+
+.table
+{
+    width: 100%;
+    color:  white;
+    border: 2px black solid;
+    border-radius: 0.2rem;
+}
+
+.panel-th
+{
+    color:  white;
+    background-color: #65a63e;
+}
+
+.table tr
+{
+    height: 50px;
+    color: black;
+   /* text-align: center;*/
+}
+
+.table tbody tr:nth-child(odd)
+{
+    background-color: #d7d7d7;
+    color: black;
+}
+
+footer a
+{
+    color:#EB984E;
+    font-size: 0.8em;
+    font-style: italic;
+    font-weight: bold;
+}
+
+/* ----- sigle  Euros sur amount input number------ */
+
+ .input-euro
+ {
+     position: relative;
+ }
+ .input-euro.right input
+  {
+     padding-right:18px;
+     text-align:auto;
+ }
+
+ .input-euro:before
+ {
+     position: absolute;
+     top: 0;
+     content:"€";
+ }
+
+ .input-euro.right:before
+  {
+     right: 5px;
+ }
