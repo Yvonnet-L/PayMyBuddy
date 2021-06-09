@@ -1,5 +1,8 @@
 package com.oc.ly.PayMyBuddy.security;
 
+import com.oc.ly.PayMyBuddy.controller.HomeController;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -18,17 +21,25 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     UserDetailsService userDetailsService;
 
+    private static Logger logger = LogManager.getLogger(SecurityConfig.class);
+
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 
         auth.userDetailsService(userDetailsService);
 
+        Logger logger = LogManager.getLogger(SecurityConfig.class);
 
         PasswordEncoder passwordEncoder = passwordEncoder();
         System.out.println("*************************");
         System.out.println(passwordEncoder.encode("123"));
         System.out.println("*************************");
         System.out.println(userDetailsService.getClass().getName());
+        // On produit un log de niveau informatif.
+        logger.info( "Hello World with Log4J 2" );
+
+        // On produit un log de niveau erreur.
+        logger.error( "Houston, we have a problem" );
 
     }
 

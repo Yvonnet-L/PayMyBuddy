@@ -39,6 +39,8 @@ public class Transaction {
 	@Column(name= "description", length = 200,nullable = false)
 	private String description;
 
+
+
 	
 	
 	

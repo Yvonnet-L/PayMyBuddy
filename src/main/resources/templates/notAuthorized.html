@@ -1,28 +1,34 @@
-
-
-<!--<html xmlns:th="http://www.thymeLeaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/thymeLeaf/layout"
-      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
-      > -->
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
 
-
-<head>
-  <meta charset="UTF-8">
-  <title>Welcome</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-</head>
-<body>
-  <div  class="container">
-    </br></br></br>
-    <center> <h3 class="text-danger"> Sorry but,  :-( </h3></center>
-    </br></br>
-    <center> <h3 class="text-danger"> Vous n'êtes pas autorisé(e) à accéder à cette page.</h3></center>
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"
+      xmlns="http://www.w3.org/1999/html">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<center>
+  </br> </br> </br> </br>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="error-template">
+          <h1 class="text-danger">
+            Sorry but,  :-(</h1>
+          </br></br>
+          <h2 class="text-danger">
+            Vous n'êtes pas autorisé(e) à accéder à cette page</h2>
+          </br></br>
+          <div class="error-actions">
+            <a th:href="@{/home}" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-home"></span>
+              Take Me Home </a><a th:href="@{/home}" class="btn btn-default btn-lg">
+            <span class="glyphicon glyphicon-envelope"></span> Contact Support </a>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</body>
-</html>
+</center>
+
+
+

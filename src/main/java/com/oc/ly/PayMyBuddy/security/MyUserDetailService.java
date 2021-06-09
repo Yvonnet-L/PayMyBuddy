@@ -1,14 +1,14 @@
 package com.oc.ly.PayMyBuddy.security;
 
 
+import com.oc.ly.PayMyBuddy.controller.HomeController;
 import com.oc.ly.PayMyBuddy.model.MyUserDetails;
 import com.oc.ly.PayMyBuddy.model.User;
 import com.oc.ly.PayMyBuddy.repository.UserRepository;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -22,7 +22,9 @@ public class MyUserDetailService implements UserDetailsService {
     @Autowired
     UserRepository userRepository;
 
-    private static Logger logger = LoggerFactory.getLogger(MyUserDetailService.class);
+
+
+    private static Logger logger = LogManager.getLogger(HomeController.class);
 
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException, DataAccessException {

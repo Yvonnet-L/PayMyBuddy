@@ -8,11 +8,19 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name= "id_user", nullable = false)
     private int id;
+    @Column(name= "user_name", length = 40, nullable = false)
     private String userName;
+    @Column(name= "firstname", length = 40, nullable = false)
+    private String firstName;
+    @Column(name= "password", length = 80, nullable = false)
     private String password;
+    @Column(name= "email", length = 40, unique = true, nullable = false)
     private String email;
+    @Column(name= "active")
     private boolean active;
+    @Column(name= "roles", length = 20, nullable = false)
     private String roles;
 
     public int getId() {
