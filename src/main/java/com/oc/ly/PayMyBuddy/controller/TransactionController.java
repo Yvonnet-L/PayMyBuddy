@@ -1,6 +1,5 @@
 package com.oc.ly.PayMyBuddy.controller;
 
-
 import com.oc.ly.PayMyBuddy.model.Friend;
 import com.oc.ly.PayMyBuddy.model.Transaction;
 import com.oc.ly.PayMyBuddy.model.User;
@@ -25,9 +24,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.time.LocalDate;
 import java.util.List;
 
-
 @Controller
-public class HomeController {
+public class TransactionController {
 
 
     private static Logger logger = LogManager.getLogger(HomeController.class);
@@ -45,49 +43,17 @@ public class HomeController {
     TransactionRepository transactionRepository;
 
 
-    @RequestMapping(value = { "/login" }, method = RequestMethod.GET)
-    public String login(Model model)
-    {
-        return "login";
-    }
 
-    @RequestMapping(value = { "/save" }, method = RequestMethod.GET)
-    public String save(Model model)
-    {
-        return "login";
-    }
-
-    @RequestMapping(value = { "/index" }, method = RequestMethod.GET)
-    public String index(Model model)
-    {
-        return "login";
-    }
-
-    @RequestMapping(value = { "/logout" }, method = RequestMethod.GET)
-    public String logout(HttpServletRequest request, HttpServletResponse response)
-    {
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        if (auth != null){
-            new SecurityContextLogoutHandler().logout(request, response, auth);
-        }
-        return "redirect:/login?logout";
-    }
-
-    @RequestMapping(value = { "/admin" }, method = RequestMethod.GET)
-    public String admin() { return  "admin";
-    }
-
-
-    @GetMapping("/delete")
+    @GetMapping("/deleteTransaction")
     public String delete(Integer id, int page){
-            transactionRepository.deleteById(id);
-            return"redirect:/home?page="+page;
+        transactionRepository.deleteById(id);
+        return"redirect:/transaction?page="+page;
     }
 
 
-    @RequestMapping(value = { "/home" }, method = RequestMethod.GET)
+    @RequestMapping(value = { "/transfer" }, method = RequestMethod.GET)
     public String home(Model model, @RequestParam(name="page", defaultValue = "0") int page,
-                                Double amount, String friendEmail, String description, String errorMessage)
+                       Double amount, String friendEmail, String description, String errorMessage)
     {
         String emailSession = SecurityContextHolder.getContext().getAuthentication().getName();
 
@@ -95,7 +61,7 @@ public class HomeController {
 
         List<Friend> friends = friendService.findFriendByOwner(userLog);
 
-        Page<Transaction> pageTransactions = transactionRepository.findAllByPayer(userLog,PageRequest.of(page,3));
+        Page<Transaction> pageTransactions = transactionRepository.findAllByPayer(userLog, PageRequest.of(page,3));
 
         String role = null;
         String authorisation = userLog.getRoles();
@@ -110,10 +76,10 @@ public class HomeController {
         model.addAttribute("pages", new int[pageTransactions.getTotalPages()]);
         model.addAttribute("errorMessage", errorMessage);
         model.addAttribute("currentPage", page);
-        return "home";
+        return "transfer";
     }
 
-    @PostMapping(value = { "/home" })
+    @PostMapping(value = { "/transfer" })
     public String addTransaction(Model model, Double amount, String friendEmail, String description, String errorMessage)
     {
         LocalDate createDate = LocalDate.now();
@@ -138,14 +104,8 @@ public class HomeController {
             transactionRepository.save(newTransaction);
             logger.info("---> Sauvegarde transaction ok !");
         }
-        return "redirect:/home";
+        return "redirect:/transfer";
 
     }
 
-
-
-
 }
-
-
-

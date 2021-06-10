@@ -31,7 +31,7 @@ public class Transaction {
 	private User beneficiary;
 	
 	@Column(name= "date", nullable = false)
-	private LocalDate createDate = LocalDate.now();
+	private LocalDate creationDate = LocalDate.now();
 	
 	@Column(name= "amount", nullable = false)
 	private double amount;
@@ -39,10 +39,11 @@ public class Transaction {
 	@Column(name= "description", length = 200,nullable = false)
 	private String description;
 
-
+	@Column(name= "fee")
+	private double fee;
 
 	
-	
+	//--------------------------------------------------------------------------------------------
 	
 	public Transaction() {
 		super();
@@ -50,15 +51,13 @@ public class Transaction {
 	}
 
 
-
-
-	public Transaction(int idTransaction, User payer, User beneficiary, LocalDate createDate, double amount,
+	public Transaction(int idTransaction, User payer, User beneficiary, LocalDate creationDate, double amount,
 			String description) {
 		super();
 		this.idTransaction = idTransaction;
 		this.payer = payer;
 		this.beneficiary = beneficiary;
-		this.createDate = createDate;
+		this.creationDate = creationDate;
 		this.amount = amount;
 		this.description = description;
 	}
@@ -66,15 +65,17 @@ public class Transaction {
 
 
 	public Transaction(User payer, User beneficiary, LocalDate createDate, double amount,
-			String description) {
+			String description, double fee ) {
 		super();
 		this.payer = payer;
 		this.beneficiary = beneficiary;
-		this.createDate = createDate;
+		this.creationDate = createDate;
 		this.amount = amount;
 		this.description = description;
+		this.fee = fee;
 	}
 
+	//--------------------------------------------------------------------------------------------
 	public int getIdTransaction() {
 		return idTransaction;
 	}
@@ -117,15 +118,15 @@ public class Transaction {
 
 
 
-	public LocalDate getCreateDate() {
-		return createDate;
+	public LocalDate getCreationDate() {
+		return creationDate;
 	}
 
 
 
 
-	public void setCreateDate(LocalDate createDate) {
-		this.createDate = createDate;
+	public void setCreationDate(LocalDate createDate) {
+		this.creationDate = createDate;
 	}
 
 
@@ -162,7 +163,7 @@ public class Transaction {
 	@Override
 	public String toString() {
 		return "Transaction [idTransaction=" + idTransaction + ", payer=" + payer + ", beneficiary=" + beneficiary
-				+ ", createDate=" + createDate + ", amount=" + amount + ", description=" + description + "]";
+				+ ", createDate=" + creationDate + ", amount=" + amount + ", description=" + description + "]";
 	}
 	
 	

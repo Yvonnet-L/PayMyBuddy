@@ -1,6 +1,5 @@
 package com.oc.ly.PayMyBuddy.service;
 
-import com.oc.ly.PayMyBuddy.dto.FriendDTO;
 import com.oc.ly.PayMyBuddy.model.Friend;
 import com.oc.ly.PayMyBuddy.model.User;
 
@@ -9,7 +8,7 @@ import java.util.List;
 
 public interface IFriendService {
 
-    public Friend addFriend(FriendDTO friendDTO);
+    public Friend addFriend(Friend friendDTO);
 
     public Friend updateFriend(Friend friend);
 

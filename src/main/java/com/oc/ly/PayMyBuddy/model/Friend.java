@@ -8,90 +8,65 @@ import java.time.LocalDate;
 public class Friend {
 
 
-        @Id
-        @GeneratedValue(strategy = GenerationType.AUTO)
-        @Column(name= "id_friend", nullable = false)
-        private Integer friendID;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name= "id_friend", nullable = false)
+    private Integer idFriend;
 
-        @ManyToOne(optional = false)
-        @JoinColumn(name= "owner")
-        private User owner;
+    @ManyToOne(optional = false)
+    @JoinColumn(name= "owner")
+    private User owner;
 
-        @ManyToOne(optional = false)
-        @JoinColumn(name= "friend")
-        private User friend;
+    @ManyToOne(optional = false)
+    @JoinColumn(name= "friend")
+    private User friend;
 
-        @Column(name= "date_creation", updatable=false)
-        private LocalDate dateCreation = LocalDate.now();
+    @Column(name= "creation_date", updatable=false)
+    private LocalDate creationDate = LocalDate.now();
+
+    //--------------------------------------------------------------------------
 
     public Friend() {
         super();
     }
 
-
-    public Friend(Integer friendID, User owner, User friend, LocalDate dateCreation) {
-        super();
-        this.friendID = friendID;
+    public Friend(User owner, User friend, LocalDate creationDate) {
         this.owner = owner;
         this.friend = friend;
-        this.dateCreation = dateCreation;
+        this.creationDate = creationDate;
     }
 
+    //--------------------------------------------------------------------------
 
-    public Friend(User owner, User friend, LocalDate dateCreation) {
-        super();
-        this.owner = owner;
-        this.friend = friend;
-        this.dateCreation = dateCreation;
+    public Integer getIdFriend() {
+        return idFriend;
     }
 
-
-    public Integer getFriendID() {
-        return friendID;
+    public void setIdFriend(Integer idFriend) {
+        this.idFriend = idFriend;
     }
-
-
-    public void setFriendID(Integer friendID) {
-        this.friendID = friendID;
-    }
-
 
     public User getOwner() {
         return owner;
     }
 
-
     public void setOwner(User owner) {
         this.owner = owner;
     }
-
 
     public User getFriend() {
         return friend;
     }
 
-
     public void setFriend(User friend) {
         this.friend = friend;
     }
 
-
-    public LocalDate getDateCreation() {
-        return dateCreation;
+    public LocalDate getCreationDate() {
+        return creationDate;
     }
 
-
-    public void setDateCreation(LocalDate dateCreation) {
-        this.dateCreation = dateCreation;
+    public void setCreationDate(LocalDate creationDate) {
+        this.creationDate = creationDate;
     }
-
-
-    @Override
-    public String toString() {
-        return "Friend [friendID=" + friendID + ", owner=" + owner + ", friend=" + friend + ", dateCreation="
-                + dateCreation + "]";
-    }
-
-
-
 }

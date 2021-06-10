@@ -16,7 +16,7 @@ public class FriendServiceImpl implements IFriendService{
     FriendRepository friendRepository;
 
     @Override
-    public Friend addFriend(FriendDTO friendDTO) {
+    public Friend addFriend(Friend friend) {
         return null;
     }
 
@@ -38,7 +38,8 @@ public class FriendServiceImpl implements IFriendService{
     @Override
     public List<Friend> findFriendByOwner(User owner) {
 
-        User userOwner = new User();
+       // User userOwner = new User();
+
         List<Friend> friendsList = friendRepository.FindListFriendByOwner(owner);
         if ( friendsList!=null ) {
             return friendsList;

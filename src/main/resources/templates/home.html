@@ -23,19 +23,19 @@
                       <a class="button1" href="${pageContext.request.contextPath}login">Pay My Buddy</a>
              </div>
              <div class="hrefs">
-                      <a href="/home">Home</a>
-                      <a href="${pageContext.request.contextPath}/transfer">Transfer</a>
-                      <a href="${pageContext.request.contextPath}/profil">Profile</a>
-                      <a href="${pageContext.request.contextPath}/contact">Contact</a>
+                      <a href="#" th:href="@{/home}">Home</a>
+                      <a href="#" th:href="@{/transfer}">Transfer</a>
+                      <a href="#" th:href="@{/profile}">Profile</a>
+                      <a href="#" th:href="@{/contact}">Contact</a>
                       <a href="#" th:href="@{/logout}">Log off</a>
              </div>
         </div>
-           
-        <div class="subMenu">
-            <a class="aHome" href="${pageContext.request.contextPath}/userList">Home</a>
-            <a> / </a> 
-            <a href="${pageContext.request.contextPath}/bankList">Transfer</a>
-        </div>
+
+          <div class="subMenu">
+              <a class="aHome" th:href="@{/home}">Home</a>
+              <a> / </a>
+              <a th:href="@{/transfer}">Transfer</a>
+          </div>
 
         <div class="send">
              <div class="send-a">
@@ -83,39 +83,39 @@
 
           <div class="consTrans">
 
-            <div class="panel-heading" align="left">My Transactions</div>
+                <div class="panel-heading" align="left">My Transactions</div>
 
 
-                                <table class="table">
-                                    <thead>
-                                      <tr class="panel-th" >
-                                        <th width="30%">Connections</th>
-                                        <th width="50%">Description</th>
-                                        <th width="20%">Amount</th>
-                                          <th ></th>
-                                    </thead>
-                                      </tr>
-                                      <tbody>
-                                        <tr th:each ="transaction : ${transactions}">
-                                            <td th:utext="${transaction.beneficiary.email}">...</td>
-                                            <td th:utext="${transaction.description}">...</td>
-                                            <td th:utext="${transaction.amount}">...</td>
-                                            <td>
-                                                <a th:if="${admin}"
-                                                    class="btn btn-danger" onclick="return confirm( ' Etes vous sûre de vouloir supprimer?')"
-                                                      th:href="@{/delete(id=${transaction.idTransaction}, page=${currentPage})}">Delete</a>
-                                            </td>
-                                        </tr>
-                                      </tbody>
-                                </table>
-                           
-                                <ul class="nav nav-pills" >
-                                    <li  th:class="${currentPage==status.index?'active':''}" th:each="page,status:${pages}">
-                                        <a th:href="@{/home(page=${status.index})}" th:text="${status.index}"></a>
-                                    </li>
-                                </ul>
+                <table class="table">
+                    <thead>
+                      <tr class="panel-th" >
+                        <th width="30%" >Connections</th>
+                        <th width="50%">Description</th>
+                        <th width="20%">Amount</th>
+                          <th ></th>
+                    </thead>
+                      </tr>
+                      <tbody>
+                        <tr th:each ="transaction : ${transactions}">
+                            <td th:utext="${transaction.beneficiary.email}">...</td>
+                            <td th:utext="${transaction.description}">...</td>
+                            <td th:utext="${transaction.amount}">...</td>
+                            <td>
+                                <a th:if="${admin}"
+                                    class="btn btn-danger" onclick="return confirm( ' Etes vous sûre de vouloir supprimer?')"
+                                      th:href="@{/delete(id=${transaction.idTransaction}, page=${currentPage})}">Delete</a>
+                            </td>
+                        </tr>
+                      </tbody>
+                </table>
 
-        </div>
+                <ul class="nav nav-pills" >
+                    <li  th:class="${currentPage==status.index?'active':''}" th:each="page,status:${pages}">
+                        <a th:href="@{/home(page=${status.index})}" th:text="${status.index}"></a>
+                    </li>
+                </ul>
+
+          </div>
       </div> 
   </center>
 </body>

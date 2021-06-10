@@ -9,11 +9,14 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -29,12 +32,8 @@ public class MyUserDetailService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException, DataAccessException {
 
+        logger.info("-> Verification de l'identifiant !");
         Optional<User> user = userRepository.findByEmail(email);
-
-        User user1 = userRepository.findUserByEmail(email);
-        logger.info("-> Lancement de la recherche !");
-        logger.info("-> user id :" + user1.getId() + " - name: " + user1.getUserName() + " - role: " + user1.getRoles());
-
 
         user.orElseThrow(() -> new UsernameNotFoundException("Not Found: " + email));
 
@@ -49,4 +48,7 @@ public class MyUserDetailService implements UserDetailsService {
     Bien sur le User, MyUserDetails qui fait le lien entre l'entity User et SrpingSecurity
     puis nous avons le service de ce dernier MyUserDetailService qui permet d'éttablir la recherche sur la DB
     et pour finir bien sur SecurityConfig indispensable pour configurer l'ensemble.
+
+    Nous injectons l'email dans MyUserDetails grâce à " this.userName = user.getEmail(); " dans le constructeur (User)
+    afin de persister dans le context notre clé unique.
  */
