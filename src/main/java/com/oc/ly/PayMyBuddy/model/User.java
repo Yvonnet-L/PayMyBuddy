@@ -31,7 +31,7 @@ public class User {
     private String roles;
 
     @Column(name= "wallet", length = 10)
-    private Double wallet;
+    private Double  wallet  ;
 
     @Column(name= "creation_date", nullable = false)
     private LocalDate creationDate = LocalDate.now();
@@ -42,6 +42,19 @@ public class User {
     //---------------------------------------------------------------------
 
     public User() {
+    }
+
+    public User(int id, String userName, String firstName, String password, String email, boolean active, String roles, Double wallet, LocalDate creationDate, LocalDate modifDate) {
+        this.id = id;
+        this.userName = userName;
+        this.firstName = firstName;
+        this.password = password;
+        this.email = email;
+        this.active = active;
+        this.roles = roles;
+        this.wallet = wallet;
+        this.creationDate = creationDate;
+        this.modifDate = modifDate;
     }
 
     //---------------------------------------------------------------------
@@ -124,5 +137,9 @@ public class User {
 
     public void setModifDate(LocalDate modifDate) {
         this.modifDate = modifDate;
+    }
+
+    public void setCreationDate(LocalDate creationDate) {
+        this.creationDate = creationDate;
     }
 }

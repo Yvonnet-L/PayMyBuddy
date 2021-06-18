@@ -1,11 +1,14 @@
 package com.oc.ly.PayMyBuddy.controller;
 
 
+import com.oc.ly.PayMyBuddy.dto.FriendDTO;
 import com.oc.ly.PayMyBuddy.model.Friend;
 import com.oc.ly.PayMyBuddy.model.Transaction;
+import com.oc.ly.PayMyBuddy.model.Transfer;
 import com.oc.ly.PayMyBuddy.model.User;
 import com.oc.ly.PayMyBuddy.repository.FriendRepository;
 import com.oc.ly.PayMyBuddy.repository.TransactionRepository;
+import com.oc.ly.PayMyBuddy.repository.TransferRepository;
 import com.oc.ly.PayMyBuddy.repository.UserRepository;
 import com.oc.ly.PayMyBuddy.service.IFriendService;
 import org.apache.logging.log4j.LogManager;
@@ -44,6 +47,9 @@ public class HomeController {
     @Autowired
     TransactionRepository transactionRepository;
 
+    @Autowired
+    TransferRepository transferRepository;
+
 
     @RequestMapping(value = { "/login" }, method = RequestMethod.GET)
     public String login(Model model)
@@ -78,24 +84,25 @@ public class HomeController {
     }
 
 
-    @GetMapping("/delete")
-    public String delete(Integer id, int page){
-            transactionRepository.deleteById(id);
-            return"redirect:/home?page="+page;
-    }
+
 
 
     @RequestMapping(value = { "/home" }, method = RequestMethod.GET)
     public String home(Model model, @RequestParam(name="page", defaultValue = "0") int page,
-                                Double amount, String friendEmail, String description, String errorMessage)
+                                Double amount, String friendEmail, String description,String errorMessage)
     {
         String emailSession = SecurityContextHolder.getContext().getAuthentication().getName();
 
         User userLog = userRepository.findUserByEmail(emailSession);
+        String firstName = userLog.getFirstName();
+        Double wallet = userLog.getWallet();
+        List<FriendDTO> friends = friendService.findFriendByOwner(userLog);
 
-        List<Friend> friends = friendService.findFriendByOwner(userLog);
-
-        Page<Transaction> pageTransactions = transactionRepository.findAllByPayer(userLog,PageRequest.of(page,3));
+        logger.info("---> On entre bien dans /home ");
+        Page<Transaction> pageTransactions = transactionRepository.theLastThreeTransactions(userLog, PageRequest.of(page,2));
+        Page<Transfer> pageTransfers = transferRepository.theLastThreeTransfers(userLog, PageRequest.of(page,2));
+        Page<Transaction> pageRefunds = transactionRepository.theLastThreeTransactionsBeneficiary(userLog, PageRequest.of(page,2));
+        logger.info("---> On passe bien les requete " + pageTransfers.getSize()) ;
 
         String role = null;
         String authorisation = userLog.getRoles();
@@ -106,41 +113,17 @@ public class HomeController {
 
         model.addAttribute("admin", role);
         model.addAttribute("friends", friends);
-        model.addAttribute("transactions", pageTransactions.getContent());
-        model.addAttribute("pages", new int[pageTransactions.getTotalPages()]);
+        model.addAttribute("transactions", pageTransactions);
+        model.addAttribute("transfers", pageTransfers);
+        model.addAttribute("refunds", pageRefunds);
         model.addAttribute("errorMessage", errorMessage);
+        model.addAttribute("firstName", firstName);
+        model.addAttribute("wallet", wallet);
         model.addAttribute("currentPage", page);
         return "home";
     }
 
-    @PostMapping(value = { "/home" })
-    public String addTransaction(Model model, Double amount, String friendEmail, String description, String errorMessage)
-    {
-        LocalDate createDate = LocalDate.now();
-        String emailSession = SecurityContextHolder.getContext().getAuthentication().getName();
 
-        User userLog = userRepository.findUserByEmail(emailSession);
-
-        if (friendEmail.equals("vide")) {
-            errorMessage="Vous devez choisir un email! ";
-            model.addAttribute("errorMessage", errorMessage);
-            model.addAttribute("description", description);
-            model.addAttribute("amount", amount);
-
-        }else {
-            logger.info("---> On entre bien dans le Post /home ");
-            logger.info("---> valeur des variables:  montant: " + amount + " , email: " + friendEmail + " , description " + description);
-            User beneficiary = userRepository.findUserByEmail(friendEmail);
-            User payer = userRepository.findUserById(userLog.getId());
-            logger.info("---> Pas d'erreur sur les recherches repo");
-            Transaction newTransaction = new Transaction(payer, beneficiary, createDate, amount, description, amount*0.005);
-            logger.info("---> création de la nouvelle transaction ");
-            transactionRepository.save(newTransaction);
-            logger.info("---> Sauvegarde transaction ok !");
-        }
-        return "redirect:/home";
-
-    }
 
 
 

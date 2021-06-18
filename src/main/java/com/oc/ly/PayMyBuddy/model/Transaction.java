@@ -1,6 +1,8 @@
 package com.oc.ly.PayMyBuddy.model;
 
-import java.time.LocalDate;
+import com.oc.ly.PayMyBuddy.exceptions.DataNotFoundException;
+
+
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,7 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-
+import java.time.LocalDateTime;
 
 
 @Entity
@@ -31,7 +33,7 @@ public class Transaction {
 	private User beneficiary;
 	
 	@Column(name= "date", nullable = false)
-	private LocalDate creationDate = LocalDate.now();
+	private LocalDateTime creationDate = LocalDateTime.now();
 	
 	@Column(name= "amount", nullable = false)
 	private double amount;
@@ -51,8 +53,8 @@ public class Transaction {
 	}
 
 
-	public Transaction(int idTransaction, User payer, User beneficiary, LocalDate creationDate, double amount,
-			String description) {
+	public Transaction(int idTransaction, User payer, User beneficiary, LocalDateTime creationDate, double amount,
+			String description, double fee) {
 		super();
 		this.idTransaction = idTransaction;
 		this.payer = payer;
@@ -60,11 +62,12 @@ public class Transaction {
 		this.creationDate = creationDate;
 		this.amount = amount;
 		this.description = description;
+		this.fee = fee;
 	}
 
 
 
-	public Transaction(User payer, User beneficiary, LocalDate createDate, double amount,
+	public Transaction(User payer, User beneficiary, LocalDateTime createDate, double amount,
 			String description, double fee ) {
 		super();
 		this.payer = payer;
@@ -118,14 +121,14 @@ public class Transaction {
 
 
 
-	public LocalDate getCreationDate() {
+	public LocalDateTime getCreationDate() {
 		return creationDate;
 	}
 
 
 
 
-	public void setCreationDate(LocalDate createDate) {
+	public void setCreationDate(LocalDateTime createDate) {
 		this.creationDate = createDate;
 	}
 
@@ -151,14 +154,17 @@ public class Transaction {
 	}
 
 
-
-
 	public void setDescription(String description) {
 		this.description = description;
 	}
 
+	public double getFee() {
+		return fee;
+	}
 
-
+	public void setFee(double fee) {
+		this.fee = fee;
+	}
 
 	@Override
 	public String toString() {

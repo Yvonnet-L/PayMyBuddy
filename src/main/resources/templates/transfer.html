@@ -4,125 +4,126 @@
 
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
+  <meta charset="UTF-8" />
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-          th:href="@{https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        th:href="@{https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css}">
 
 
-    <title>Transfer</title>
+  <title>Transaction</title>
 
-    <link rel="stylesheet" th:href="@{/css/home.css}"/>
+  <link rel="stylesheet" th:href="@{/css/home.css}"/>
 </head>
 
 <body>
 <center>
-    <div class="home">
-        <div class="menu">
-            <div class="greenButton">
-                <a class="button1" href="${pageContext.request.contextPath}login">Pay My Buddy</a>
-            </div>
-            <div class="hrefs">
-                <a href="#" th:href="@{/home}">Home</a>
-                <a href="#" th:href="@{/transfer}">Transfer</a>
-                <a href="#" th:href="@{/profile}">Profile</a>
-                <a href="#" th:href="@{/contact}">Contact</a>
-                <a href="#" th:href="@{/logout}">Log off</a>
-            </div>
-        </div>
-
-        <div class="subMenu">
-            <a class="aHome" th:href="@{/home}">Home</a>
-            <a> / </a>
-            <a th:href="@{/transfer}">Transfer</a>
-        </div>
-
-        <div class="send">
-            <div class="send-a">
-                <a>Send Money</a>
-            </div>
-            <div class="send-b">
-
-                <a  class="button2" href="${pageContext.request.contextPath}/login"> Add Connection </a>
-            </div>
-        </div>
-        <div th:if="${errorMessage}" th:utext="${errorMessage}"
-             style="color:red;font-style:italic;"> </div>
-        <div class="createTrans">
-            <form th:action="@{/transfer}" method="post">
-                <div class="createTrans2">
-                    <div class="trans-friends" th:object="${friends}">
-                        <select class="form-control" id="friendEmail" name="friendEmail" >
-                            <option  value="vide" name="friend" >Select a friend</option>
-                            <option th:each="friend  : ${friends }"
-                                    th:value="${friend.friend.email}"
-                                    th:text="${friend.friend.email}"  required="true"></option>
-                        </select>
-
-                    </div>
-                    <div class="trans-amount">
-                          <span class="input-euro right">
-                             <input type="number" name="amount" min="5" max="10000" placeholder="5€" required="true"/>
-                          </span>
-                    </div>
-                    <div class="trans-button">
-
-                        <input type="submit" class="button3" name="create" value="Pay" />
-                    </div>
-                </div>
-                <div class="createTrans3">
-                    <div class="description" th:object="${description}">
-                        <input type="text" name="description"  placeholder="Description" required="true" />
-                    </div>
-                    <div class="invisible">
-                    </div>
-                </div>
-            </form>
-        </div>
-
-
-        <div class="consTrans">
-
-            <div class="panel-heading" align="left">My Transactions</div>
-
-
-            <table class="table">
-                <thead>
-                <tr class="panel-th" >
-                    <th width="30%" >Connections</th>
-                    <th width="50%">Description</th>
-                    <th width="20%">Amount</th>
-                    <th ></th>
-                </thead>
-                </tr>
-                <tbody>
-                <tr th:each ="transaction : ${transactions}">
-                    <td th:utext="${transaction.beneficiary.email}">...</td>
-                    <td th:utext="${transaction.description}">...</td>
-                    <td th:utext="${transaction.amount}">...</td>
-                    <td>
-                        <a th:if="${admin}"
-                           class="btn btn-danger" onclick="return confirm( ' Etes vous sûre de vouloir supprimer?')"
-                           th:href="@{/delete(id=${transaction.idTransaction}, page=${currentPage})}">Delete</a>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-
-            <ul class="nav nav-pills" >
-                <li  th:class="${currentPage==status.index?'active':''}" th:each="page,status:${pages}">
-                    <a th:href="@{/transfer(page=${status.index})}" th:text="${status.index}"></a>
-                </li>
-            </ul>
-
-        </div>
+  <div class="home">
+    <div class="menu">
+      <div class="greenButton">
+        <a class="button1" href="${pageContext.request.contextPath}login">Pay My Buddy</a>
+      </div>
+      <div class="hrefs">
+        <a href="#" th:href="@{/home}">Home</a>
+        <a href="#" th:href="@{/transaction}">Transaction</a>
+        <a href="#" th:href="@{/profile}">Profile</a>
+        <a href="#" th:href="@{/contact}">Contact</a>
+        <a href="#" th:href="@{/logout}">Log off</a>
+      </div>
     </div>
+
+    <div class="subMenu">
+      <a class="aHome" th:href="@{/home}">Home</a>
+      <a> / </a>
+      <a th:href="@{/transaction}">Transaction</a>
+    </div>
+
+    <div class="send">
+      <div class="send-a">
+        <a>Send Money</a>
+      </div>
+      <div class="send-b">
+
+        <a  class="button2" th:href="@{/contact}"> Add Connection </a>
+      </div>
+    </div>
+    <div th:if="${errorMessage}" th:utext="${errorMessage}"
+         style=" color:red; font-style:italic ; font-weight: bold; "> </div>
+    <div class="createTrans">
+      <form th:action="@{/transaction}" method="post">
+        <div class="createTrans2">
+          <div class="trans-friends" th:object="${friends}">
+            <select class="form-control" id="friendEmail" name="friendEmail" >
+              th:if="${errorMessage}" th:utext="${errorMessage}"
+              <option th:value="${friend}"  name="friend" th:if="${friend}" th:utext="${friend}":>Select a friend</option>
+              <option th:each="friend  : ${friends }"
+                      th:value="${friend.friend.email}"
+                      th:text="${friend.friend.email}"  required="true"></option>
+            </select>
+
+          </div>
+          <div class="trans-amount">
+                          <span class="input-euro right">
+                             <input type="number" name="amount"  th:value="${amount}" min="5" max="10000" placeholder="5€" required="true"/>
+                          </span>
+          </div>
+          <div class="trans-button">
+
+            <input type="submit" class="button3" name="create" value="Pay" />
+          </div>
+        </div>
+        <div class="createTrans3">
+          <div class="description" th:object="${description}">
+            <input type="text" name="description"  th:value="${description}" placeholder="Description" required="true" />
+          </div>
+          <div class="invisible">
+          </div>
+        </div>
+      </form>
+    </div>
+
+
+    <div class="consTrans">
+
+      <div class="panel-heading" align="left">My Transactions</div>
+
+
+      <table class="table">
+        <thead>
+        <tr class="panel-th" >
+          <th width="30%" >Connections</th>
+          <th width="50%">Description</th>
+          <th width="20%">Amount</th>
+          <th ></th>
+        </thead>
+        </tr>
+        <tbody>
+        <tr th:each ="transaction : ${transactions}">
+          <td th:utext="${transaction.beneficiary.email}">...</td>
+          <td th:utext="${transaction.description}">...</td>
+          <td th:utext="${transaction.amount}">...</td>
+          <td>
+            <a th:if="${admin}"
+               class="btn btn-danger" onclick="return confirm( ' Etes vous sûre de vouloir supprimer?')"
+               th:href="@{/deleteTransaction(id=${transaction.idTransaction}, page=${currentPage})}">Delete</a>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+
+      <ul class="nav nav-pills" >
+        <li  th:class="${currentPage==status.index?'active':''}" th:each="page,status:${pages}">
+          <a th:href="@{/transaction(page=${status.index})}" th:text="${status.index}"></a>
+        </li>
+      </ul>
+
+    </div>
+  </div>
 </center>
 </body>
 <footer>
-    <Center>
-        <a style="color: #F5CBA7P;"> MyBuddy-Inc - V 0.2 ( 2021 ) </a>
-    </Center>
+  <Center>
+    <a style="color: #F5CBA7P;"> MyBuddy-Inc - V 0.2 ( 2021 ) </a>
+  </Center>
 </footer>
 
 </html>

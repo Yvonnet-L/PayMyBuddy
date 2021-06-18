@@ -36,7 +36,13 @@ public class Friend {
         this.creationDate = creationDate;
     }
 
-    //--------------------------------------------------------------------------
+    public Friend(Integer idFriend, User owner, User friend, LocalDate creationDate) {
+        this.idFriend = idFriend;
+        this.owner = owner;
+        this.friend = friend;
+        this.creationDate = creationDate;
+    }
+//--------------------------------------------------------------------------
 
     public Integer getIdFriend() {
         return idFriend;

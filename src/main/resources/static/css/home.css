@@ -7,7 +7,7 @@ body{
 div.home{
     border: 2px #CFCBCA solid;
     height: 90vh;
-    min-height: 500px;
+    min-height: 680px;
     width: 70%;
     min-width: 550px;
     margin: 0 auto 1px;
@@ -93,6 +93,17 @@ div.consTrans{
     margin: 0 auto 2px;
 }
 
+
+div.consTrans2{
+    width: 75%;
+    height: 21%;
+    margin: 0 auto 1px;
+}
+
+div.consTrans3{
+    width: 75%;
+    margin: 0 auto 1px;
+}
 /* ----- DIV 3eme niveau --------------------------- */
 
 /*--- div de menu */
@@ -312,7 +323,14 @@ div.trans-amount input
 
 .table td
 {
-    height: 50px;
+    height: 40px;
+    color: black;
+    text-align: center;
+}
+
+div.consTrans2 td
+{
+    height: 10px;
     color: black;
     text-align: center;
 }
