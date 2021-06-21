@@ -65,6 +65,14 @@ div.createTrans3{
     padding-top: 10px;
 }
 
+
+div.createTransfer{
+    width: 75%;
+    height: 20px;
+    margin: 0 auto 1px;
+    background-color: #E5E8E8;
+}
+
 div.description
 {
     width: 48%;

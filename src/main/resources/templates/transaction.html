@@ -53,7 +53,6 @@
                 <div class="createTrans2">
                     <div class="trans-friends" th:object="${friends}">
                         <select class="form-control" id="friendEmail" name="friendEmail" >
-                            th:if="${errorMessage}" th:utext="${errorMessage}"
                             <option th:value="${friend}"  name="friend" th:if="${friend}" th:utext="${friend}":>Select a friend</option>
                             <option th:each="friend  : ${friends }"
                                     th:value="${friend.friend.email}"

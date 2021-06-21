@@ -17,7 +17,7 @@ public interface FriendRepository extends JpaRepository<Friend, Integer> {
 
     @Query("SELECT f FROM Friend f "
             + "WHERE f.owner = :owner")
-    public List<Friend> FindListFriendByOwner(User owner);
+    public List<Friend> findListFriendByOwner(User owner);
 
     @Query("SELECT f FROM Friend f "
             + "WHERE f.owner = :owner")

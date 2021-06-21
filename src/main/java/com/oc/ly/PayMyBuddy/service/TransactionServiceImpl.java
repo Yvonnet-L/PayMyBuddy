@@ -36,9 +36,9 @@ public class TransactionServiceImpl implements ITransactionService {
     private static Logger logger = LogManager.getLogger(TransactionServiceImpl.class);
 
     LocalDate today = LocalDate.now();
-
+    // @Transactional(readOnly = false,rollbackFor = Exception.class)
     @Override
-    @Transactional(readOnly = false, propagation = Propagation.REQUIRES_NEW)
+    @Transactional(propagation = Propagation.REQUIRES_NEW)
     public TransactionDTO addTransaction(TransactionDTO transactionDTO) {
 
         logger.info("---> processing of the request to add a transaction by the service   !");
@@ -56,7 +56,7 @@ public class TransactionServiceImpl implements ITransactionService {
                     throw new DataNotFoundException("Problem with the database, user payer not found");
                 }
 
-        try {
+      //  try {
 
            //-- mise en place des données manquante pour la transaction
             LocalDateTime createDate = LocalDateTime.now();
@@ -91,7 +91,7 @@ public class TransactionServiceImpl implements ITransactionService {
                     transactionDTO.getPayer().setModifDate(today);
 
                     userRepository.save(transactionDTO.getBeneficiary());
-                    //userRepository.save(null);
+                   // userRepository.save(null);
                     userRepository.save(transactionDTO.getPayer());
                     logger.info("  ---> Save transaction ok! Update Users ok!");
                 return transactionDTO;
@@ -99,10 +99,10 @@ public class TransactionServiceImpl implements ITransactionService {
                 logger.info("  ---> the amount withdrawn exceeds the wallet");
                 throw new DataNotConformException("the amount exceeds the wallet");
             }
-        }
-        catch (DataNotFoundException e){
+     /*   }
+        catch (Exception e){
            throw new DataNotFoundException("Problem with the DataBase");
-        }
+        }*/
     }
 
 

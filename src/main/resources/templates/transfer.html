@@ -10,7 +10,7 @@
         th:href="@{https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css}">
 
 
-  <title>Transaction</title>
+  <title>Transfer</title>
 
   <link rel="stylesheet" th:href="@{/css/home.css}"/>
 </head>
@@ -34,89 +34,119 @@
     <div class="subMenu">
       <a class="aHome" th:href="@{/home}">Home</a>
       <a> / </a>
-      <a th:href="@{/transaction}">Transaction</a>
+      <a th:href="@{/transaction}">Transfer</a>
     </div>
 
     <div class="send">
       <div class="send-a">
-        <a>Send Money</a>
+        <a>Transfer Management</a>
       </div>
-      <div class="send-b">
 
-        <a  class="button2" th:href="@{/contact}"> Add Connection </a>
-      </div>
     </div>
     <div th:if="${errorMessage}" th:utext="${errorMessage}"
          style=" color:red; font-style:italic ; font-weight: bold; "> </div>
     <div class="createTrans">
-      <form th:action="@{/transaction}" method="post">
+      <form th:action="@{/addTransfer}" method="post">
         <div class="createTrans2">
           <div class="trans-friends" th:object="${friends}">
-            <select class="form-control" id="friendEmail" name="friendEmail" >
-              th:if="${errorMessage}" th:utext="${errorMessage}"
-              <option th:value="${friend}"  name="friend" th:if="${friend}" th:utext="${friend}":>Select a friend</option>
-              <option th:each="friend  : ${friends }"
-                      th:value="${friend.friend.email}"
-                      th:text="${friend.friend.email}"  required="true"></option>
+            <select class="form-control" id="rib" name="rib" >
+              <option th:value="${bankAccount}"  name="bankAccount" th:if="${bankAccount}" th:utext="${bankAccount}":>Select a RIB</option>
+              <option th:each="bankAccount  : ${bankAccounts}"
+                      th:value="${bankAccount.rib}"
+                      th:text="${bankAccount.rib}"  required="true"></option>
             </select>
 
           </div>
           <div class="trans-amount">
-                          <span class="input-euro right">
-                             <input type="number" name="amount"  th:value="${amount}" min="5" max="10000" placeholder="5€" required="true"/>
-                          </span>
+              <span class="input-euro right">
+                 <input type="number" name="amount"  th:value="${amount}" min="5" max="10000" placeholder="5€" required="true"/>
+              </span>
           </div>
           <div class="trans-button">
+            <input type="submit" class="button3" name="create" value="Validate" />
+          </div>
+        </div>
+        <br/>
+        <p>Select a type:
+          <input type="radio" id="CREDIT_WALLET" name="type" value="CREDIT_WALLET" checked>
+          <label for="CREDIT_WALLET">Credit</label>
 
-            <input type="submit" class="button3" name="create" value="Pay" />
-          </div>
-        </div>
-        <div class="createTrans3">
-          <div class="description" th:object="${description}">
-            <input type="text" name="description"  th:value="${description}" placeholder="Description" required="true" />
-          </div>
-          <div class="invisible">
-          </div>
-        </div>
+          <input type="radio" id="DEBIT_WALLET" name="type" value="DEBIT_WALLET">
+          <label for="DEBIT_WALLET">Debit</label>
+        </p>
       </form>
     </div>
 
 
-    <div class="consTrans">
-
-      <div class="panel-heading" align="left">My Transactions</div>
-
+    <div class="consTrans3">
+      <div class="panel-heading" align="left">My Transfers</div>
 
       <table class="table">
         <thead>
         <tr class="panel-th" >
-          <th width="30%" >Connections</th>
-          <th width="50%">Description</th>
+          <th width="30%" >Date</th>
+          <th width="50%">Type</th>
           <th width="20%">Amount</th>
           <th ></th>
         </thead>
         </tr>
         <tbody>
-        <tr th:each ="transaction : ${transactions}">
-          <td th:utext="${transaction.beneficiary.email}">...</td>
-          <td th:utext="${transaction.description}">...</td>
-          <td th:utext="${transaction.amount}">...</td>
-          <td>
-            <a th:if="${admin}"
-               class="btn btn-danger" onclick="return confirm( ' Etes vous sûre de vouloir supprimer?')"
-               th:href="@{/deleteTransaction(id=${transaction.idTransaction}, page=${currentPage})}">Delete</a>
-          </td>
-        </tr>
+          <tr th:each ="transfer : ${transfers}">
+            <td th:utext="${transfer.createDate}">...</td>
+            <td th:utext="${transfer.type}">...</td>
+            <td th:utext="${transfer.amount}">...</td>
+          </tr>
         </tbody>
       </table>
 
       <ul class="nav nav-pills" >
         <li  th:class="${currentPage==status.index?'active':''}" th:each="page,status:${pages}">
-          <a th:href="@{/transaction(page=${status.index})}" th:text="${status.index}"></a>
+          <a th:href="@{/transfer(page=${status.index})}" th:text="${status.index}"></a>
         </li>
       </ul>
-
     </div>
+    <br/>
+    <div class="createTransfer">
+      <form th:action="@{/addBankAccount}" method="post">
+
+          <div class="createTrans2" th:object="${rib}">
+            <input type="text" size="40" name="rib"  th:value="${rib}" placeholder="new account" required="true" />
+              <input type="submit" class="button2" name="create" value="Add Account" />
+          </div>
+      </form>
+    </div>
+
+  <br/>
+    <div class="send">
+      <div class="send-a">
+        <a>Your Accounts</a>
+      </div>
+    </div>
+
+    <div class="consTrans3" style="overflow:scroll;  height: 125px;">
+
+      <table class="table">
+        <thead>
+        <tr class="panel-th" >
+          <th width="80%" >Rib</th>
+          <th ></th>
+        </thead>
+        </tr>
+        <tbody>
+        <tr th:each ="bankAccount : ${bankAccounts}">
+          <td th:utext="${bankAccount.rib}">...</td>
+          <td>
+
+            <a
+               class="btn btn-danger" onclick="return confirm( ' Etes vous sûre de vouloir supprimer?')"
+               th:href="@{/deleteAccount(id=${bankAccount.idBankAccount})}">Delete</a>
+
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
   </div>
 </center>
 </body>

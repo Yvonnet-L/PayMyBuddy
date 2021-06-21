@@ -117,4 +117,23 @@ public class UserDTO {
     }
 
     //---------------------------------------------------------
+
+    @Override
+    public String toString() {
+        return "UserDTO{" +
+                "id=" + id +
+                ", userName='" + userName + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", password='" + password + '\'' +
+                ", email='" + email + '\'' +
+                ", active=" + active +
+                ", roles='" + roles + '\'' +
+                ", wallet=" + wallet +
+                ", creationDate=" + creationDate +
+                ", modifDate=" + modifDate +
+                '}';
+    }
+
+
+    //---------------------------------------------------------
 }

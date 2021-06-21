@@ -3,6 +3,7 @@ package com.oc.ly.PayMyBuddy.model;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name="transfer")
@@ -21,7 +22,7 @@ public class Transfer {
     private String rib;
 
     @Column(name= "date", nullable = false)
-    private LocalDate createDate = LocalDate.now();
+    private LocalDateTime createDate = LocalDateTime.now();
 
     @Column(name= "amount", nullable = false)
     private double amount;
@@ -34,7 +35,7 @@ public class Transfer {
     public Transfer() {
     }
 
-    public Transfer(User user, String rib, LocalDate createDate, double amount, String type) {
+    public Transfer(User user, String rib, LocalDateTime createDate, double amount, String type) {
         this.user = user;
         this.rib = rib;
         this.createDate = createDate;
@@ -67,11 +68,11 @@ public class Transfer {
         this.rib = rib;
     }
 
-    public LocalDate getCreateDate() {
+    public LocalDateTime getCreateDate() {
         return createDate;
     }
 
-    public void setCreateDate(LocalDate createDate) {
+    public void setCreateDate(LocalDateTime createDate) {
         this.createDate = createDate;
     }
 

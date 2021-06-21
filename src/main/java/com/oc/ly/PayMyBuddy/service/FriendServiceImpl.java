@@ -50,7 +50,7 @@ public class FriendServiceImpl implements IFriendService{
     public List<FriendDTO> findFriendByOwner(User owner) {
 
         List<FriendDTO> friendsDTOList= new ArrayList<>();
-        List<Friend> friendsList = friendRepository.FindListFriendByOwner(owner);
+        List<Friend> friendsList = friendRepository.findListFriendByOwner(owner);
 
         if ( friendsList!=null ) {
             for ( Friend f : friendsList ) {

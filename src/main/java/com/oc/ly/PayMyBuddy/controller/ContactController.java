@@ -73,7 +73,7 @@ public class ContactController {
        // Page<Friend> pageFriends = friendService.findFriendByOwner(userLog, PageRequest.of(page, 3));
         List<FriendDTO> pageFriends = friendService.findFriendByOwner(userLog);
        // Page<Friend> pageFriends2 = friendService.findFriendByOwner(userLog, PageRequest.of(page, 2));
-        Page<User> pageUsersNotFriend = userService.ListUserNotFriend(userLog,"%"+mc+"%",PageRequest.of(page, 3));
+        Page<User> pageUsersNotFriend = userService.listUserNotFriend(userLog,"%"+mc+"%",PageRequest.of(page, 3));
 
         String role = null;
         String authorisation = userLog.getRoles();

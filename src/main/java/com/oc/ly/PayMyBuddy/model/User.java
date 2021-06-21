@@ -36,7 +36,7 @@ public class User {
     @Column(name= "creation_date", nullable = false)
     private LocalDate creationDate = LocalDate.now();
 
-    @Column(name= "modif_date", nullable = false)
+    @Column(name= "modif_date")
     private LocalDate modifDate = LocalDate.now();
 
     //---------------------------------------------------------------------
@@ -57,7 +57,18 @@ public class User {
         this.modifDate = modifDate;
     }
 
-    //---------------------------------------------------------------------
+    public User(String userName, String firstName, String password, String email, boolean active, String roles, Double wallet, LocalDate creationDate, LocalDate modifDate) {
+        this.userName = userName;
+        this.firstName = firstName;
+        this.password = password;
+        this.email = email;
+        this.active = active;
+        this.roles = roles;
+        this.wallet = wallet;
+        this.creationDate = creationDate;
+        this.modifDate = modifDate;
+    }
+//---------------------------------------------------------------------
 
     public int getId() {
         return id;
@@ -127,10 +138,6 @@ public class User {
         return creationDate;
     }
 
-    public void setCreateDate(LocalDate createDate) {
-        this.creationDate = createDate;
-    }
-
     public LocalDate getModifDate() {
         return modifDate;
     }
@@ -141,5 +148,24 @@ public class User {
 
     public void setCreationDate(LocalDate creationDate) {
         this.creationDate = creationDate;
+    }
+
+    //---------------------------------------------------------
+
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", userName='" + userName + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", password='" + password + '\'' +
+                ", email='" + email + '\'' +
+                ", active=" + active +
+                ", roles='" + roles + '\'' +
+                ", wallet=" + wallet +
+                ", creationDate=" + creationDate +
+                ", modifDate=" + modifDate +
+                '}';
     }
 }

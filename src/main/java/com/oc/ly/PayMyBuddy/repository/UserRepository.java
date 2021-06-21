@@ -24,7 +24,7 @@ public interface UserRepository extends JpaRepository<User, Integer> {
     @Query("select u from User  u "
             + "WHERE u not in (Select friend from Friend f where f.owner= :owner)"
             + " AND u.email like :x")
-    public Page<User> ListUserNotFriend(User owner, @Param("x")String mc , Pageable pageable);
+    public Page<User> listUserNotFriend(User owner, @Param("x")String mc , Pageable pageable);
 
 
 }

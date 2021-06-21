@@ -118,7 +118,7 @@ public class TransactionController {
                                 "&amount="+amount+
                                 "&description="+description;
             }
-            errorMessage = "Transaction sauvegardée";
+            errorMessage = "Transaction saved";
         }
             return"redirect:/transaction?page="+page+
                     "&errorMessage="+errorMessage+

@@ -19,4 +19,47 @@ public class BankAccount {
     @Column(name= "rib")
     private String rib;
 
+    //-----------------------------------------------------------------
+
+    public BankAccount() {
+    }
+
+    public BankAccount(Integer idBankAccount, User user, String rib) {
+        this.idBankAccount = idBankAccount;
+        this.user = user;
+        this.rib = rib;
+    }
+
+    public BankAccount(User user, String rib) {
+        this.user = user;
+        this.rib = rib;
+    }
+//-----------------------------------------------------------------
+
+    public Integer getIdBankAccount() {
+        return idBankAccount;
+    }
+
+    public void setIdBankAccount(Integer idBankAccount) {
+        this.idBankAccount = idBankAccount;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public String getRib() {
+        return rib;
+    }
+
+    public void setRib(String rib) {
+        this.rib = rib;
+    }
+
+
+    //-----------------------------------------------------------------
 }

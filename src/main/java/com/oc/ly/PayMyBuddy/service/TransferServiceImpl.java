@@ -1,13 +1,35 @@
 package com.oc.ly.PayMyBuddy.service;
 
+import com.oc.ly.PayMyBuddy.constants.TransferType;
+import com.oc.ly.PayMyBuddy.exceptions.DataNotConformException;
+import com.oc.ly.PayMyBuddy.exceptions.DataNotFoundException;
 import com.oc.ly.PayMyBuddy.model.Transfer;
 import com.oc.ly.PayMyBuddy.model.User;
+import com.oc.ly.PayMyBuddy.repository.TransferRepository;
+import com.oc.ly.PayMyBuddy.repository.UserRepository;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
 public class TransferServiceImpl implements ITransferService{
+
+    @Autowired
+    TransferRepository transferRepository;
+
+    @Autowired
+    IUserService userService;
+
+    private static Logger logger = LogManager.getLogger(TransferServiceImpl.class);
 
     @Override
     public Transfer addFriend(Transfer transfer) {
@@ -20,7 +42,7 @@ public class TransferServiceImpl implements ITransferService{
     }
 
     @Override
-    public Transfer deleteTransaction(Transfer transfer) {
+    public Transfer deleteTransfer(Transfer transfer) {
         return null;
     }
 
@@ -30,7 +52,89 @@ public class TransferServiceImpl implements ITransferService{
     }
 
     @Override
-    public List<Transfer> FindTransactionByUser(User user) {
+    @Transactional(propagation = Propagation.REQUIRES_NEW, readOnly = false)
+    public Transfer addTransfer(String rib, String type, double amount, User user) {
+
+        Transfer transfer = new Transfer(user, rib, LocalDateTime.now(), amount, type);
+        if (tranferDataVerification(transfer)) {
+               logger.info("-----> on entre dans le if puisque verif est true");
+                    if (transfer.getType().equals(TransferType.CREDIT_WALLET.toString())) {
+                        Double newWallet =  (double)Math.round((transfer.getUser().getWallet() + transfer.getAmount())*100)/100;
+                        transfer.getUser().setWallet(newWallet);
+
+                        userService.addUser(transfer.getUser());
+                        logger.info("------> transfer save");
+                        transferRepository.save(transfer);
+                    } else {
+                        if (walletOperation(transfer)) {
+                            Double newWallet =  (double)Math.round((transfer.getUser().getWallet() - transfer.getAmount())*100)/100;
+                            transfer.getUser().setWallet(newWallet);
+                            transfer.getUser().setModifDate(LocalDate.now());
+
+                            userService.addUser(transfer.getUser());
+                            logger.info("------> transfer save");
+                            transferRepository.save(transfer);
+                        } else {
+                            throw new DataNotConformException("the amount exceeds the wallet");
+                        }
+                    }
+                return null;
+        }else{
+            throw new DataNotConformException("invalid transfer, data problem !");
+        }
+    }
+
+    @Override
+    public List<Transfer> FindTransferByUser(User user) {
         return null;
     }
+
+    @Override
+    public Page<Transfer> findAllByUser(User user, Pageable pageable) {
+        logger.info(" ---> Launch of the search for a user's transfers");
+        Page<Transfer> transferList = transferRepository.findAllByUser(user, pageable);
+        return transferList;
+    }
+
+
+    //--------------------------------------------------------------------------------------------
+
+    private Boolean walletOperation(Transfer transfer) {
+        if ( transfer.getAmount() == 0) {
+            throw new DataNotFoundException("Amount must be greater than 0");
+        }
+        double wallet = transfer.getUser().getWallet();
+        double amount = transfer.getAmount();
+        //--- vérification de la couverture --
+        if( wallet - amount >= 0) {
+            return true;
+        }else {
+            return false;
+        }
+
+    }
+    //----------- verification data transfer valid -----------------------------------------------
+    private Boolean tranferDataVerification(Transfer transfer){
+        Boolean resultat = false;
+        if (transfer.getAmount() > 0 ) {
+            resultat = true;
+            logger.info("----- résultat montant = "+resultat);
+        } ;
+
+        if (transfer.getUser() !=null){
+           resultat = userService.userExistById(transfer.getUser().getId());
+            logger.info("----- résultat user = "+resultat);
+
+        }else { resultat=false; }
+
+        String type = transfer.getType();
+        if ( type.equals("CREDIT_WALLET") || type.equals("DEBIT_WALLET")) {
+            resultat = true;
+            logger.info("----- résultat type = "+resultat);
+        }else{ resultat=false; }
+        logger.info("----- resultat de sortie = "+resultat);
+        return resultat;
+    }
+
+    //--------------------------------------------------------------------------------------------
 }
