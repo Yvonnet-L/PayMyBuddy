@@ -1,6 +1,7 @@
 package com.oc.ly.PayMyBuddy.service;
 
 import com.oc.ly.PayMyBuddy.dto.FriendDTO;
+import com.oc.ly.PayMyBuddy.dto.UserDTO;
 import com.oc.ly.PayMyBuddy.model.Friend;
 import com.oc.ly.PayMyBuddy.model.User;
 import com.oc.ly.PayMyBuddy.repository.FriendRepository;
@@ -26,7 +27,8 @@ public class FriendServiceImpl implements IFriendService{
     public Factory factory = new Factory();
 
     @Override
-    public Friend addFriend(Friend friend) {
+    public Friend addFriend(FriendDTO friendDTO) {
+        Friend friend = factory.constructFriend(friendDTO);
         friendRepository.save(friend);
         return null;
     }
@@ -47,15 +49,16 @@ public class FriendServiceImpl implements IFriendService{
     }
 
     @Override
-    public List<FriendDTO> findFriendByOwner(User owner) {
+    public List<FriendDTO> findFriendByOwner(UserDTO ownerDTO) {
 
         List<FriendDTO> friendsDTOList= new ArrayList<>();
+        User owner = factory.constructUser(ownerDTO);
         List<Friend> friendsList = friendRepository.findListFriendByOwner(owner);
 
         if ( friendsList!=null ) {
             for ( Friend f : friendsList ) {
                 FriendDTO friendDTO = new FriendDTO();
-                factory.constructFriendDTO( friendDTO , f );
+                friendDTO = factory.constructFriendDTO( f );
                 friendsDTOList.add(friendDTO);
             }
             return friendsDTOList;
@@ -67,7 +70,8 @@ public class FriendServiceImpl implements IFriendService{
 
     @Override
     public Page<Friend> findFriendByOwner(User owner, Pageable pageable) {
-        return friendRepository.findFriendByOwner(owner, pageable);
+        Page<Friend> pagesFriends= friendRepository.findFriendByOwner(owner, pageable);
+        return pagesFriends;
     }
 
     @Override

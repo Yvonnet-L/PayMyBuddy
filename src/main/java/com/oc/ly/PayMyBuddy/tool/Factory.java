@@ -1,12 +1,7 @@
 package com.oc.ly.PayMyBuddy.tool;
 
-import com.oc.ly.PayMyBuddy.dto.FriendDTO;
-import com.oc.ly.PayMyBuddy.dto.TransactionDTO;
-import com.oc.ly.PayMyBuddy.dto.UserDTO;
-import com.oc.ly.PayMyBuddy.model.Friend;
-import com.oc.ly.PayMyBuddy.model.Transaction;
-import com.oc.ly.PayMyBuddy.model.User;
-import com.oc.ly.PayMyBuddy.service.FriendServiceImpl;
+import com.oc.ly.PayMyBuddy.dto.*;
+import com.oc.ly.PayMyBuddy.model.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -16,11 +11,14 @@ public class Factory {
 
     private static Logger logger = LogManager.getLogger(Factory.class);
 
+
     LocalDate createDate = LocalDate.now();
 
     //----------  USER -----------------------------------------------------
-    public UserDTO constructUserDTO(UserDTO usDTO, User u) {
-        if(u != null) {
+    public UserDTO constructUserDTO(User u) {
+        logger.info("on entre dans le construct userDTO 1");
+        UserDTO usDTO = new UserDTO();
+            logger.info("on entre dans le construct userDTO dans IF");
             usDTO.setId(u.getId());
             usDTO.setFirstName(u.getFirstName());
             usDTO.setUserName(u.getUserName());
@@ -32,13 +30,13 @@ public class Factory {
             usDTO.setCreationDate(u.getCreationDate());
             usDTO.setModifDate(u.getModifDate());
             return usDTO;
-        }else {
-            return null;
-        }
+
     }
 
-    public User constructUser(UserDTO usDTO, User user) {
+    public User constructUser(UserDTO usDTO) {
+        User user = new User();
         if(usDTO != null) {
+            user.setId(usDTO.getId());
             user.setFirstName(usDTO.getFirstName());
             user.setUserName(usDTO.getUserName());
             user.setEmail(usDTO.getEmail());
@@ -54,46 +52,54 @@ public class Factory {
         }
     }
 
-  /*
+
    //----------  BANK -----------------------------------------------------
 
-    public Bank constructBank(BankDTO bankDTO, Bank bank) {
-        bank.setBankName(bankDTO.getBankName());
-        bank.setCodeBank(bankDTO.getCodeBank());
-        return bank;
+    public BankAccount constructBank(BankAccountDTO bankAccountDTO) {
+        BankAccount bankAccount = new BankAccount();
+        bankAccount.setIdBankAccount(bankAccountDTO.getIdBankAccount());
+        bankAccount.setRib(bankAccountDTO.getRib());
+        bankAccount.setUser(bankAccountDTO.getUser());
+        return bankAccount;
     }
 
-    public BankDTO constructBankDTO(BankDTO bankDTO, Bank bank) {
-        bankDTO.setIdBank(bank.getIdBank());
-        bankDTO.setBankName(bank.getBankName());
-        bankDTO.setCodeBank(bank.getCodeBank());
-        return bankDTO;
+    public BankAccountDTO constructBankDTO(BankAccount bankAccount) {
+        BankAccountDTO bankAccountDTO = new BankAccountDTO();
+        bankAccountDTO.setIdBankAccount(bankAccount.getIdBankAccount());
+        bankAccountDTO.setRib(bankAccount.getRib());
+        bankAccountDTO.setUser(bankAccount.getUser());
+        return bankAccountDTO;
     }
 
     //----------  TRANSFER -----------------------------------------------------
 
-    public Transfer constructTransfer(TransferDTO transferDTO, Transfer transfer) {
+    public Transfer constructTransfer(TransferDTO transferDTO) {
+        Transfer transfer = new Transfer();
+        transfer.setIdTransfer(transferDTO.getIdTransfer());
         transfer.setUser(transferDTO.getUser());
-        transfer.setIdBank(transferDTO.getIdBank());
-        transfer.setCreateDate(createDate);
+        transfer.setRib(transferDTO.getRib());
+        transfer.setCreateDate(transferDTO.getCreateDate());
         transfer.setAmount(transferDTO.getAmount());
-        transfer.setType(transferDTO.getType().toString());
+        transfer.setType(transferDTO.getType());
         return transfer;
     }
 
-    public TransferDTO constructTransferDTO(TransferDTO transferDTO, Transfer transfer) {
+    public TransferDTO constructTransferDTO(Transfer transfer) {
+        TransferDTO transferDTO = new TransferDTO();
         transferDTO.setIdTransfer(transfer.getIdTransfer());
         transferDTO.setUser(transfer.getUser());
-        transferDTO.setIdBank(transfer.getIdBank());
+        transferDTO.setRib(transferDTO.getRib());
         transferDTO.setCreateDate(transfer.getCreateDate());
         transferDTO.setAmount(transfer.getAmount());
-        transferDTO.setType(TransferType.valueOf(transfer.getType()));
+        transferDTO.setType(transfer.getType());
+       // transferDTO.setType(TransferType.valueOf(transfer.getType()));
         return transferDTO;
     }
-*/
+
     //----------  TRANSACTION -----------------------------------------------------
 
-    public Transaction constructTransaction(TransactionDTO transactionDTO, Transaction transaction) {
+    public Transaction constructTransaction(TransactionDTO transactionDTO) {
+        Transaction transaction = new Transaction();
         transaction.setIdTransaction(transactionDTO.getIdTransaction());
         transaction.setCreationDate(transactionDTO.getCreationDate());
         transaction.setBeneficiary(transactionDTO.getBeneficiary());
@@ -106,7 +112,8 @@ public class Factory {
 
 
 
-    public TransactionDTO constructTransactionDTO(TransactionDTO transactionDTO, Transaction transaction) {
+    public TransactionDTO constructTransactionDTO(Transaction transaction) {
+        TransactionDTO transactionDTO = new TransactionDTO();
         transactionDTO.setIdTransaction(transaction.getIdTransaction());
         transactionDTO.setCreationDate(transaction.getCreationDate());
         transactionDTO.setBeneficiary(transaction.getBeneficiary());
@@ -119,17 +126,19 @@ public class Factory {
 
     //----------  FRIEND -----------------------------------------------------------
 
-    public Friend constructFriend(FriendDTO friendDTO, Friend friend) {
+    public Friend constructFriend(FriendDTO friendDTO) {
+        Friend friend = new Friend();
         friend.setIdFriend(friendDTO.getIdFriend());
         friend.setFriend(friendDTO.getFriend());
         friend.setOwner(friendDTO.getOwner());
-        friend.setCreationDate(friendDTO.getDateCreation());
+        friend.setCreationDate(friendDTO.getCreationDate());
         return friend;
     }
 
-    public FriendDTO constructFriendDTO(FriendDTO friendDTO, Friend friend) {
+    public FriendDTO constructFriendDTO(Friend friend) {
+        FriendDTO friendDTO = new FriendDTO();
         friendDTO.setIdFriend(friend.getIdFriend());
-        friendDTO.setDateCreation(friend.getCreationDate());
+        friendDTO.setCreationDate(friend.getCreationDate());
         friendDTO.setFriend(friend.getFriend());
         friendDTO.setOwner(friend.getOwner());
         return friendDTO;

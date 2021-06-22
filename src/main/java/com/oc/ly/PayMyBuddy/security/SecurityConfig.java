@@ -32,7 +32,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
         PasswordEncoder passwordEncoder = passwordEncoder();
         System.out.println("*************************");
-        System.out.println(passwordEncoder.encode("123"));
+        System.out.println(passwordEncoder.encode("rootroot"));
         System.out.println("*************************");
         System.out.println(userDetailsService.getClass().getName());
         // On produit un log de niveau informatif.
@@ -50,7 +50,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                     .antMatchers("/").permitAll()
                     .antMatchers("/css/**").permitAll()
-                    .antMatchers("/save**/**","/delete**/**","/admin").hasRole("ADMIN")
+                    .antMatchers("/save**/**","/delete**/**","/admin,/management**/**").hasRole("ADMIN")
                     .anyRequest().authenticated();
 
         http.formLogin().loginPage("/login").defaultSuccessUrl("/home").failureUrl("/login?error=true").permitAll();

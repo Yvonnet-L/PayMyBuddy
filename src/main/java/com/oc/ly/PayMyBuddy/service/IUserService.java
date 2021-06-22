@@ -1,5 +1,6 @@
 package com.oc.ly.PayMyBuddy.service;
 
+import com.oc.ly.PayMyBuddy.dto.UserDTO;
 import com.oc.ly.PayMyBuddy.model.Transaction;
 import com.oc.ly.PayMyBuddy.model.User;
 import org.springframework.data.domain.Page;
@@ -14,15 +15,15 @@ public interface IUserService {
 
     public User findUserById(Integer id);
 
-    public User findUserByEmail(String email);
+    public UserDTO findUserByEmail(String email);
 
-    public Optional<User> findByEmail(String email);
+  //  public Optional<User> findByEmail(String email);
 
    // public Page<User> ListUserNotFriend(User user, String mc,Pageable pageable);
 
     public User addUser(User user);
 
-    public Page<User> listUserNotFriend(User owner, @Param("x")String mc , Pageable pageable);
+    public Page<UserDTO> listUserNotFriend(UserDTO owner, @Param("x")String mc , Pageable pageable);
 
     public Boolean userExistById ( Integer id );
 

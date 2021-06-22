@@ -1,6 +1,9 @@
 package com.oc.ly.PayMyBuddy.controller;
 
 
+import com.oc.ly.PayMyBuddy.dto.BankAccountDTO;
+import com.oc.ly.PayMyBuddy.dto.TransferDTO;
+import com.oc.ly.PayMyBuddy.dto.UserDTO;
 import com.oc.ly.PayMyBuddy.exceptions.DataNotConformException;
 import com.oc.ly.PayMyBuddy.exceptions.DataNotFoundException;
 import com.oc.ly.PayMyBuddy.model.BankAccount;
@@ -10,6 +13,7 @@ import com.oc.ly.PayMyBuddy.service.IBankAccountService;
 import com.oc.ly.PayMyBuddy.service.IFriendService;
 import com.oc.ly.PayMyBuddy.service.ITransferService;
 import com.oc.ly.PayMyBuddy.service.IUserService;
+import com.oc.ly.PayMyBuddy.tool.Factory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,6 +43,8 @@ public class TransferController {
     @Autowired
     ITransferService transferService;
 
+    public Factory factory = new Factory();
+
     @RequestMapping(value = { "/transfer" }, method = RequestMethod.GET)
     public String home(Model model,
                        @RequestParam(name="page", defaultValue = "0") int page,
@@ -47,12 +53,12 @@ public class TransferController {
     {
         //-- Security Context - récupération du userLog
         String emailSession = SecurityContextHolder.getContext().getAuthentication().getName();
-        User userLog = userService.findUserByEmail(emailSession);
+        UserDTO userLog = userService.findUserByEmail(emailSession);
         //-- Récupération de la liste des rib
 
-        List<BankAccount> bankAccounts = bankAccountService.findBankAccountByUser(userLog);
+        List<BankAccountDTO> bankAccounts = bankAccountService.findBankAccountByUser(userLog);
 
-        Page<Transfer> pageTransfers = transferService.findAllByUser(userLog, PageRequest.of(page,2));
+        Page<TransferDTO> pageTransfers = transferService.findAllByUser(userLog, PageRequest.of(page,2));
 
         String role = null;
         String authorisation = userLog.getRoles();
@@ -88,8 +94,8 @@ public class TransferController {
         logger.info(" ---> entrée dans /addBankAccount " + rib);
         //-- Security Context - récupération du userLog
         String emailSession = SecurityContextHolder.getContext().getAuthentication().getName();
-        User userLog = userService.findUserByEmail(emailSession);
-        bankAccountService.addAccount( rib , userLog);
+        UserDTO userLog = userService.findUserByEmail(emailSession);
+        bankAccountService.addAccount( rib ,userLog);
         return"redirect:/transfer";
     }
 
@@ -100,9 +106,10 @@ public class TransferController {
         logger.info(" ---> entrée dans /addBTransfer " + rib + " - " + amount + " - " + type);
         //-- Security Context - récupération du userLog
         String emailSession = SecurityContextHolder.getContext().getAuthentication().getName();
-        User userLog = userService.findUserByEmail(emailSession);
+        UserDTO userLog = userService.findUserByEmail(emailSession);
+        User user = factory.constructUser(userLog);
         try{
-            transferService.addTransfer(rib,type, amount, userLog);
+            transferService.addTransfer(rib,type, amount, user);
         }
         catch (DataNotFoundException | DataNotConformException e){
             errorMessage = e.getMessage();

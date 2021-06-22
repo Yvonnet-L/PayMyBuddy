@@ -2,6 +2,7 @@ package com.oc.ly.PayMyBuddy.service;
 
 
 import com.oc.ly.PayMyBuddy.dto.TransactionDTO;
+import com.oc.ly.PayMyBuddy.dto.UserDTO;
 import com.oc.ly.PayMyBuddy.exceptions.DataNotConformException;
 import com.oc.ly.PayMyBuddy.exceptions.DataNotFoundException;
 import com.oc.ly.PayMyBuddy.model.Transaction;
@@ -13,6 +14,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
@@ -21,6 +23,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.function.Function;
 
 @Service("TransactionService")
 public class TransactionServiceImpl implements ITransactionService {
@@ -73,7 +76,7 @@ public class TransactionServiceImpl implements ITransactionService {
 
             if (bUserWalletOperation == true){
                 //- sauvegarde de la transaction
-                    transaction = factory.constructTransaction(transactionDTO, transaction);
+                    transaction = factory.constructTransaction(transactionDTO);
                     transactionRepository.save(transaction);
                 //- Récuperation des données venant de la DB en réinjectant dans le DTO
                    // factory.constructTransactionDTO(transactionDTO, transaction);
@@ -133,13 +136,42 @@ public class TransactionServiceImpl implements ITransactionService {
     }
 
     @Override
-    public Page<Transaction> theLastThreeTransactions(User user, Pageable pageable) {
-
-        return transactionRepository.theLastThreeTransactions(user, pageable);
+    public Page<TransactionDTO> theLastThreeTransactions(UserDTO userDTO, Pageable pageable) {
+        User user = factory.constructUser(userDTO);
+        Page<Transaction> pagesTransaction = transactionRepository.theLastThreeTransactions(user, pageable);
+        Page<TransactionDTO> pagesTransactionDTO= pagesTransaction.map(new Function<Transaction, TransactionDTO>() {
+            @Override
+            public TransactionDTO apply(Transaction transaction) {
+                TransactionDTO transactionDTO = new TransactionDTO();
+                transactionDTO = factory.constructTransactionDTO(transaction);
+                return transactionDTO;
+            }
+        });
+        return pagesTransactionDTO;
     }
 
     @Override
-    public Page<Transaction> findAllByPayer(User payer, Pageable pageable) {
+    public Page<TransactionDTO> theLastThreeTransactionsBeneficiary(UserDTO userDTO, Pageable pageable) {
+        User user = factory.constructUser(userDTO);
+        Page<Transaction> pagesTransaction =transactionRepository.theLastThreeTransactionsBeneficiary(user, pageable);
+            Page<TransactionDTO> pagesTransactionDTO= pagesTransaction.map(new Function<Transaction, TransactionDTO>() {
+                @Override
+                public TransactionDTO apply(Transaction transaction) {
+                    TransactionDTO transactionDTO = new TransactionDTO();
+                    transactionDTO = factory.constructTransactionDTO(transaction);
+                    return transactionDTO;
+                }
+            });
+        for (TransactionDTO t: pagesTransactionDTO)
+        {
+            logger.info("--- montant du dto de Page<DTO> " + t.getAmount());
+        }
+        return pagesTransactionDTO;
+    }
+
+    @Override
+    public Page<Transaction> findAllByPayer(UserDTO payerDTO, Pageable pageable) {
+        User payer = factory.constructUser(payerDTO);
         return transactionRepository.findAllByPayer(payer, pageable);
     }
 

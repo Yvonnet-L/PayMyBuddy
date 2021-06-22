@@ -2,6 +2,7 @@ package com.oc.ly.PayMyBuddy.controller;
 
 import com.oc.ly.PayMyBuddy.dto.FriendDTO;
 import com.oc.ly.PayMyBuddy.dto.TransactionDTO;
+import com.oc.ly.PayMyBuddy.dto.UserDTO;
 import com.oc.ly.PayMyBuddy.exceptions.DataNotConformException;
 import com.oc.ly.PayMyBuddy.exceptions.DataNotFoundException;
 import com.oc.ly.PayMyBuddy.model.Friend;
@@ -10,6 +11,7 @@ import com.oc.ly.PayMyBuddy.model.User;
 import com.oc.ly.PayMyBuddy.service.IFriendService;
 import com.oc.ly.PayMyBuddy.service.ITransactionService;
 import com.oc.ly.PayMyBuddy.service.IUserService;
+import com.oc.ly.PayMyBuddy.tool.Factory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,6 +39,8 @@ public class TransactionController {
     @Autowired
     IUserService userService;
 
+    Factory factory = new Factory();
+
     @GetMapping("/deleteTransaction")
     public String delete(Integer id, int page){
         transactionService.deleteById(id);
@@ -56,7 +60,7 @@ public class TransactionController {
 
             String emailSession = SecurityContextHolder.getContext().getAuthentication().getName();
 
-            User userLog = userService.findUserByEmail(emailSession);
+            UserDTO userLog = userService.findUserByEmail(emailSession);
 
             List<FriendDTO> friends = friendService.findFriendByOwner(userLog);
 
@@ -93,7 +97,7 @@ public class TransactionController {
         logger.info(" ---> Launch of the request:  Post /home ");
         String emailSession = SecurityContextHolder.getContext().getAuthentication().getName();
 
-        User userLog = new User();
+        UserDTO userLog = new UserDTO();
         try {
             userLog = userService.findUserByEmail(emailSession);
             }catch (Exception e){
@@ -103,8 +107,9 @@ public class TransactionController {
         if (friendEmail.equals("")) {
             errorMessage="You must choose an email! ";
         }else {
-            User beneficiary = userService.findUserByEmail(friendEmail);
-            User payer = userLog;
+            UserDTO beneficiaryDTO = userService.findUserByEmail(friendEmail);
+            User beneficiary = factory.constructUser(beneficiaryDTO);
+            User payer = factory.constructUser(userLog);
             logger.info("  ---> Data of Payer & Beneficiary found");
             try {
                 TransactionDTO newTransactionDTO = new TransactionDTO(payer, beneficiary, amount, description);

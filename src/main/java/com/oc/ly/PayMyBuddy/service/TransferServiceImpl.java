@@ -1,12 +1,16 @@
 package com.oc.ly.PayMyBuddy.service;
 
 import com.oc.ly.PayMyBuddy.constants.TransferType;
+import com.oc.ly.PayMyBuddy.dto.TransactionDTO;
+import com.oc.ly.PayMyBuddy.dto.TransferDTO;
+import com.oc.ly.PayMyBuddy.dto.UserDTO;
 import com.oc.ly.PayMyBuddy.exceptions.DataNotConformException;
 import com.oc.ly.PayMyBuddy.exceptions.DataNotFoundException;
+import com.oc.ly.PayMyBuddy.model.Transaction;
 import com.oc.ly.PayMyBuddy.model.Transfer;
 import com.oc.ly.PayMyBuddy.model.User;
 import com.oc.ly.PayMyBuddy.repository.TransferRepository;
-import com.oc.ly.PayMyBuddy.repository.UserRepository;
+import com.oc.ly.PayMyBuddy.tool.Factory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +23,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.function.Function;
 
 @Service
 public class TransferServiceImpl implements ITransferService{
@@ -28,6 +33,8 @@ public class TransferServiceImpl implements ITransferService{
 
     @Autowired
     IUserService userService;
+
+    public Factory factory  = new Factory();
 
     private static Logger logger = LogManager.getLogger(TransferServiceImpl.class);
 
@@ -90,10 +97,34 @@ public class TransferServiceImpl implements ITransferService{
     }
 
     @Override
-    public Page<Transfer> findAllByUser(User user, Pageable pageable) {
+    public Page<TransferDTO> findAllByUser(UserDTO userDTO, Pageable pageable) {
         logger.info(" ---> Launch of the search for a user's transfers");
-        Page<Transfer> transferList = transferRepository.findAllByUser(user, pageable);
-        return transferList;
+        User user = factory.constructUser(userDTO);
+        Page<Transfer> pagesTransfer = transferRepository.findAllByUser(user, pageable);
+        Page<TransferDTO> pagesTransferDTO= pagesTransfer.map(new Function<Transfer, TransferDTO>() {
+            @Override
+            public TransferDTO apply(Transfer transfer) {
+                TransferDTO transferDTO = new TransferDTO();
+                transferDTO = factory.constructTransferDTO(transfer);
+                return transferDTO;
+            }
+        });
+        return pagesTransferDTO;
+    }
+
+    @Override
+    public Page<TransferDTO> theLastThreeTransfers(UserDTO userDTO, Pageable pageable) {
+        User user = factory.constructUser(userDTO);
+        Page<Transfer> pagesTransfer = transferRepository.theLastThreeTransfers(user, pageable);
+        Page<TransferDTO> pagesTransferDTO= pagesTransfer.map(new Function<Transfer, TransferDTO>() {
+            @Override
+            public TransferDTO apply(Transfer transfer) {
+                TransferDTO transferDTO = new TransferDTO();
+                transferDTO = factory.constructTransferDTO(transfer);
+                return transferDTO;
+            }
+        });
+        return pagesTransferDTO;
     }
 
 

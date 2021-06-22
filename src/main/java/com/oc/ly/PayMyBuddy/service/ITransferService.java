@@ -1,5 +1,7 @@
 package com.oc.ly.PayMyBuddy.service;
 
+import com.oc.ly.PayMyBuddy.dto.TransferDTO;
+import com.oc.ly.PayMyBuddy.dto.UserDTO;
 import com.oc.ly.PayMyBuddy.model.Transfer;
 import com.oc.ly.PayMyBuddy.model.User;
 import org.springframework.data.domain.Page;
@@ -21,7 +23,9 @@ public interface ITransferService {
 
     public List<Transfer > FindTransferByUser (User user);
 
-    public Page<Transfer> findAllByUser(User user, Pageable pageable);
+    public Page<TransferDTO> findAllByUser(UserDTO userDTO, Pageable pageable);
+
+    public Page<TransferDTO> theLastThreeTransfers(UserDTO userDTO, Pageable pageable);
 
 
 }

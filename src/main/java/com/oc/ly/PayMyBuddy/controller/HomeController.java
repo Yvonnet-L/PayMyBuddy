@@ -2,15 +2,13 @@ package com.oc.ly.PayMyBuddy.controller;
 
 
 import com.oc.ly.PayMyBuddy.dto.FriendDTO;
-import com.oc.ly.PayMyBuddy.model.Friend;
-import com.oc.ly.PayMyBuddy.model.Transaction;
-import com.oc.ly.PayMyBuddy.model.Transfer;
-import com.oc.ly.PayMyBuddy.model.User;
-import com.oc.ly.PayMyBuddy.repository.FriendRepository;
-import com.oc.ly.PayMyBuddy.repository.TransactionRepository;
-import com.oc.ly.PayMyBuddy.repository.TransferRepository;
-import com.oc.ly.PayMyBuddy.repository.UserRepository;
+import com.oc.ly.PayMyBuddy.dto.TransactionDTO;
+import com.oc.ly.PayMyBuddy.dto.TransferDTO;
+import com.oc.ly.PayMyBuddy.dto.UserDTO;
 import com.oc.ly.PayMyBuddy.service.IFriendService;
+import com.oc.ly.PayMyBuddy.service.ITransactionService;
+import com.oc.ly.PayMyBuddy.service.ITransferService;
+import com.oc.ly.PayMyBuddy.service.IUserService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,11 +19,12 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.time.LocalDate;
 import java.util.List;
 
 
@@ -39,16 +38,13 @@ public class HomeController {
     IFriendService friendService;
 
     @Autowired
-    UserRepository userRepository;
+    IUserService userService;
 
     @Autowired
-    FriendRepository friendRepository;
+    ITransactionService transactionService;
 
     @Autowired
-    TransactionRepository transactionRepository;
-
-    @Autowired
-    TransferRepository transferRepository;
+    ITransferService transferService;
 
 
     @RequestMapping(value = { "/login" }, method = RequestMethod.GET)
@@ -84,28 +80,24 @@ public class HomeController {
     }
 
 
-
-
-
     @RequestMapping(value = { "/home" }, method = RequestMethod.GET)
     public String home(Model model, @RequestParam(name="page", defaultValue = "0") int page,
                                 Double amount, String friendEmail, String description,String errorMessage)
     {
         String emailSession = SecurityContextHolder.getContext().getAuthentication().getName();
-
-        User userLog = userRepository.findUserByEmail(emailSession);
-        String firstName = userLog.getFirstName();
-        Double wallet = userLog.getWallet();
-        List<FriendDTO> friends = friendService.findFriendByOwner(userLog);
+        UserDTO userLogDTO = userService.findUserByEmail(emailSession);
+        String firstName = userLogDTO.getFirstName();
+        Double wallet = userLogDTO.getWallet();
+        List<FriendDTO> friends = friendService.findFriendByOwner(userLogDTO);
 
         logger.info("---> On entre bien dans /home ");
-        Page<Transaction> pageTransactions = transactionRepository.theLastThreeTransactions(userLog, PageRequest.of(page,2));
-        Page<Transfer> pageTransfers = transferRepository.theLastThreeTransfers(userLog, PageRequest.of(page,2));
-        Page<Transaction> pageRefunds = transactionRepository.theLastThreeTransactionsBeneficiary(userLog, PageRequest.of(page,2));
+        Page<TransactionDTO> pageTransactions = transactionService.theLastThreeTransactions(userLogDTO, PageRequest.of(page,2));
+        Page<TransferDTO> pageTransfers = transferService.theLastThreeTransfers(userLogDTO, PageRequest.of(page,2));
+        Page<TransactionDTO> pageRefunds = transactionService.theLastThreeTransactionsBeneficiary(userLogDTO, PageRequest.of(page,2));
         logger.info("---> On passe bien les requete " + pageTransfers.getSize()) ;
 
         String role = null;
-        String authorisation = userLog.getRoles();
+        String authorisation = userLogDTO.getRoles();
 
         if ( authorisation.equals("ROLE_ADMIN") ) {
             role = "admin";
@@ -122,12 +114,6 @@ public class HomeController {
         model.addAttribute("currentPage", page);
         return "home";
     }
-
-
-
-
-
-
 }
 
 

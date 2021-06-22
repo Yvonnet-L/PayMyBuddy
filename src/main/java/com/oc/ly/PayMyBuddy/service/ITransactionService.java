@@ -1,12 +1,10 @@
 package com.oc.ly.PayMyBuddy.service;
 
-import com.oc.ly.PayMyBuddy.dto.FriendDTO;
 import com.oc.ly.PayMyBuddy.dto.TransactionDTO;
-import com.oc.ly.PayMyBuddy.model.Friend;
+import com.oc.ly.PayMyBuddy.dto.UserDTO;
 import com.oc.ly.PayMyBuddy.model.Transaction;
 import com.oc.ly.PayMyBuddy.model.User;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 
 import java.util.List;
@@ -26,7 +24,10 @@ public interface ITransactionService {
 
     public List<Transaction > FindTransactionByPayer (User payer);
 
-    Page<Transaction> theLastThreeTransactions(User user, Pageable pageable);
+    public Page<TransactionDTO> theLastThreeTransactions(UserDTO user, Pageable pageable);
 
-    public Page<Transaction> findAllByPayer(User payer, Pageable pageable);
+    public Page<TransactionDTO> theLastThreeTransactionsBeneficiary(UserDTO user,  Pageable pageable);
+
+    public Page<Transaction> findAllByPayer(UserDTO payer, Pageable pageable);
+
 }

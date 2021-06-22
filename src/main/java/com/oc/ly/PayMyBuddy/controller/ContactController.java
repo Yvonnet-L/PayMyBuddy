@@ -1,13 +1,11 @@
 package com.oc.ly.PayMyBuddy.controller;
 
 import com.oc.ly.PayMyBuddy.dto.FriendDTO;
-import com.oc.ly.PayMyBuddy.model.Friend;
-import com.oc.ly.PayMyBuddy.model.Transaction;
+import com.oc.ly.PayMyBuddy.dto.UserDTO;
 import com.oc.ly.PayMyBuddy.model.User;
-import com.oc.ly.PayMyBuddy.repository.FriendRepository;
-import com.oc.ly.PayMyBuddy.repository.UserRepository;
 import com.oc.ly.PayMyBuddy.service.IFriendService;
 import com.oc.ly.PayMyBuddy.service.IUserService;
+import com.oc.ly.PayMyBuddy.tool.Factory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +20,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.List;
 
 @Controller
@@ -35,6 +32,8 @@ public class ContactController {
 
     @Autowired
     IUserService userService;
+
+    public Factory factory = new Factory();
 
 
     @GetMapping("/deleteContact")
@@ -49,13 +48,14 @@ public class ContactController {
         //-- Security Context - récupération du userLog
         logger.info(" --->   idFriend: " + idFriend );
         String emailSession = SecurityContextHolder.getContext().getAuthentication().getName();
-        User userLog = userService.findUserByEmail(emailSession);
+        UserDTO userLog = userService.findUserByEmail(emailSession);
         User uFriend = userService.findUserById(idFriend);
         logger.info(" --->  ");
         logger.info("userOwner: " + userLog.getEmail() +" userFrriend: " + uFriend.getEmail()   );
         LocalDate date = LocalDate.now();
-        Friend newFriend = new Friend(userLog, uFriend, date);
-        friendService.addFriend(newFriend);
+        User owner = factory.constructUser(userLog);
+        FriendDTO newFriendDTO = new FriendDTO(owner, uFriend, date);
+        friendService.addFriend(newFriendDTO);
         return"redirect:/contact";
     }
 
@@ -67,13 +67,13 @@ public class ContactController {
     {
         //-- Security Context - récupération du userLog
         String emailSession = SecurityContextHolder.getContext().getAuthentication().getName();
-        User userLog = userService.findUserByEmail(emailSession);
+        UserDTO userLog = userService.findUserByEmail(emailSession);
         //-- Récupération de la liste des amis
        // List<Friend> friends = friendService.findFriendByOwner(userLog);
        // Page<Friend> pageFriends = friendService.findFriendByOwner(userLog, PageRequest.of(page, 3));
         List<FriendDTO> pageFriends = friendService.findFriendByOwner(userLog);
        // Page<Friend> pageFriends2 = friendService.findFriendByOwner(userLog, PageRequest.of(page, 2));
-        Page<User> pageUsersNotFriend = userService.listUserNotFriend(userLog,"%"+mc+"%",PageRequest.of(page, 3));
+        Page<UserDTO> pageUsersNotFriend = userService.listUserNotFriend(userLog,"%"+mc+"%",PageRequest.of(page, 3));
 
         String role = null;
         String authorisation = userLog.getRoles();
@@ -84,10 +84,8 @@ public class ContactController {
 
         model.addAttribute("admin", role);
         model.addAttribute("friends", pageFriends);
-      //  model.addAttribute("friends", pageFriends.getContent());
         model.addAttribute("notFriends", pageUsersNotFriend .getContent());
         model.addAttribute("errorMessage", errorMessage);
-       // model.addAttribute("pages", new int[pageFriends.getTotalPages()]);
         model.addAttribute("currentPage", page);
         model.addAttribute("pages", new int[pageUsersNotFriend .getTotalPages()]);
         model.addAttribute("motCle", mc);

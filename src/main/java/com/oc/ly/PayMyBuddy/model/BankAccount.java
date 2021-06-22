@@ -24,17 +24,17 @@ public class BankAccount {
     public BankAccount() {
     }
 
+    public BankAccount(User user, String rib) {
+        this.user = user;
+        this.rib = rib;
+    }
+
     public BankAccount(Integer idBankAccount, User user, String rib) {
         this.idBankAccount = idBankAccount;
         this.user = user;
         this.rib = rib;
     }
-
-    public BankAccount(User user, String rib) {
-        this.user = user;
-        this.rib = rib;
-    }
-//-----------------------------------------------------------------
+    //-----------------------------------------------------------------
 
     public Integer getIdBankAccount() {
         return idBankAccount;

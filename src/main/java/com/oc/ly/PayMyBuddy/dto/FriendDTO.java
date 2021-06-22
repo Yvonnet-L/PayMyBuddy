@@ -14,7 +14,7 @@ public class FriendDTO {
 
         private User friend;
 
-        private LocalDate dateCreation = LocalDate.now();
+        private LocalDate creationDate = LocalDate.now();
 
 
         //--------------------------------------------------------------------------
@@ -23,11 +23,11 @@ public class FriendDTO {
     public FriendDTO() {
     }
 
-    public FriendDTO(User owner, User friend, LocalDate dateCreation) {
+    public FriendDTO(User owner, User friend, LocalDate creationDate) {
             super();
             this.owner = owner;
             this.friend = friend;
-            this.dateCreation = dateCreation;
+            this.creationDate= creationDate;
         }
 
 
@@ -38,44 +38,45 @@ public class FriendDTO {
             this.friend = friend;
         }
 
-    public FriendDTO(Integer idFriend, User owner, User friend, LocalDate dateCreation) {
+    public FriendDTO(Integer idFriend, User owner, User friend, LocalDate creationDate) {
         this.idFriend = idFriend;
         this.owner = owner;
         this.friend = friend;
-        this.dateCreation = dateCreation;
+        this.creationDate = creationDate;
     }
 //--------------------------------------------------------------------------
 
-        public Integer getIdFriend() {
-            return idFriend;
-        }
+    public Integer getIdFriend() {
+        return idFriend;
+    }
 
-        public void setIdFriend(Integer idFriend) {
-            this.idFriend = idFriend;
-        }
+    public void setIdFriend(Integer idFriend) {
+        this.idFriend = idFriend;
+    }
 
-        public User getOwner() {
-            return owner;
-        }
+    public User getOwner() {
+        return owner;
+    }
 
-        public void setOwner(User owner) {
-            this.owner = owner;
-        }
+    public void setOwner(User owner) {
+        this.owner = owner;
+    }
 
-        public User getFriend() {
-            return friend;
-        }
+    public User getFriend() {
+        return friend;
+    }
 
-        public void setFriend(User friend) {
-            this.friend = friend;
-        }
+    public void setFriend(User friend) {
+        this.friend = friend;
+    }
 
-        public LocalDate getDateCreation() {
-            return dateCreation;
-        }
+    public LocalDate getCreationDate() {
+        return creationDate;
+    }
 
-        public void setDateCreation(LocalDate dateCreation) {
-            this.dateCreation = dateCreation;
-        }
-        //--------------------------------------------------------------------------
+    public void setCreationDate(LocalDate creationDate) {
+        this.creationDate = creationDate;
+    }
+
+    //--------------------------------------------------------------------------
 }
