@@ -11,17 +11,7 @@ import java.util.List;
 
 public interface ITransferService {
 
-    public Transfer addFriend(Transfer  transfer);
-
-    public Transfer updateFriend(Transfer  transfer);
-
-    public Transfer deleteTransfer (Transfer  transfer);
-
-    public List<Transfer > allTransfer();
-
-    public Transfer addTransfer(String rib, String type, double amount, User user);
-
-    public List<Transfer > FindTransferByUser (User user);
+    public TransferDTO addTransfer(String rib, String type, double amount, User user);
 
     public Page<TransferDTO> findAllByUser(UserDTO userDTO, Pageable pageable);
 

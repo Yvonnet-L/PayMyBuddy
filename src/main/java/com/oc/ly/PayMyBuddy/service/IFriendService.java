@@ -13,19 +13,11 @@ import java.util.List;
 
 public interface IFriendService {
 
-    public Friend addFriend(FriendDTO friendDTO);
-
-    public Friend updateFriend(Friend friend);
-
-    public Friend deleteFriend(Friend friend);
-
-    public List<Friend> allFriends();
+    public FriendDTO addFriend(FriendDTO friendDTO);
 
     public List<FriendDTO> findFriendByOwner(UserDTO owner);
 
-    public Page<Friend> findFriendByOwner(User owner, Pageable pageable);
-
-    public Friend deleteById(Integer id);
+    public FriendDTO deleteById(Integer id);
 
 }
 

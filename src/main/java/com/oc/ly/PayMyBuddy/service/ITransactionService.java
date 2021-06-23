@@ -14,20 +14,12 @@ public interface ITransactionService {
 
     public TransactionDTO addTransaction(TransactionDTO  transactionDTO);
 
-    public Transaction  updateTransaction(Transaction  transaction);
-
-    public Transaction deleteTransaction (Transaction  transaction);
-
     public Transaction deleteById ( int id );
-
-    public List<Transaction > allTransaction ();
-
-    public List<Transaction > FindTransactionByPayer (User payer);
 
     public Page<TransactionDTO> theLastThreeTransactions(UserDTO user, Pageable pageable);
 
     public Page<TransactionDTO> theLastThreeTransactionsBeneficiary(UserDTO user,  Pageable pageable);
 
-    public Page<Transaction> findAllByPayer(UserDTO payer, Pageable pageable);
+    public Page<TransactionDTO> findAllByPayer(UserDTO payer, Pageable pageable);
 
 }

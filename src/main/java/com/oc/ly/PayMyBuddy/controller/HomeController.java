@@ -90,11 +90,9 @@ public class HomeController {
         Double wallet = userLogDTO.getWallet();
         List<FriendDTO> friends = friendService.findFriendByOwner(userLogDTO);
 
-        logger.info("---> On entre bien dans /home ");
         Page<TransactionDTO> pageTransactions = transactionService.theLastThreeTransactions(userLogDTO, PageRequest.of(page,2));
         Page<TransferDTO> pageTransfers = transferService.theLastThreeTransfers(userLogDTO, PageRequest.of(page,2));
         Page<TransactionDTO> pageRefunds = transactionService.theLastThreeTransactionsBeneficiary(userLogDTO, PageRequest.of(page,2));
-        logger.info("---> On passe bien les requete " + pageTransfers.getSize()) ;
 
         String role = null;
         String authorisation = userLogDTO.getRoles();
@@ -102,7 +100,7 @@ public class HomeController {
         if ( authorisation.equals("ROLE_ADMIN") ) {
             role = "admin";
         }
-
+        logger.info("----->  /home ");
         model.addAttribute("admin", role);
         model.addAttribute("friends", friends);
         model.addAttribute("transactions", pageTransactions);

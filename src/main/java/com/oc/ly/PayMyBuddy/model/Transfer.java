@@ -10,12 +10,12 @@ import java.time.LocalDateTime;
 public class Transfer {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy= GenerationType.AUTO)
     @Column(name= "id_transfer", nullable = false)
     private int idTransfer;
 
     @ManyToOne
-    @JoinColumn(name = "fk_user", nullable = false)
+    @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
     @Column(name= "rib", nullable = false)

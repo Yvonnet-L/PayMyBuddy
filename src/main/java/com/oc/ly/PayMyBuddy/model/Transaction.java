@@ -20,16 +20,16 @@ import java.time.LocalDateTime;
 public class Transaction {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name= "id_transaction", nullable = false)
 	private int idTransaction;
 	
 	@ManyToOne
-	@JoinColumn(name = "payer", nullable = false)
+	@JoinColumn(name = "payer_id", nullable = false)
 	private User payer;
 	
 	@ManyToOne
-	@JoinColumn(name= "beneficiary", nullable = false)
+	@JoinColumn(name= "beneficiary_id", nullable = false)
 	private User beneficiary;
 	
 	@Column(name= "date", nullable = false)

@@ -27,25 +27,10 @@ public class FriendServiceImpl implements IFriendService{
     public Factory factory = new Factory();
 
     @Override
-    public Friend addFriend(FriendDTO friendDTO) {
+    public FriendDTO addFriend(FriendDTO friendDTO) {
         Friend friend = factory.constructFriend(friendDTO);
-        friendRepository.save(friend);
-        return null;
-    }
-
-    @Override
-    public Friend updateFriend(Friend friend) {
-        return null;
-    }
-
-    @Override
-    public Friend deleteFriend(Friend friend) {
-        return null;
-    }
-
-    @Override
-    public List<Friend> allFriends() {
-        return null;
+        friendDTO = factory.constructFriendDTO(friendRepository.save(friend));
+        return friendDTO;
     }
 
     @Override
@@ -69,13 +54,7 @@ public class FriendServiceImpl implements IFriendService{
     }
 
     @Override
-    public Page<Friend> findFriendByOwner(User owner, Pageable pageable) {
-        Page<Friend> pagesFriends= friendRepository.findFriendByOwner(owner, pageable);
-        return pagesFriends;
-    }
-
-    @Override
-    public Friend deleteById(Integer id) {
+    public FriendDTO deleteById(Integer id) {
         friendRepository.deleteById(id);
         return null;
     }

@@ -13,7 +13,7 @@ public class BankAccount {
     private Integer idBankAccount;
 
     @ManyToOne(optional = false)
-    @JoinColumn(name= "user")
+    @JoinColumn(name= "user_id")
     private User user;
 
     @Column(name= "rib")

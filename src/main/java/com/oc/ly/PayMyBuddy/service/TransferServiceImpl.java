@@ -1,12 +1,10 @@
 package com.oc.ly.PayMyBuddy.service;
 
 import com.oc.ly.PayMyBuddy.constants.TransferType;
-import com.oc.ly.PayMyBuddy.dto.TransactionDTO;
 import com.oc.ly.PayMyBuddy.dto.TransferDTO;
 import com.oc.ly.PayMyBuddy.dto.UserDTO;
 import com.oc.ly.PayMyBuddy.exceptions.DataNotConformException;
 import com.oc.ly.PayMyBuddy.exceptions.DataNotFoundException;
-import com.oc.ly.PayMyBuddy.model.Transaction;
 import com.oc.ly.PayMyBuddy.model.Transfer;
 import com.oc.ly.PayMyBuddy.model.User;
 import com.oc.ly.PayMyBuddy.repository.TransferRepository;
@@ -22,7 +20,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.List;
 import java.util.function.Function;
 
 @Service
@@ -39,28 +36,8 @@ public class TransferServiceImpl implements ITransferService{
     private static Logger logger = LogManager.getLogger(TransferServiceImpl.class);
 
     @Override
-    public Transfer addFriend(Transfer transfer) {
-        return null;
-    }
-
-    @Override
-    public Transfer updateFriend(Transfer transfer) {
-        return null;
-    }
-
-    @Override
-    public Transfer deleteTransfer(Transfer transfer) {
-        return null;
-    }
-
-    @Override
-    public List<Transfer> allTransfer() {
-        return null;
-    }
-
-    @Override
     @Transactional(propagation = Propagation.REQUIRES_NEW, readOnly = false)
-    public Transfer addTransfer(String rib, String type, double amount, User user) {
+    public TransferDTO addTransfer(String rib, String type, double amount, User user) {
 
         Transfer transfer = new Transfer(user, rib, LocalDateTime.now(), amount, type);
         if (tranferDataVerification(transfer)) {
@@ -72,6 +49,7 @@ public class TransferServiceImpl implements ITransferService{
                         userService.addUser(transfer.getUser());
                         logger.info("------> transfer save");
                         transferRepository.save(transfer);
+                       // transferRepository.save(null);
                     } else {
                         if (walletOperation(transfer)) {
                             Double newWallet =  (double)Math.round((transfer.getUser().getWallet() - transfer.getAmount())*100)/100;
@@ -85,15 +63,10 @@ public class TransferServiceImpl implements ITransferService{
                             throw new DataNotConformException("the amount exceeds the wallet");
                         }
                     }
-                return null;
+                return factory.constructTransferDTO(transfer);
         }else{
             throw new DataNotConformException("invalid transfer, data problem !");
         }
-    }
-
-    @Override
-    public List<Transfer> FindTransferByUser(User user) {
-        return null;
     }
 
     @Override

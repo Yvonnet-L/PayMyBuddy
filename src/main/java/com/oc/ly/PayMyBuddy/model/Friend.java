@@ -14,11 +14,11 @@ public class Friend {
     private Integer idFriend;
 
     @ManyToOne(optional = false)
-    @JoinColumn(name= "owner")
+    @JoinColumn(name= "owner_id")
     private User owner;
 
     @ManyToOne(optional = false)
-    @JoinColumn(name= "friend")
+    @JoinColumn(name= "friend_id")
     private User friend;
 
     @Column(name= "creation_date", updatable=false)

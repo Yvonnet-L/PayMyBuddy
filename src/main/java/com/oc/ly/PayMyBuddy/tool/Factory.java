@@ -1,6 +1,7 @@
 package com.oc.ly.PayMyBuddy.tool;
 
 import com.oc.ly.PayMyBuddy.dto.*;
+import com.oc.ly.PayMyBuddy.exceptions.DataNotConformException;
 import com.oc.ly.PayMyBuddy.model.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -16,9 +17,8 @@ public class Factory {
 
     //----------  USER -----------------------------------------------------
     public UserDTO constructUserDTO(User u) {
-        logger.info("on entre dans le construct userDTO 1");
-        UserDTO usDTO = new UserDTO();
-            logger.info("on entre dans le construct userDTO dans IF");
+        if (u != null) {
+            UserDTO usDTO = new UserDTO();
             usDTO.setId(u.getId());
             usDTO.setFirstName(u.getFirstName());
             usDTO.setUserName(u.getUserName());
@@ -30,6 +30,9 @@ public class Factory {
             usDTO.setCreationDate(u.getCreationDate());
             usDTO.setModifDate(u.getModifDate());
             return usDTO;
+        }else{
+            throw new DataNotConformException(" **** User not be null ****");
+        }
 
     }
 

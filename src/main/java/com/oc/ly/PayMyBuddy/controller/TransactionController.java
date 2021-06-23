@@ -64,7 +64,7 @@ public class TransactionController {
 
             List<FriendDTO> friends = friendService.findFriendByOwner(userLog);
 
-            Page<Transaction> pageTransactions = transactionService.findAllByPayer(userLog, PageRequest.of(page, 4));
+            Page<TransactionDTO> pageTransactions = transactionService.findAllByPayer(userLog, PageRequest.of(page, 4));
 
             String role = null;
             String authorisation = userLog.getRoles();
@@ -84,11 +84,7 @@ public class TransactionController {
             model.addAttribute("amount", amount);
 
             return "transaction";
-
-
     }
-
-
 
     @PostMapping(value = { "/transaction" })
     public String addTransaction(Model model, @RequestParam(name="page", defaultValue = "0") int page, Double amount,
