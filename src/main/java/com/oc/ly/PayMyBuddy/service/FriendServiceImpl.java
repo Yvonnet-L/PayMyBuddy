@@ -29,7 +29,10 @@ public class FriendServiceImpl implements IFriendService{
     @Override
     public FriendDTO addFriend(FriendDTO friendDTO) {
         Friend friend = factory.constructFriend(friendDTO);
+        logger.info("--- friendDTO ID:- "+ friendDTO.getIdFriend()  );
+        logger.info("--- friend ID:- "+ friend.getIdFriend()  );
         friendDTO = factory.constructFriendDTO(friendRepository.save(friend));
+
         return friendDTO;
     }
 
