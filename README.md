@@ -1,3 +1,3 @@
 ###  Diagrams
 
-![MPD](MPD_PayMyBuddy.png)
+![MPD](MPD_PayMyBuddy.jpg)
