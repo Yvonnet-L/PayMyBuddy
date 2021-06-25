@@ -8,18 +8,18 @@ PayMyBuddy  V1.0
 
 Description
 ------------
-    Pay My Buddy is an application that allows you to easily transfer money to your friends to facilitate the organization of events
+Pay My Buddy is an application that allows you to easily transfer money to your friends to facilitate the organization of events
 
 ## Prerequisites
 ### Technologies
-    - Spring Boot
-    - Spring MVC
-    - Spring Data JPA
-    - Hibernate
-    - Spring Security
+- Spring Boot
+- Spring MVC
+- Spring Data JPA
+- Hibernate
+- Spring Security
 ### Installing
 
-    Here are the links for the prerequisites necessary for proper operation. In addition, I invite you to download postman to test the urls of the application.
+Here are the links for the prerequisites necessary for proper operation. In addition, I invite you to download postman to test the urls of the application.
     
  Install Java:
 * https://www.oracle.com/fr/java/technologies/javase-downloads.html
