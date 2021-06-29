@@ -7,21 +7,18 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.repository.query.Param;
 
+import java.util.List;
 import java.util.Optional;
 
 public interface IUserService {
 
-    public User findByUserName(String userName);
+    public List<UserDTO> findAll();
 
     public UserDTO findUserById(Integer id);
 
     public UserDTO findUserByEmail(String email);
 
-  //  public Optional<User> findByEmail(String email);
-
-   // public Page<User> ListUserNotFriend(User user, String mc,Pageable pageable);
-
-    public User addUser(User user);
+    public UserDTO saveUser(UserDTO userDTO);
 
     public Page<UserDTO> listUserNotFriend(UserDTO owner, @Param("x")String mc , Pageable pageable);
 

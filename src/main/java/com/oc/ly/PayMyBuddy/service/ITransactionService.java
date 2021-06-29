@@ -14,6 +14,8 @@ public interface ITransactionService {
 
     public TransactionDTO addTransaction(TransactionDTO  transactionDTO);
 
+    public List<TransactionDTO> findAll();
+
     public Transaction deleteById ( int id );
 
     public Page<TransactionDTO> theLastThreeTransactions(UserDTO user, Pageable pageable);

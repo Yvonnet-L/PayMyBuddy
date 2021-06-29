@@ -46,7 +46,7 @@ public class TransferServiceImpl implements ITransferService{
                         Double newWallet =  (double)Math.round((transfer.getUser().getWallet() + transfer.getAmount())*100)/100;
                         transfer.getUser().setWallet(newWallet);
 
-                        userService.addUser(transfer.getUser());
+                        userService.saveUser(factory.constructUserDTO(transfer.getUser()));
                         logger.info("------> transfer save");
                         transferRepository.save(transfer);
                        // transferRepository.save(null);
@@ -56,7 +56,7 @@ public class TransferServiceImpl implements ITransferService{
                             transfer.getUser().setWallet(newWallet);
                             transfer.getUser().setModifDate(LocalDate.now());
 
-                            userService.addUser(transfer.getUser());
+                            userService.saveUser(factory.constructUserDTO(transfer.getUser()));
                             logger.info("------> transfer save");
                             transferRepository.save(transfer);
                         } else {

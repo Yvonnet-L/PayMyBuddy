@@ -23,6 +23,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Function;
 
 @Service("TransactionService")
@@ -33,7 +35,7 @@ public class TransactionServiceImpl implements ITransactionService {
     TransactionRepository transactionRepository;
 
     @Autowired
-    UserRepository userRepository;
+    IUserService userService;
 
     private Factory factory = new Factory();
 
@@ -47,7 +49,6 @@ public class TransactionServiceImpl implements ITransactionService {
 
         logger.info("---> processing of the request to add a transaction by the service   !");
 
-
             //-- Vérification de la validitée des données
                 if (transactionDTO.getDescription().length() > 30) {
                     throw new DataNotConformException("The name is too big! (30 characters maximum)");
@@ -56,7 +57,7 @@ public class TransactionServiceImpl implements ITransactionService {
                     throw new WalletNotEnoughException("The amount must be positive");
                 }
 
-                if (userRepository.findUserById(transactionDTO.getPayer().getId())==null) {
+                if (userService.findUserById(transactionDTO.getPayer().getId())==null) {
                     throw new DataNotFoundException("Problem with the database, user payer not found");
                 }
 
@@ -96,8 +97,8 @@ public class TransactionServiceImpl implements ITransactionService {
                     transactionDTO.getBeneficiary().setModifDate(today);
                     transactionDTO.getPayer().setModifDate(today);
 
-                    userRepository.save(transactionDTO.getPayer());
-                    userRepository.save(transactionDTO.getBeneficiary());
+                    userService.saveUser(factory.constructUserDTO(transactionDTO.getPayer()));
+                    userService.saveUser(factory.constructUserDTO(transactionDTO.getBeneficiary()));
                     logger.info("  ---> Save transaction ok! Update Users ok!");
                 return transactionDTO;
             } else {
@@ -109,13 +110,23 @@ public class TransactionServiceImpl implements ITransactionService {
         }*/
     }
 
+    @Override
+    public List<TransactionDTO> findAll() {
+        List<Transaction> transactionList = transactionRepository.findAll();
+        List<TransactionDTO> transactionDTOList = new ArrayList<TransactionDTO>();
+        for (Transaction transaction: transactionList){
+            transactionDTOList.add(factory.constructTransactionDTO(transaction));
+        }
+        return transactionDTOList;
+    }
+
     public Transaction deleteTransaction(Transaction transaction) {
         return null;
     }
 
     @Override
-    public Transaction deleteById(int idTransaction) {
-        transactionRepository.deleteById(idTransaction);
+    public Transaction deleteById(int idTransactionDTO) {
+        transactionRepository.deleteById(idTransactionDTO);
         return null;
     }
 

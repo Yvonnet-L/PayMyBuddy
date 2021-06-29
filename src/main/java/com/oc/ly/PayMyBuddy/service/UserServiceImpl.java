@@ -1,8 +1,6 @@
 package com.oc.ly.PayMyBuddy.service;
 
-import com.oc.ly.PayMyBuddy.dto.TransactionDTO;
 import com.oc.ly.PayMyBuddy.dto.UserDTO;
-import com.oc.ly.PayMyBuddy.model.Transaction;
 import com.oc.ly.PayMyBuddy.model.User;
 import com.oc.ly.PayMyBuddy.repository.UserRepository;
 import com.oc.ly.PayMyBuddy.tool.Factory;
@@ -13,7 +11,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Function;
 
 
@@ -29,8 +28,14 @@ public class UserServiceImpl implements IUserService{
 
 
     @Override
-    public User findByUserName(String userName) {
-        return null;
+    public List<UserDTO> findAll() {
+        List<User> listUser = userRepository.findAll();
+        List<UserDTO> listUserDTO = new ArrayList<UserDTO>();
+        for (User user: listUser) {
+            logger.info(user.getId());
+            listUserDTO.add(factory.constructUserDTO(user));
+        }
+        return listUserDTO;
     }
 
     @Override
@@ -67,10 +72,10 @@ public class UserServiceImpl implements IUserService{
     }
 
     @Override
-    public User addUser(User user) {
+    public UserDTO saveUser(UserDTO userDTO) {
         logger.info("-------> User save !");
-        User userAdd = userRepository.save(user);
-        return userAdd;
+        User userAdd = userRepository.save(factory.constructUser(userDTO));
+        return factory.constructUserDTO(userAdd);
     }
 
 }

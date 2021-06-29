@@ -69,10 +69,7 @@ public class ContactController {
         String emailSession = SecurityContextHolder.getContext().getAuthentication().getName();
         UserDTO userLog = userService.findUserByEmail(emailSession);
         //-- Récupération de la liste des amis
-       // List<Friend> friends = friendService.findFriendByOwner(userLog);
-       // Page<Friend> pageFriends = friendService.findFriendByOwner(userLog, PageRequest.of(page, 3));
         List<FriendDTO> pageFriends = friendService.findFriendByOwner(userLog);
-       // Page<Friend> pageFriends2 = friendService.findFriendByOwner(userLog, PageRequest.of(page, 2));
         Page<UserDTO> pageUsersNotFriend = userService.listUserNotFriend(userLog,"%"+mc+"%",PageRequest.of(page, 3));
 
         String role = null;
