@@ -13,7 +13,7 @@ public interface IUserService {
 
     public User findByUserName(String userName);
 
-    public User findUserById(Integer id);
+    public UserDTO findUserById(Integer id);
 
     public UserDTO findUserByEmail(String email);
 

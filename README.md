@@ -19,7 +19,7 @@ Pay My Buddy is an application that allows you to easily transfer money to your 
 - Spring Security
 ### Installing
 
-Here are the links for the prerequisites necessary for proper operation. In addition, I invite you to download postman to test the urls of the application.
+Here are the links for the prerequisites necessary for proper operation. In addition.
     
  Install Java:
 * https://www.oracle.com/fr/java/technologies/javase-downloads.html

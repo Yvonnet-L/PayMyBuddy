@@ -25,7 +25,11 @@ public class MyUserDetails implements UserDetails {
                 .collect(Collectors.toList());
     }
 
-    //on modifie les return apres voir injecté les methodes
+    public MyUserDetails(String userName, String password) {
+        this.userName = userName;
+        this.password = password;
+    }
+//on modifie les return apres voir injecté les methodes
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

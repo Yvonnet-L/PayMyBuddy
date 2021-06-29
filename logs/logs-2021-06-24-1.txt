@@ -1,0 +1,860 @@
+2021-06-24 10:43:00,736 - [main] INFO       | org.hibernate.jpa.internal.util.LogHelper                    | HHH000204: Processing PersistenceUnitInfo [name: default] (LogHelper.java:31)
+2021-06-24 10:43:00,794 - [main] INFO       | org.hibernate.Version                                        | HHH000412: Hibernate ORM core version 5.4.31.Final (Version.java:44)
+2021-06-24 10:43:00,913 - [main] INFO       | org.hibernate.annotations.common.Version                     | HCANN000001: Hibernate Commons Annotations {5.1.2.Final} (JavaReflectionManager.java:56)
+2021-06-24 10:43:01,311 - [main] INFO       | org.hibernate.dialect.Dialect                                | HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect (Dialect.java:175)
+2021-06-24 10:43:02,123 - [main] INFO       | org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator | HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] (JtaPlatformInitiator.java:52)
+2021-06-24 10:43:02,888 - [main] INFO       | com.oc.ly.PayMyBuddy.security.SecurityConfig                 | Hello World with Log4J 2 (SecurityConfig.java:39)
+2021-06-24 10:43:02,889 - [main] ERROR      | com.oc.ly.PayMyBuddy.security.SecurityConfig                 | Houston, we have a problem (SecurityConfig.java:42)
+2021-06-24 11:10:28,972 - [main] INFO       | org.hibernate.jpa.internal.util.LogHelper                    | HHH000204: Processing PersistenceUnitInfo [name: default] (LogHelper.java:31)
+2021-06-24 11:10:29,022 - [main] INFO       | org.hibernate.Version                                        | HHH000412: Hibernate ORM core version 5.4.31.Final (Version.java:44)
+2021-06-24 11:10:29,143 - [main] INFO       | org.hibernate.annotations.common.Version                     | HCANN000001: Hibernate Commons Annotations {5.1.2.Final} (JavaReflectionManager.java:56)
+2021-06-24 11:10:29,540 - [main] INFO       | org.hibernate.dialect.Dialect                                | HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect (Dialect.java:175)
+2021-06-24 11:10:30,220 - [main] INFO       | org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator | HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] (JtaPlatformInitiator.java:52)
+2021-06-24 11:10:31,020 - [main] INFO       | com.oc.ly.PayMyBuddy.security.SecurityConfig                 | Hello World with Log4J 2 (SecurityConfig.java:39)
+2021-06-24 11:10:31,020 - [main] ERROR      | com.oc.ly.PayMyBuddy.security.SecurityConfig                 | Houston, we have a problem (SecurityConfig.java:42)
+2021-06-24 11:10:38,562 - [http-nio-8080-exec-4] INFO       | com.oc.ly.PayMyBuddy.controller.HomeController               | -> Verification de l'identifiant ! (MyUserDetailService.java:35)
+2021-06-24 11:10:45,435 - [http-nio-8080-exec-7] INFO       | com.oc.ly.PayMyBuddy.controller.HomeController               | -> Verification de l'identifiant ! (MyUserDetailService.java:35)
+2021-06-24 11:10:45,450 - [http-nio-8080-exec-7] INFO       | com.oc.ly.PayMyBuddy.controller.HomeController               | ---> Utilisateur trouvé!  (MyUserDetailService.java:40)
+2021-06-24 11:10:51,644 - [http-nio-8080-exec-4] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          | --- montant du dto de Page<DTO> 50.0 (TransactionServiceImpl.java:151)
+2021-06-24 11:10:51,644 - [http-nio-8080-exec-4] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          | --- montant du dto de Page<DTO> 50.0 (TransactionServiceImpl.java:151)
+2021-06-24 11:10:51,645 - [http-nio-8080-exec-4] INFO       | com.oc.ly.PayMyBuddy.controller.HomeController               | ----->  /home  (HomeController.java:103)
+2021-06-24 11:10:57,960 - [http-nio-8080-exec-7] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          | --- montant du dto de Page<DTO> 50.0 (TransactionServiceImpl.java:151)
+2021-06-24 11:10:57,960 - [http-nio-8080-exec-7] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          | --- montant du dto de Page<DTO> 50.0 (TransactionServiceImpl.java:151)
+2021-06-24 11:10:57,961 - [http-nio-8080-exec-7] INFO       | com.oc.ly.PayMyBuddy.controller.HomeController               | ----->  /home  (HomeController.java:103)
+2021-06-24 11:11:09,422 - [http-nio-8080-exec-4] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            |  --->   idFriend: 3 (ContactController.java:49)
+2021-06-24 11:11:09,427 - [http-nio-8080-exec-4] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            |  --->   (ContactController.java:53)
+2021-06-24 11:11:09,427 - [http-nio-8080-exec-4] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            | userOwner: lolo@email.com userFrriend: flora@email.com (ContactController.java:54)
+2021-06-24 11:11:09,451 - [http-nio-8080-exec-4] WARN       | org.hibernate.engine.jdbc.spi.SqlExceptionHelper             | SQL Error: 1062, SQLState: 23000 (SqlExceptionHelper.java:137)
+2021-06-24 11:11:09,452 - [http-nio-8080-exec-4] ERROR      | org.hibernate.engine.jdbc.spi.SqlExceptionHelper             | Duplicate entry '1' for key 'friend.PRIMARY' (SqlExceptionHelper.java:142)
+2021-06-24 11:11:13,748 - [http-nio-8080-exec-5] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          | --- montant du dto de Page<DTO> 50.0 (TransactionServiceImpl.java:151)
+2021-06-24 11:11:13,748 - [http-nio-8080-exec-5] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          | --- montant du dto de Page<DTO> 50.0 (TransactionServiceImpl.java:151)
+2021-06-24 11:11:13,748 - [http-nio-8080-exec-5] INFO       | com.oc.ly.PayMyBuddy.controller.HomeController               | ----->  /home  (HomeController.java:103)
+2021-06-24 11:11:21,628 - [http-nio-8080-exec-9] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            |  --->   idFriend: 3 (ContactController.java:49)
+2021-06-24 11:11:21,631 - [http-nio-8080-exec-9] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            |  --->   (ContactController.java:53)
+2021-06-24 11:11:21,631 - [http-nio-8080-exec-9] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            | userOwner: lolo@email.com userFrriend: flora@email.com (ContactController.java:54)
+2021-06-24 11:11:21,637 - [http-nio-8080-exec-9] WARN       | org.hibernate.engine.jdbc.spi.SqlExceptionHelper             | SQL Error: 1062, SQLState: 23000 (SqlExceptionHelper.java:137)
+2021-06-24 11:11:21,637 - [http-nio-8080-exec-9] ERROR      | org.hibernate.engine.jdbc.spi.SqlExceptionHelper             | Duplicate entry '2' for key 'friend.PRIMARY' (SqlExceptionHelper.java:142)
+2021-06-24 11:21:26,942 - [http-nio-8080-exec-10] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          | --- montant du dto de Page<DTO> 50.0 (TransactionServiceImpl.java:151)
+2021-06-24 11:21:26,942 - [http-nio-8080-exec-10] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          | --- montant du dto de Page<DTO> 50.0 (TransactionServiceImpl.java:151)
+2021-06-24 11:21:26,942 - [http-nio-8080-exec-10] INFO       | com.oc.ly.PayMyBuddy.controller.HomeController               | ----->  /home  (HomeController.java:103)
+2021-06-24 11:21:38,694 - [http-nio-8080-exec-7] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            |  --->   idFriend: 3 (ContactController.java:49)
+2021-06-24 11:21:38,697 - [http-nio-8080-exec-7] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            |  --->   (ContactController.java:53)
+2021-06-24 11:21:38,698 - [http-nio-8080-exec-7] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            | userOwner: lolo@email.com userFrriend: flora@email.com (ContactController.java:54)
+2021-06-24 11:21:38,700 - [http-nio-8080-exec-7] ERROR      | org.hibernate.id.enhanced.TableStructure                     | could not read a hi value (TableStructure.java:148)
+java.sql.SQLSyntaxErrorException: Table 'paymybuddydb.hibernate_sequence' doesn't exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeQuery(ClientPreparedStatement.java:1003) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeQuery(ProxyPreparedStatement.java:52) ~[HikariCP-4.0.3.jar:?]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeQuery(HikariProxyPreparedStatement.java) ~[HikariCP-4.0.3.jar:?]
+	at org.hibernate.id.enhanced.TableStructure.executeQuery(TableStructure.java:216) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.hibernate.id.enhanced.TableStructure.access$300(TableStructure.java:46) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.hibernate.id.enhanced.TableStructure$1$1.execute(TableStructure.java:138) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.hibernate.id.enhanced.TableStructure$1$1.execute(TableStructure.java:126) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.hibernate.jdbc.WorkExecutor.executeReturningWork(WorkExecutor.java:55) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.hibernate.jdbc.AbstractReturningWork.accept(AbstractReturningWork.java:34) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:57) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.hibernate.id.enhanced.TableStructure$1.getNextValue(TableStructure.java:125) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.hibernate.id.enhanced.NoopOptimizer.generate(NoopOptimizer.java:40) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.hibernate.id.enhanced.SequenceStyleGenerator.generate(SequenceStyleGenerator.java:523) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.hibernate.event.internal.AbstractSaveEventListener.saveWithGeneratedId(AbstractSaveEventListener.java:115) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.hibernate.event.internal.DefaultPersistEventListener.entityIsTransient(DefaultPersistEventListener.java:185) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:128) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:55) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:93) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.hibernate.internal.SessionImpl.firePersist(SessionImpl.java:720) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.hibernate.internal.SessionImpl.persist(SessionImpl.java:706) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567) ~[?:?]
+	at org.springframework.orm.jpa.ExtendedEntityManagerCreator$ExtendedEntityManagerInvocationHandler.invoke(ExtendedEntityManagerCreator.java:362) ~[spring-orm-5.3.7.jar:5.3.7]
+	at com.sun.proxy.$Proxy96.persist(Unknown Source) ~[?:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567) ~[?:?]
+	at org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:311) ~[spring-orm-5.3.7.jar:5.3.7]
+	at com.sun.proxy.$Proxy96.persist(Unknown Source) ~[?:?]
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.save(SimpleJpaRepository.java:597) ~[spring-data-jpa-2.5.1.jar:2.5.1]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567) ~[?:?]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker$RepositoryFragmentMethodInvoker.lambda$new$0(RepositoryMethodInvoker.java:289) ~[spring-data-commons-2.5.1.jar:2.5.1]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:137) [spring-data-commons-2.5.1.jar:2.5.1]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:121) [spring-data-commons-2.5.1.jar:2.5.1]
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:529) [spring-data-commons-2.5.1.jar:2.5.1]
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:285) [spring-data-commons-2.5.1.jar:2.5.1]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:599) [spring-data-commons-2.5.1.jar:2.5.1]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) [spring-aop-5.3.7.jar:5.3.7]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:163) [spring-data-commons-2.5.1.jar:2.5.1]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:138) [spring-data-commons-2.5.1.jar:2.5.1]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) [spring-aop-5.3.7.jar:5.3.7]
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:80) [spring-data-commons-2.5.1.jar:2.5.1]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) [spring-aop-5.3.7.jar:5.3.7]
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123) [spring-tx-5.3.7.jar:5.3.7]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388) [spring-tx-5.3.7.jar:5.3.7]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) [spring-tx-5.3.7.jar:5.3.7]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) [spring-aop-5.3.7.jar:5.3.7]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137) [spring-tx-5.3.7.jar:5.3.7]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) [spring-aop-5.3.7.jar:5.3.7]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:174) [spring-data-jpa-2.5.1.jar:2.5.1]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) [spring-aop-5.3.7.jar:5.3.7]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) [spring-aop-5.3.7.jar:5.3.7]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) [spring-aop-5.3.7.jar:5.3.7]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215) [spring-aop-5.3.7.jar:5.3.7]
+	at com.sun.proxy.$Proxy102.save(Unknown Source) [?:?]
+	at com.oc.ly.PayMyBuddy.service.FriendServiceImpl.addFriend(FriendServiceImpl.java:32) [classes/:?]
+	at com.oc.ly.PayMyBuddy.controller.ContactController.add(ContactController.java:58) [classes/:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567) ~[?:?]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:197) [spring-web-5.3.7.jar:5.3.7]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:141) [spring-web-5.3.7.jar:5.3.7]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106) [spring-webmvc-5.3.7.jar:5.3.7]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:894) [spring-webmvc-5.3.7.jar:5.3.7]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) [spring-webmvc-5.3.7.jar:5.3.7]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) [spring-webmvc-5.3.7.jar:5.3.7]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1063) [spring-webmvc-5.3.7.jar:5.3.7]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963) [spring-webmvc-5.3.7.jar:5.3.7]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) [spring-webmvc-5.3.7.jar:5.3.7]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) [spring-webmvc-5.3.7.jar:5.3.7]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626) [tomcat-embed-core-9.0.46.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) [spring-webmvc-5.3.7.jar:5.3.7]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733) [tomcat-embed-core-9.0.46.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-embed-websocket-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:327) [spring-security-web-5.5.0.jar:5.5.0]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:115) [spring-security-web-5.5.0.jar:5.5.0]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:81) [spring-security-web-5.5.0.jar:5.5.0]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.5.0.jar:5.5.0]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:121) [spring-security-web-5.5.0.jar:5.5.0]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:115) [spring-security-web-5.5.0.jar:5.5.0]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.5.0.jar:5.5.0]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:126) [spring-security-web-5.5.0.jar:5.5.0]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81) [spring-security-web-5.5.0.jar:5.5.0]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.5.0.jar:5.5.0]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:105) [spring-security-web-5.5.0.jar:5.5.0]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.5.0.jar:5.5.0]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149) [spring-security-web-5.5.0.jar:5.5.0]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.5.0.jar:5.5.0]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) [spring-security-web-5.5.0.jar:5.5.0]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.5.0.jar:5.5.0]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:218) [spring-security-web-5.5.0.jar:5.5.0]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:212) [spring-security-web-5.5.0.jar:5.5.0]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.5.0.jar:5.5.0]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103) [spring-security-web-5.5.0.jar:5.5.0]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89) [spring-security-web-5.5.0.jar:5.5.0]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.5.0.jar:5.5.0]
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:117) [spring-security-web-5.5.0.jar:5.5.0]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.3.7.jar:5.3.7]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.5.0.jar:5.5.0]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) [spring-security-web-5.5.0.jar:5.5.0]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) [spring-security-web-5.5.0.jar:5.5.0]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.3.7.jar:5.3.7]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.5.0.jar:5.5.0]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:110) [spring-security-web-5.5.0.jar:5.5.0]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:80) [spring-security-web-5.5.0.jar:5.5.0]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.5.0.jar:5.5.0]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55) [spring-security-web-5.5.0.jar:5.5.0]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.3.7.jar:5.3.7]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.5.0.jar:5.5.0]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211) [spring-security-web-5.5.0.jar:5.5.0]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183) [spring-security-web-5.5.0.jar:5.5.0]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) [spring-web-5.3.7.jar:5.3.7]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) [spring-web-5.3.7.jar:5.3.7]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-5.3.7.jar:5.3.7]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.3.7.jar:5.3.7]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-5.3.7.jar:5.3.7]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.3.7.jar:5.3.7]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-5.3.7.jar:5.3.7]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.3.7.jar:5.3.7]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at java.base/java.lang.Thread.run(Thread.java:830) [?:?]
+2021-06-24 11:21:38,705 - [http-nio-8080-exec-7] WARN       | org.hibernate.engine.jdbc.spi.SqlExceptionHelper             | SQL Error: 1146, SQLState: 42S02 (SqlExceptionHelper.java:137)
+2021-06-24 11:21:38,705 - [http-nio-8080-exec-7] ERROR      | org.hibernate.engine.jdbc.spi.SqlExceptionHelper             | Table 'paymybuddydb.hibernate_sequence' doesn't exist (SqlExceptionHelper.java:142)
+2021-06-24 11:21:40,155 - [http-nio-8080-exec-8] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          | --- montant du dto de Page<DTO> 50.0 (TransactionServiceImpl.java:151)
+2021-06-24 11:21:40,155 - [http-nio-8080-exec-8] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          | --- montant du dto de Page<DTO> 50.0 (TransactionServiceImpl.java:151)
+2021-06-24 11:21:40,155 - [http-nio-8080-exec-8] INFO       | com.oc.ly.PayMyBuddy.controller.HomeController               | ----->  /home  (HomeController.java:103)
+2021-06-24 11:22:33,686 - [http-nio-8080-exec-10] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          | --- montant du dto de Page<DTO> 50.0 (TransactionServiceImpl.java:151)
+2021-06-24 11:22:33,687 - [http-nio-8080-exec-10] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          | --- montant du dto de Page<DTO> 50.0 (TransactionServiceImpl.java:151)
+2021-06-24 11:22:33,687 - [http-nio-8080-exec-10] INFO       | com.oc.ly.PayMyBuddy.controller.HomeController               | ----->  /home  (HomeController.java:103)
+2021-06-24 11:22:34,501 - [http-nio-8080-exec-2] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          | --- montant du dto de Page<DTO> 50.0 (TransactionServiceImpl.java:151)
+2021-06-24 11:22:34,501 - [http-nio-8080-exec-2] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          | --- montant du dto de Page<DTO> 50.0 (TransactionServiceImpl.java:151)
+2021-06-24 11:22:34,501 - [http-nio-8080-exec-2] INFO       | com.oc.ly.PayMyBuddy.controller.HomeController               | ----->  /home  (HomeController.java:103)
+2021-06-24 11:24:11,249 - [main] INFO       | org.hibernate.jpa.internal.util.LogHelper                    | HHH000204: Processing PersistenceUnitInfo [name: default] (LogHelper.java:31)
+2021-06-24 11:24:11,295 - [main] INFO       | org.hibernate.Version                                        | HHH000412: Hibernate ORM core version 5.4.31.Final (Version.java:44)
+2021-06-24 11:24:11,427 - [main] INFO       | org.hibernate.annotations.common.Version                     | HCANN000001: Hibernate Commons Annotations {5.1.2.Final} (JavaReflectionManager.java:56)
+2021-06-24 11:24:11,803 - [main] INFO       | org.hibernate.dialect.Dialect                                | HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect (Dialect.java:175)
+2021-06-24 11:24:12,483 - [main] INFO       | org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator | HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] (JtaPlatformInitiator.java:52)
+2021-06-24 11:24:13,300 - [main] INFO       | com.oc.ly.PayMyBuddy.security.SecurityConfig                 | Hello World with Log4J 2 (SecurityConfig.java:39)
+2021-06-24 11:24:13,301 - [main] ERROR      | com.oc.ly.PayMyBuddy.security.SecurityConfig                 | Houston, we have a problem (SecurityConfig.java:42)
+2021-06-24 11:24:23,036 - [http-nio-8080-exec-4] INFO       | com.oc.ly.PayMyBuddy.controller.HomeController               | -> Verification de l'identifiant ! (MyUserDetailService.java:35)
+2021-06-24 11:24:23,082 - [http-nio-8080-exec-4] INFO       | com.oc.ly.PayMyBuddy.controller.HomeController               | ---> Utilisateur trouvé!  (MyUserDetailService.java:40)
+2021-06-24 11:24:26,241 - [http-nio-8080-exec-7] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            |  --->   idFriend: 3 (ContactController.java:49)
+2021-06-24 11:24:26,246 - [http-nio-8080-exec-7] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            |  --->   (ContactController.java:53)
+2021-06-24 11:24:26,246 - [http-nio-8080-exec-7] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            | userOwner: lolo@email.com userFrriend: flora@email.com (ContactController.java:54)
+2021-06-24 11:24:26,246 - [http-nio-8080-exec-7] INFO       | com.oc.ly.PayMyBuddy.service.FriendServiceImpl               | --- friendDTO ID:- null (FriendServiceImpl.java:32)
+2021-06-24 11:24:26,288 - [http-nio-8080-exec-7] WARN       | org.hibernate.engine.jdbc.spi.SqlExceptionHelper             | SQL Error: 1062, SQLState: 23000 (SqlExceptionHelper.java:137)
+2021-06-24 11:24:26,288 - [http-nio-8080-exec-7] ERROR      | org.hibernate.engine.jdbc.spi.SqlExceptionHelper             | Duplicate entry '1' for key 'friend.PRIMARY' (SqlExceptionHelper.java:142)
+2021-06-24 11:28:05,095 - [main] INFO       | org.hibernate.jpa.internal.util.LogHelper                    | HHH000204: Processing PersistenceUnitInfo [name: default] (LogHelper.java:31)
+2021-06-24 11:28:05,143 - [main] INFO       | org.hibernate.Version                                        | HHH000412: Hibernate ORM core version 5.4.31.Final (Version.java:44)
+2021-06-24 11:28:05,264 - [main] INFO       | org.hibernate.annotations.common.Version                     | HCANN000001: Hibernate Commons Annotations {5.1.2.Final} (JavaReflectionManager.java:56)
+2021-06-24 11:28:05,651 - [main] INFO       | org.hibernate.dialect.Dialect                                | HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect (Dialect.java:175)
+2021-06-24 11:28:06,315 - [main] INFO       | org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator | HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] (JtaPlatformInitiator.java:52)
+2021-06-24 11:28:07,063 - [main] INFO       | com.oc.ly.PayMyBuddy.security.SecurityConfig                 | Hello World with Log4J 2 (SecurityConfig.java:39)
+2021-06-24 11:28:07,063 - [main] ERROR      | com.oc.ly.PayMyBuddy.security.SecurityConfig                 | Houston, we have a problem (SecurityConfig.java:42)
+2021-06-24 11:28:31,620 - [http-nio-8080-exec-4] INFO       | com.oc.ly.PayMyBuddy.controller.HomeController               | -> Verification de l'identifiant ! (MyUserDetailService.java:35)
+2021-06-24 11:28:31,669 - [http-nio-8080-exec-4] INFO       | com.oc.ly.PayMyBuddy.controller.HomeController               | ---> Utilisateur trouvé!  (MyUserDetailService.java:40)
+2021-06-24 11:28:31,741 - [http-nio-8080-exec-5] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            |  --->   idFriend: 3 (ContactController.java:49)
+2021-06-24 11:28:31,748 - [http-nio-8080-exec-5] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            |  --->   (ContactController.java:53)
+2021-06-24 11:28:31,748 - [http-nio-8080-exec-5] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            | userOwner: lolo@email.com userFrriend: flora@email.com (ContactController.java:54)
+2021-06-24 11:28:31,749 - [http-nio-8080-exec-5] INFO       | com.oc.ly.PayMyBuddy.service.FriendServiceImpl               | --- friendDTO ID:- null (FriendServiceImpl.java:32)
+2021-06-24 11:28:31,749 - [http-nio-8080-exec-5] INFO       | com.oc.ly.PayMyBuddy.service.FriendServiceImpl               | --- friend ID:- null (FriendServiceImpl.java:33)
+2021-06-24 11:28:31,796 - [http-nio-8080-exec-5] WARN       | org.hibernate.engine.jdbc.spi.SqlExceptionHelper             | SQL Error: 1062, SQLState: 23000 (SqlExceptionHelper.java:137)
+2021-06-24 11:28:31,796 - [http-nio-8080-exec-5] ERROR      | org.hibernate.engine.jdbc.spi.SqlExceptionHelper             | Duplicate entry '2' for key 'friend.PRIMARY' (SqlExceptionHelper.java:142)
+2021-06-24 11:28:34,106 - [http-nio-8080-exec-6] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          | --- montant du dto de Page<DTO> 50.0 (TransactionServiceImpl.java:151)
+2021-06-24 11:28:34,106 - [http-nio-8080-exec-6] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          | --- montant du dto de Page<DTO> 50.0 (TransactionServiceImpl.java:151)
+2021-06-24 11:28:34,106 - [http-nio-8080-exec-6] INFO       | com.oc.ly.PayMyBuddy.controller.HomeController               | ----->  /home  (HomeController.java:103)
+2021-06-24 11:28:43,413 - [http-nio-8080-exec-10] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            |  --->   idFriend: 3 (ContactController.java:49)
+2021-06-24 11:28:43,417 - [http-nio-8080-exec-10] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            |  --->   (ContactController.java:53)
+2021-06-24 11:28:43,417 - [http-nio-8080-exec-10] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            | userOwner: lolo@email.com userFrriend: flora@email.com (ContactController.java:54)
+2021-06-24 11:28:43,418 - [http-nio-8080-exec-10] INFO       | com.oc.ly.PayMyBuddy.service.FriendServiceImpl               | --- friendDTO ID:- null (FriendServiceImpl.java:32)
+2021-06-24 11:28:43,418 - [http-nio-8080-exec-10] INFO       | com.oc.ly.PayMyBuddy.service.FriendServiceImpl               | --- friend ID:- null (FriendServiceImpl.java:33)
+2021-06-24 11:28:43,424 - [http-nio-8080-exec-10] WARN       | org.hibernate.engine.jdbc.spi.SqlExceptionHelper             | SQL Error: 1062, SQLState: 23000 (SqlExceptionHelper.java:137)
+2021-06-24 11:28:43,424 - [http-nio-8080-exec-10] ERROR      | org.hibernate.engine.jdbc.spi.SqlExceptionHelper             | Duplicate entry '3' for key 'friend.PRIMARY' (SqlExceptionHelper.java:142)
+2021-06-24 11:29:21,875 - [http-nio-8080-exec-2] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          | --- montant du dto de Page<DTO> 50.0 (TransactionServiceImpl.java:151)
+2021-06-24 11:29:21,876 - [http-nio-8080-exec-2] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          | --- montant du dto de Page<DTO> 50.0 (TransactionServiceImpl.java:151)
+2021-06-24 11:29:21,876 - [http-nio-8080-exec-2] INFO       | com.oc.ly.PayMyBuddy.controller.HomeController               | ----->  /home  (HomeController.java:103)
+2021-06-24 11:29:26,409 - [http-nio-8080-exec-5] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            |  --->   idFriend: 3 (ContactController.java:49)
+2021-06-24 11:29:26,412 - [http-nio-8080-exec-5] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            |  --->   (ContactController.java:53)
+2021-06-24 11:29:26,412 - [http-nio-8080-exec-5] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            | userOwner: lolo@email.com userFrriend: flora@email.com (ContactController.java:54)
+2021-06-24 11:29:26,412 - [http-nio-8080-exec-5] INFO       | com.oc.ly.PayMyBuddy.service.FriendServiceImpl               | --- friendDTO ID:- null (FriendServiceImpl.java:32)
+2021-06-24 11:29:26,413 - [http-nio-8080-exec-5] INFO       | com.oc.ly.PayMyBuddy.service.FriendServiceImpl               | --- friend ID:- null (FriendServiceImpl.java:33)
+2021-06-24 11:30:15,191 - [http-nio-8080-exec-10] INFO       | com.oc.ly.PayMyBuddy.controller.TransactionController        |  ---> Launch of the request:  Post /home  (TransactionController.java:93)
+2021-06-24 11:30:15,194 - [http-nio-8080-exec-10] INFO       | com.oc.ly.PayMyBuddy.controller.TransactionController        |   ---> Data of Payer & Beneficiary found (TransactionController.java:109)
+2021-06-24 11:30:15,196 - [http-nio-8080-exec-10] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          | ---> processing of the request to add a transaction by the service   ! (TransactionServiceImpl.java:48)
+2021-06-24 11:30:15,204 - [http-nio-8080-exec-10] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          |    ---> ID of the transaction created:0 (TransactionServiceImpl.java:85)
+2021-06-24 11:30:15,210 - [http-nio-8080-exec-10] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          |   ---> Save transaction ok! Update Users ok! (TransactionServiceImpl.java:101)
+2021-06-24 11:30:15,212 - [http-nio-8080-exec-10] WARN       | org.hibernate.engine.jdbc.spi.SqlExceptionHelper             | SQL Error: 1062, SQLState: 23000 (SqlExceptionHelper.java:137)
+2021-06-24 11:30:15,212 - [http-nio-8080-exec-10] ERROR      | org.hibernate.engine.jdbc.spi.SqlExceptionHelper             | Duplicate entry '5' for key 'transaction.PRIMARY' (SqlExceptionHelper.java:142)
+2021-06-24 11:30:16,493 - [http-nio-8080-exec-2] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          | --- montant du dto de Page<DTO> 50.0 (TransactionServiceImpl.java:151)
+2021-06-24 11:30:16,493 - [http-nio-8080-exec-2] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          | --- montant du dto de Page<DTO> 50.0 (TransactionServiceImpl.java:151)
+2021-06-24 11:30:16,493 - [http-nio-8080-exec-2] INFO       | com.oc.ly.PayMyBuddy.controller.HomeController               | ----->  /home  (HomeController.java:103)
+2021-06-24 11:33:14,803 - [http-nio-8080-exec-6] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            |  --->   idFriend: 4 (ContactController.java:49)
+2021-06-24 11:33:14,807 - [http-nio-8080-exec-6] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            |  --->   (ContactController.java:53)
+2021-06-24 11:33:14,807 - [http-nio-8080-exec-6] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            | userOwner: lolo@email.com userFrriend: mathieu@email.com (ContactController.java:54)
+2021-06-24 11:33:14,808 - [http-nio-8080-exec-6] INFO       | com.oc.ly.PayMyBuddy.service.FriendServiceImpl               | --- friendDTO ID:- null (FriendServiceImpl.java:32)
+2021-06-24 11:33:14,808 - [http-nio-8080-exec-6] INFO       | com.oc.ly.PayMyBuddy.service.FriendServiceImpl               | --- friend ID:- null (FriendServiceImpl.java:33)
+2021-06-24 11:33:14,812 - [http-nio-8080-exec-6] WARN       | org.hibernate.engine.jdbc.spi.SqlExceptionHelper             | SQL Error: 1062, SQLState: 23000 (SqlExceptionHelper.java:137)
+2021-06-24 11:33:14,813 - [http-nio-8080-exec-6] ERROR      | org.hibernate.engine.jdbc.spi.SqlExceptionHelper             | Duplicate entry '6' for key 'friend.PRIMARY' (SqlExceptionHelper.java:142)
+2021-06-24 11:33:16,776 - [http-nio-8080-exec-7] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          | --- montant du dto de Page<DTO> 50.0 (TransactionServiceImpl.java:151)
+2021-06-24 11:33:16,777 - [http-nio-8080-exec-7] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          | --- montant du dto de Page<DTO> 50.0 (TransactionServiceImpl.java:151)
+2021-06-24 11:33:16,777 - [http-nio-8080-exec-7] INFO       | com.oc.ly.PayMyBuddy.controller.HomeController               | ----->  /home  (HomeController.java:103)
+2021-06-24 11:34:35,600 - [http-nio-8080-exec-2] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            |  --->   idFriend: 4 (ContactController.java:49)
+2021-06-24 11:34:35,604 - [http-nio-8080-exec-2] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            |  --->   (ContactController.java:53)
+2021-06-24 11:34:35,605 - [http-nio-8080-exec-2] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            | userOwner: lolo@email.com userFrriend: mathieu@email.com (ContactController.java:54)
+2021-06-24 11:34:35,605 - [http-nio-8080-exec-2] INFO       | com.oc.ly.PayMyBuddy.service.FriendServiceImpl               | --- friendDTO ID:- null (FriendServiceImpl.java:32)
+2021-06-24 11:34:35,605 - [http-nio-8080-exec-2] INFO       | com.oc.ly.PayMyBuddy.service.FriendServiceImpl               | --- friend ID:- null (FriendServiceImpl.java:33)
+2021-06-24 11:34:35,611 - [http-nio-8080-exec-2] WARN       | org.hibernate.engine.jdbc.spi.SqlExceptionHelper             | SQL Error: 1062, SQLState: 23000 (SqlExceptionHelper.java:137)
+2021-06-24 11:34:35,611 - [http-nio-8080-exec-2] ERROR      | org.hibernate.engine.jdbc.spi.SqlExceptionHelper             | Duplicate entry '7' for key 'friend.PRIMARY' (SqlExceptionHelper.java:142)
+2021-06-24 11:34:36,601 - [http-nio-8080-exec-1] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          | --- montant du dto de Page<DTO> 50.0 (TransactionServiceImpl.java:151)
+2021-06-24 11:34:36,601 - [http-nio-8080-exec-1] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          | --- montant du dto de Page<DTO> 50.0 (TransactionServiceImpl.java:151)
+2021-06-24 11:34:36,601 - [http-nio-8080-exec-1] INFO       | com.oc.ly.PayMyBuddy.controller.HomeController               | ----->  /home  (HomeController.java:103)
+2021-06-24 11:34:39,829 - [http-nio-8080-exec-6] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            |  --->   idFriend: 4 (ContactController.java:49)
+2021-06-24 11:34:39,831 - [http-nio-8080-exec-6] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            |  --->   (ContactController.java:53)
+2021-06-24 11:34:39,832 - [http-nio-8080-exec-6] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            | userOwner: lolo@email.com userFrriend: mathieu@email.com (ContactController.java:54)
+2021-06-24 11:34:39,832 - [http-nio-8080-exec-6] INFO       | com.oc.ly.PayMyBuddy.service.FriendServiceImpl               | --- friendDTO ID:- null (FriendServiceImpl.java:32)
+2021-06-24 11:34:39,832 - [http-nio-8080-exec-6] INFO       | com.oc.ly.PayMyBuddy.service.FriendServiceImpl               | --- friend ID:- null (FriendServiceImpl.java:33)
+2021-06-24 11:34:39,838 - [http-nio-8080-exec-6] WARN       | org.hibernate.engine.jdbc.spi.SqlExceptionHelper             | SQL Error: 1062, SQLState: 23000 (SqlExceptionHelper.java:137)
+2021-06-24 11:34:39,838 - [http-nio-8080-exec-6] ERROR      | org.hibernate.engine.jdbc.spi.SqlExceptionHelper             | Duplicate entry '8' for key 'friend.PRIMARY' (SqlExceptionHelper.java:142)
+2021-06-24 11:34:40,878 - [http-nio-8080-exec-7] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          | --- montant du dto de Page<DTO> 50.0 (TransactionServiceImpl.java:151)
+2021-06-24 11:34:40,878 - [http-nio-8080-exec-7] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          | --- montant du dto de Page<DTO> 50.0 (TransactionServiceImpl.java:151)
+2021-06-24 11:34:40,878 - [http-nio-8080-exec-7] INFO       | com.oc.ly.PayMyBuddy.controller.HomeController               | ----->  /home  (HomeController.java:103)
+2021-06-24 11:34:43,999 - [http-nio-8080-exec-2] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            |  --->   idFriend: 4 (ContactController.java:49)
+2021-06-24 11:34:44,003 - [http-nio-8080-exec-2] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            |  --->   (ContactController.java:53)
+2021-06-24 11:34:44,003 - [http-nio-8080-exec-2] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            | userOwner: lolo@email.com userFrriend: mathieu@email.com (ContactController.java:54)
+2021-06-24 11:34:44,003 - [http-nio-8080-exec-2] INFO       | com.oc.ly.PayMyBuddy.service.FriendServiceImpl               | --- friendDTO ID:- null (FriendServiceImpl.java:32)
+2021-06-24 11:34:44,003 - [http-nio-8080-exec-2] INFO       | com.oc.ly.PayMyBuddy.service.FriendServiceImpl               | --- friend ID:- null (FriendServiceImpl.java:33)
+2021-06-24 11:34:51,447 - [http-nio-8080-exec-4] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            |  --->   idFriend: 1 (ContactController.java:49)
+2021-06-24 11:34:51,449 - [http-nio-8080-exec-4] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            |  --->   (ContactController.java:53)
+2021-06-24 11:34:51,450 - [http-nio-8080-exec-4] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            | userOwner: lolo@email.com userFrriend: lolo@email.com (ContactController.java:54)
+2021-06-24 11:34:51,450 - [http-nio-8080-exec-4] INFO       | com.oc.ly.PayMyBuddy.service.FriendServiceImpl               | --- friendDTO ID:- null (FriendServiceImpl.java:32)
+2021-06-24 11:34:51,450 - [http-nio-8080-exec-4] INFO       | com.oc.ly.PayMyBuddy.service.FriendServiceImpl               | --- friend ID:- null (FriendServiceImpl.java:33)
+2021-06-24 11:34:59,652 - [http-nio-8080-exec-3] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            |  --->   idFriend: 4 (ContactController.java:49)
+2021-06-24 11:34:59,655 - [http-nio-8080-exec-3] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            |  --->   (ContactController.java:53)
+2021-06-24 11:34:59,655 - [http-nio-8080-exec-3] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            | userOwner: lolo@email.com userFrriend: mathieu@email.com (ContactController.java:54)
+2021-06-24 11:34:59,655 - [http-nio-8080-exec-3] INFO       | com.oc.ly.PayMyBuddy.service.FriendServiceImpl               | --- friendDTO ID:- null (FriendServiceImpl.java:32)
+2021-06-24 11:34:59,655 - [http-nio-8080-exec-3] INFO       | com.oc.ly.PayMyBuddy.service.FriendServiceImpl               | --- friend ID:- null (FriendServiceImpl.java:33)
+2021-06-24 11:35:08,320 - [main] INFO       | org.hibernate.jpa.internal.util.LogHelper                    | HHH000204: Processing PersistenceUnitInfo [name: default] (LogHelper.java:31)
+2021-06-24 11:35:08,360 - [main] INFO       | org.hibernate.Version                                        | HHH000412: Hibernate ORM core version 5.4.31.Final (Version.java:44)
+2021-06-24 11:35:08,492 - [main] INFO       | org.hibernate.annotations.common.Version                     | HCANN000001: Hibernate Commons Annotations {5.1.2.Final} (JavaReflectionManager.java:56)
+2021-06-24 11:35:08,895 - [main] INFO       | org.hibernate.dialect.Dialect                                | HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect (Dialect.java:175)
+2021-06-24 11:35:09,573 - [main] INFO       | org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator | HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] (JtaPlatformInitiator.java:52)
+2021-06-24 11:35:10,343 - [main] INFO       | com.oc.ly.PayMyBuddy.security.SecurityConfig                 | Hello World with Log4J 2 (SecurityConfig.java:39)
+2021-06-24 11:35:10,344 - [main] ERROR      | com.oc.ly.PayMyBuddy.security.SecurityConfig                 | Houston, we have a problem (SecurityConfig.java:42)
+2021-06-24 11:35:24,280 - [http-nio-8080-exec-4] INFO       | com.oc.ly.PayMyBuddy.controller.HomeController               | -> Verification de l'identifiant ! (MyUserDetailService.java:35)
+2021-06-24 11:35:24,336 - [http-nio-8080-exec-4] INFO       | com.oc.ly.PayMyBuddy.controller.HomeController               | ---> Utilisateur trouvé!  (MyUserDetailService.java:40)
+2021-06-24 11:35:32,447 - [http-nio-8080-exec-10] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            |  --->   idFriend: 4 (ContactController.java:49)
+2021-06-24 11:35:32,453 - [http-nio-8080-exec-10] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            |  --->   (ContactController.java:53)
+2021-06-24 11:35:32,453 - [http-nio-8080-exec-10] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            | userOwner: lolo@email.com userFrriend: mathieu@email.com (ContactController.java:54)
+2021-06-24 11:35:32,454 - [http-nio-8080-exec-10] INFO       | com.oc.ly.PayMyBuddy.service.FriendServiceImpl               | --- friendDTO ID:- null (FriendServiceImpl.java:32)
+2021-06-24 11:35:32,454 - [http-nio-8080-exec-10] INFO       | com.oc.ly.PayMyBuddy.service.FriendServiceImpl               | --- friend ID:- null (FriendServiceImpl.java:33)
+2021-06-24 11:35:53,323 - [http-nio-8080-exec-3] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            |  --->   idFriend: 1 (ContactController.java:49)
+2021-06-24 11:35:53,326 - [http-nio-8080-exec-3] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            |  --->   (ContactController.java:53)
+2021-06-24 11:35:53,327 - [http-nio-8080-exec-3] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            | userOwner: lolo@email.com userFrriend: lolo@email.com (ContactController.java:54)
+2021-06-24 11:35:53,327 - [http-nio-8080-exec-3] INFO       | com.oc.ly.PayMyBuddy.service.FriendServiceImpl               | --- friendDTO ID:- null (FriendServiceImpl.java:32)
+2021-06-24 11:35:53,327 - [http-nio-8080-exec-3] INFO       | com.oc.ly.PayMyBuddy.service.FriendServiceImpl               | --- friend ID:- null (FriendServiceImpl.java:33)
+2021-06-24 11:36:00,067 - [http-nio-8080-exec-2] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            |  --->   idFriend: 4 (ContactController.java:49)
+2021-06-24 11:36:00,071 - [http-nio-8080-exec-2] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            |  --->   (ContactController.java:53)
+2021-06-24 11:36:00,072 - [http-nio-8080-exec-2] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            | userOwner: lolo@email.com userFrriend: mathieu@email.com (ContactController.java:54)
+2021-06-24 11:36:00,072 - [http-nio-8080-exec-2] INFO       | com.oc.ly.PayMyBuddy.service.FriendServiceImpl               | --- friendDTO ID:- null (FriendServiceImpl.java:32)
+2021-06-24 11:36:00,072 - [http-nio-8080-exec-2] INFO       | com.oc.ly.PayMyBuddy.service.FriendServiceImpl               | --- friend ID:- null (FriendServiceImpl.java:33)
+2021-06-24 11:36:07,762 - [http-nio-8080-exec-8] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            |  --->   idFriend: 3 (ContactController.java:49)
+2021-06-24 11:36:07,766 - [http-nio-8080-exec-8] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            |  --->   (ContactController.java:53)
+2021-06-24 11:36:07,766 - [http-nio-8080-exec-8] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            | userOwner: lolo@email.com userFrriend: flora@email.com (ContactController.java:54)
+2021-06-24 11:36:07,766 - [http-nio-8080-exec-8] INFO       | com.oc.ly.PayMyBuddy.service.FriendServiceImpl               | --- friendDTO ID:- null (FriendServiceImpl.java:32)
+2021-06-24 11:36:07,766 - [http-nio-8080-exec-8] INFO       | com.oc.ly.PayMyBuddy.service.FriendServiceImpl               | --- friend ID:- null (FriendServiceImpl.java:33)
+2021-06-24 11:36:34,189 - [main] INFO       | org.hibernate.jpa.internal.util.LogHelper                    | HHH000204: Processing PersistenceUnitInfo [name: default] (LogHelper.java:31)
+2021-06-24 11:36:34,237 - [main] INFO       | org.hibernate.Version                                        | HHH000412: Hibernate ORM core version 5.4.31.Final (Version.java:44)
+2021-06-24 11:36:34,371 - [main] INFO       | org.hibernate.annotations.common.Version                     | HCANN000001: Hibernate Commons Annotations {5.1.2.Final} (JavaReflectionManager.java:56)
+2021-06-24 11:36:34,768 - [main] INFO       | org.hibernate.dialect.Dialect                                | HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect (Dialect.java:175)
+2021-06-24 11:36:35,506 - [main] INFO       | org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator | HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] (JtaPlatformInitiator.java:52)
+2021-06-24 11:36:36,316 - [main] INFO       | com.oc.ly.PayMyBuddy.security.SecurityConfig                 | Hello World with Log4J 2 (SecurityConfig.java:39)
+2021-06-24 11:36:36,316 - [main] ERROR      | com.oc.ly.PayMyBuddy.security.SecurityConfig                 | Houston, we have a problem (SecurityConfig.java:42)
+2021-06-24 11:36:43,643 - [http-nio-8080-exec-4] INFO       | com.oc.ly.PayMyBuddy.controller.HomeController               | -> Verification de l'identifiant ! (MyUserDetailService.java:35)
+2021-06-24 11:36:49,994 - [http-nio-8080-exec-7] INFO       | com.oc.ly.PayMyBuddy.controller.HomeController               | -> Verification de l'identifiant ! (MyUserDetailService.java:35)
+2021-06-24 11:36:50,006 - [http-nio-8080-exec-7] INFO       | com.oc.ly.PayMyBuddy.controller.HomeController               | ---> Utilisateur trouvé!  (MyUserDetailService.java:40)
+2021-06-24 11:36:53,857 - [http-nio-8080-exec-10] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            |  --->   idFriend: 1 (ContactController.java:49)
+2021-06-24 11:36:53,862 - [http-nio-8080-exec-10] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            |  --->   (ContactController.java:53)
+2021-06-24 11:36:53,862 - [http-nio-8080-exec-10] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            | userOwner: lolo@email.com userFrriend: lolo@email.com (ContactController.java:54)
+2021-06-24 11:36:53,862 - [http-nio-8080-exec-10] INFO       | com.oc.ly.PayMyBuddy.service.FriendServiceImpl               | --- friendDTO ID:- null (FriendServiceImpl.java:32)
+2021-06-24 11:36:53,862 - [http-nio-8080-exec-10] INFO       | com.oc.ly.PayMyBuddy.service.FriendServiceImpl               | --- friend ID:- null (FriendServiceImpl.java:33)
+2021-06-24 11:55:48,010 - [http-nio-8080-exec-1] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          | --- montant du dto de Page<DTO> 50.0 (TransactionServiceImpl.java:151)
+2021-06-24 11:55:48,010 - [http-nio-8080-exec-1] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          | --- montant du dto de Page<DTO> 50.0 (TransactionServiceImpl.java:151)
+2021-06-24 11:55:48,010 - [http-nio-8080-exec-1] INFO       | com.oc.ly.PayMyBuddy.controller.HomeController               | ----->  /home  (HomeController.java:103)
+2021-06-24 11:55:53,757 - [http-nio-8080-exec-5] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            |  --->   idFriend: 4 (ContactController.java:49)
+2021-06-24 11:55:53,762 - [http-nio-8080-exec-5] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            |  --->   (ContactController.java:53)
+2021-06-24 11:55:53,762 - [http-nio-8080-exec-5] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            | userOwner: lolo@email.com userFrriend: mathieu@email.com (ContactController.java:54)
+2021-06-24 11:55:53,762 - [http-nio-8080-exec-5] INFO       | com.oc.ly.PayMyBuddy.service.FriendServiceImpl               | --- friendDTO ID:- null (FriendServiceImpl.java:32)
+2021-06-24 11:55:53,762 - [http-nio-8080-exec-5] INFO       | com.oc.ly.PayMyBuddy.service.FriendServiceImpl               | --- friend ID:- null (FriendServiceImpl.java:33)
+2021-06-24 11:55:53,775 - [http-nio-8080-exec-5] ERROR      | org.hibernate.id.enhanced.TableStructure                     | could not read a hi value (TableStructure.java:148)
+java.sql.SQLSyntaxErrorException: Table 'paymybuddydb.hibernate_sequence' doesn't exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeQuery(ClientPreparedStatement.java:1003) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeQuery(ProxyPreparedStatement.java:52) ~[HikariCP-4.0.3.jar:?]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeQuery(HikariProxyPreparedStatement.java) ~[HikariCP-4.0.3.jar:?]
+	at org.hibernate.id.enhanced.TableStructure.executeQuery(TableStructure.java:216) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.hibernate.id.enhanced.TableStructure.access$300(TableStructure.java:46) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.hibernate.id.enhanced.TableStructure$1$1.execute(TableStructure.java:138) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.hibernate.id.enhanced.TableStructure$1$1.execute(TableStructure.java:126) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.hibernate.jdbc.WorkExecutor.executeReturningWork(WorkExecutor.java:55) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.hibernate.jdbc.AbstractReturningWork.accept(AbstractReturningWork.java:34) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:57) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.hibernate.id.enhanced.TableStructure$1.getNextValue(TableStructure.java:125) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.hibernate.id.enhanced.NoopOptimizer.generate(NoopOptimizer.java:40) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.hibernate.id.enhanced.SequenceStyleGenerator.generate(SequenceStyleGenerator.java:523) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.hibernate.event.internal.AbstractSaveEventListener.saveWithGeneratedId(AbstractSaveEventListener.java:115) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.hibernate.event.internal.DefaultPersistEventListener.entityIsTransient(DefaultPersistEventListener.java:185) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:128) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:55) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:93) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.hibernate.internal.SessionImpl.firePersist(SessionImpl.java:720) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at org.hibernate.internal.SessionImpl.persist(SessionImpl.java:706) ~[hibernate-core-5.4.31.Final.jar:5.4.31.Final]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567) ~[?:?]
+	at org.springframework.orm.jpa.ExtendedEntityManagerCreator$ExtendedEntityManagerInvocationHandler.invoke(ExtendedEntityManagerCreator.java:362) ~[spring-orm-5.3.7.jar:5.3.7]
+	at com.sun.proxy.$Proxy96.persist(Unknown Source) ~[?:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567) ~[?:?]
+	at org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:311) ~[spring-orm-5.3.7.jar:5.3.7]
+	at com.sun.proxy.$Proxy96.persist(Unknown Source) ~[?:?]
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.save(SimpleJpaRepository.java:597) ~[spring-data-jpa-2.5.1.jar:2.5.1]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567) ~[?:?]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker$RepositoryFragmentMethodInvoker.lambda$new$0(RepositoryMethodInvoker.java:289) ~[spring-data-commons-2.5.1.jar:2.5.1]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:137) [spring-data-commons-2.5.1.jar:2.5.1]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:121) [spring-data-commons-2.5.1.jar:2.5.1]
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:529) [spring-data-commons-2.5.1.jar:2.5.1]
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:285) [spring-data-commons-2.5.1.jar:2.5.1]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:599) [spring-data-commons-2.5.1.jar:2.5.1]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) [spring-aop-5.3.7.jar:5.3.7]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:163) [spring-data-commons-2.5.1.jar:2.5.1]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:138) [spring-data-commons-2.5.1.jar:2.5.1]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) [spring-aop-5.3.7.jar:5.3.7]
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:80) [spring-data-commons-2.5.1.jar:2.5.1]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) [spring-aop-5.3.7.jar:5.3.7]
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123) [spring-tx-5.3.7.jar:5.3.7]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388) [spring-tx-5.3.7.jar:5.3.7]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) [spring-tx-5.3.7.jar:5.3.7]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) [spring-aop-5.3.7.jar:5.3.7]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137) [spring-tx-5.3.7.jar:5.3.7]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) [spring-aop-5.3.7.jar:5.3.7]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:174) [spring-data-jpa-2.5.1.jar:2.5.1]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) [spring-aop-5.3.7.jar:5.3.7]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) [spring-aop-5.3.7.jar:5.3.7]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) [spring-aop-5.3.7.jar:5.3.7]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215) [spring-aop-5.3.7.jar:5.3.7]
+	at com.sun.proxy.$Proxy102.save(Unknown Source) [?:?]
+	at com.oc.ly.PayMyBuddy.service.FriendServiceImpl.addFriend(FriendServiceImpl.java:34) [classes/:?]
+	at com.oc.ly.PayMyBuddy.controller.ContactController.add(ContactController.java:58) [classes/:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567) ~[?:?]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:197) [spring-web-5.3.7.jar:5.3.7]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:141) [spring-web-5.3.7.jar:5.3.7]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106) [spring-webmvc-5.3.7.jar:5.3.7]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:894) [spring-webmvc-5.3.7.jar:5.3.7]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) [spring-webmvc-5.3.7.jar:5.3.7]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) [spring-webmvc-5.3.7.jar:5.3.7]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1063) [spring-webmvc-5.3.7.jar:5.3.7]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963) [spring-webmvc-5.3.7.jar:5.3.7]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) [spring-webmvc-5.3.7.jar:5.3.7]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) [spring-webmvc-5.3.7.jar:5.3.7]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626) [tomcat-embed-core-9.0.46.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) [spring-webmvc-5.3.7.jar:5.3.7]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733) [tomcat-embed-core-9.0.46.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-embed-websocket-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:327) [spring-security-web-5.5.0.jar:5.5.0]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:115) [spring-security-web-5.5.0.jar:5.5.0]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:81) [spring-security-web-5.5.0.jar:5.5.0]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.5.0.jar:5.5.0]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:121) [spring-security-web-5.5.0.jar:5.5.0]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:115) [spring-security-web-5.5.0.jar:5.5.0]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.5.0.jar:5.5.0]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:126) [spring-security-web-5.5.0.jar:5.5.0]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81) [spring-security-web-5.5.0.jar:5.5.0]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.5.0.jar:5.5.0]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:105) [spring-security-web-5.5.0.jar:5.5.0]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.5.0.jar:5.5.0]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149) [spring-security-web-5.5.0.jar:5.5.0]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.5.0.jar:5.5.0]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) [spring-security-web-5.5.0.jar:5.5.0]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.5.0.jar:5.5.0]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:218) [spring-security-web-5.5.0.jar:5.5.0]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:212) [spring-security-web-5.5.0.jar:5.5.0]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.5.0.jar:5.5.0]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103) [spring-security-web-5.5.0.jar:5.5.0]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89) [spring-security-web-5.5.0.jar:5.5.0]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.5.0.jar:5.5.0]
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:117) [spring-security-web-5.5.0.jar:5.5.0]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.3.7.jar:5.3.7]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.5.0.jar:5.5.0]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) [spring-security-web-5.5.0.jar:5.5.0]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) [spring-security-web-5.5.0.jar:5.5.0]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.3.7.jar:5.3.7]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.5.0.jar:5.5.0]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:110) [spring-security-web-5.5.0.jar:5.5.0]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:80) [spring-security-web-5.5.0.jar:5.5.0]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.5.0.jar:5.5.0]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55) [spring-security-web-5.5.0.jar:5.5.0]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.3.7.jar:5.3.7]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.5.0.jar:5.5.0]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211) [spring-security-web-5.5.0.jar:5.5.0]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183) [spring-security-web-5.5.0.jar:5.5.0]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) [spring-web-5.3.7.jar:5.3.7]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) [spring-web-5.3.7.jar:5.3.7]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-5.3.7.jar:5.3.7]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.3.7.jar:5.3.7]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-5.3.7.jar:5.3.7]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.3.7.jar:5.3.7]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-5.3.7.jar:5.3.7]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.3.7.jar:5.3.7]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at java.base/java.lang.Thread.run(Thread.java:830) [?:?]
+2021-06-24 11:55:53,781 - [http-nio-8080-exec-5] WARN       | org.hibernate.engine.jdbc.spi.SqlExceptionHelper             | SQL Error: 1146, SQLState: 42S02 (SqlExceptionHelper.java:137)
+2021-06-24 11:55:53,781 - [http-nio-8080-exec-5] ERROR      | org.hibernate.engine.jdbc.spi.SqlExceptionHelper             | Table 'paymybuddydb.hibernate_sequence' doesn't exist (SqlExceptionHelper.java:142)
+2021-06-24 11:55:55,083 - [http-nio-8080-exec-6] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          | --- montant du dto de Page<DTO> 50.0 (TransactionServiceImpl.java:151)
+2021-06-24 11:55:55,083 - [http-nio-8080-exec-6] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          | --- montant du dto de Page<DTO> 50.0 (TransactionServiceImpl.java:151)
+2021-06-24 11:55:55,083 - [http-nio-8080-exec-6] INFO       | com.oc.ly.PayMyBuddy.controller.HomeController               | ----->  /home  (HomeController.java:103)
+2021-06-24 11:56:48,463 - [main] INFO       | org.hibernate.jpa.internal.util.LogHelper                    | HHH000204: Processing PersistenceUnitInfo [name: default] (LogHelper.java:31)
+2021-06-24 11:56:48,512 - [main] INFO       | org.hibernate.Version                                        | HHH000412: Hibernate ORM core version 5.4.31.Final (Version.java:44)
+2021-06-24 11:56:48,650 - [main] INFO       | org.hibernate.annotations.common.Version                     | HCANN000001: Hibernate Commons Annotations {5.1.2.Final} (JavaReflectionManager.java:56)
+2021-06-24 11:56:49,054 - [main] INFO       | org.hibernate.dialect.Dialect                                | HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect (Dialect.java:175)
+2021-06-24 11:56:49,759 - [main] INFO       | org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator | HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] (JtaPlatformInitiator.java:52)
+2021-06-24 11:56:50,542 - [main] INFO       | com.oc.ly.PayMyBuddy.security.SecurityConfig                 | Hello World with Log4J 2 (SecurityConfig.java:39)
+2021-06-24 11:56:50,543 - [main] ERROR      | com.oc.ly.PayMyBuddy.security.SecurityConfig                 | Houston, we have a problem (SecurityConfig.java:42)
+2021-06-24 11:56:59,913 - [http-nio-8080-exec-4] INFO       | com.oc.ly.PayMyBuddy.controller.HomeController               | -> Verification de l'identifiant ! (MyUserDetailService.java:35)
+2021-06-24 11:56:59,962 - [http-nio-8080-exec-4] INFO       | com.oc.ly.PayMyBuddy.controller.HomeController               | ---> Utilisateur trouvé!  (MyUserDetailService.java:40)
+2021-06-24 11:57:00,073 - [http-nio-8080-exec-5] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          | --- montant du dto de Page<DTO> 50.0 (TransactionServiceImpl.java:151)
+2021-06-24 11:57:00,073 - [http-nio-8080-exec-5] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          | --- montant du dto de Page<DTO> 50.0 (TransactionServiceImpl.java:151)
+2021-06-24 11:57:00,073 - [http-nio-8080-exec-5] INFO       | com.oc.ly.PayMyBuddy.controller.HomeController               | ----->  /home  (HomeController.java:103)
+2021-06-24 11:57:03,993 - [http-nio-8080-exec-10] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            |  --->   idFriend: 4 (ContactController.java:49)
+2021-06-24 11:57:03,998 - [http-nio-8080-exec-10] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            |  --->   (ContactController.java:53)
+2021-06-24 11:57:03,999 - [http-nio-8080-exec-10] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            | userOwner: lolo@email.com userFrriend: mathieu@email.com (ContactController.java:54)
+2021-06-24 11:57:03,999 - [http-nio-8080-exec-10] INFO       | com.oc.ly.PayMyBuddy.service.FriendServiceImpl               | --- friendDTO ID:- null (FriendServiceImpl.java:32)
+2021-06-24 11:57:03,999 - [http-nio-8080-exec-10] INFO       | com.oc.ly.PayMyBuddy.service.FriendServiceImpl               | --- friend ID:- null (FriendServiceImpl.java:33)
+2021-06-24 11:57:04,038 - [http-nio-8080-exec-10] WARN       | org.hibernate.engine.jdbc.spi.SqlExceptionHelper             | SQL Error: 1062, SQLState: 23000 (SqlExceptionHelper.java:137)
+2021-06-24 11:57:04,039 - [http-nio-8080-exec-10] ERROR      | org.hibernate.engine.jdbc.spi.SqlExceptionHelper             | Duplicate entry '1' for key 'friend.PRIMARY' (SqlExceptionHelper.java:142)
+2021-06-24 11:57:05,159 - [http-nio-8080-exec-9] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          | --- montant du dto de Page<DTO> 50.0 (TransactionServiceImpl.java:151)
+2021-06-24 11:57:05,160 - [http-nio-8080-exec-9] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          | --- montant du dto de Page<DTO> 50.0 (TransactionServiceImpl.java:151)
+2021-06-24 11:57:05,160 - [http-nio-8080-exec-9] INFO       | com.oc.ly.PayMyBuddy.controller.HomeController               | ----->  /home  (HomeController.java:103)
+2021-06-24 11:58:11,429 - [main] INFO       | org.hibernate.jpa.internal.util.LogHelper                    | HHH000204: Processing PersistenceUnitInfo [name: default] (LogHelper.java:31)
+2021-06-24 11:58:11,479 - [main] INFO       | org.hibernate.Version                                        | HHH000412: Hibernate ORM core version 5.4.31.Final (Version.java:44)
+2021-06-24 11:58:11,610 - [main] INFO       | org.hibernate.annotations.common.Version                     | HCANN000001: Hibernate Commons Annotations {5.1.2.Final} (JavaReflectionManager.java:56)
+2021-06-24 11:58:11,990 - [main] INFO       | org.hibernate.dialect.Dialect                                | HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect (Dialect.java:175)
+2021-06-24 11:58:12,634 - [main] INFO       | org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator | HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] (JtaPlatformInitiator.java:52)
+2021-06-24 11:58:13,450 - [main] INFO       | com.oc.ly.PayMyBuddy.security.SecurityConfig                 | Hello World with Log4J 2 (SecurityConfig.java:39)
+2021-06-24 11:58:13,450 - [main] ERROR      | com.oc.ly.PayMyBuddy.security.SecurityConfig                 | Houston, we have a problem (SecurityConfig.java:42)
+2021-06-24 11:58:30,911 - [http-nio-8080-exec-6] INFO       | com.oc.ly.PayMyBuddy.controller.HomeController               | -> Verification de l'identifiant ! (MyUserDetailService.java:35)
+2021-06-24 11:59:14,100 - [main] INFO       | org.hibernate.jpa.internal.util.LogHelper                    | HHH000204: Processing PersistenceUnitInfo [name: default] (LogHelper.java:31)
+2021-06-24 11:59:14,149 - [main] INFO       | org.hibernate.Version                                        | HHH000412: Hibernate ORM core version 5.4.31.Final (Version.java:44)
+2021-06-24 11:59:14,272 - [main] INFO       | org.hibernate.annotations.common.Version                     | HCANN000001: Hibernate Commons Annotations {5.1.2.Final} (JavaReflectionManager.java:56)
+2021-06-24 11:59:14,636 - [main] INFO       | org.hibernate.dialect.Dialect                                | HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect (Dialect.java:175)
+2021-06-24 11:59:15,280 - [main] INFO       | org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator | HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] (JtaPlatformInitiator.java:52)
+2021-06-24 11:59:16,019 - [main] INFO       | com.oc.ly.PayMyBuddy.security.SecurityConfig                 | Hello World with Log4J 2 (SecurityConfig.java:39)
+2021-06-24 11:59:16,020 - [main] ERROR      | com.oc.ly.PayMyBuddy.security.SecurityConfig                 | Houston, we have a problem (SecurityConfig.java:42)
+2021-06-24 11:59:58,660 - [http-nio-8080-exec-10] INFO       | com.oc.ly.PayMyBuddy.controller.HomeController               | -> Verification de l'identifiant ! (MyUserDetailService.java:35)
+2021-06-24 11:59:58,707 - [http-nio-8080-exec-10] INFO       | com.oc.ly.PayMyBuddy.controller.HomeController               | ---> Utilisateur trouvé!  (MyUserDetailService.java:40)
+2021-06-24 11:59:58,812 - [http-nio-8080-exec-1] INFO       | com.oc.ly.PayMyBuddy.controller.HomeController               | ----->  /home  (HomeController.java:103)
+2021-06-24 12:00:07,176 - [http-nio-8080-exec-5] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            |  --->   idFriend: 1 (ContactController.java:49)
+2021-06-24 12:00:07,182 - [http-nio-8080-exec-5] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            |  --->   (ContactController.java:53)
+2021-06-24 12:00:07,183 - [http-nio-8080-exec-5] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            | userOwner: lolo@email.com userFrriend: lolo@email.com (ContactController.java:54)
+2021-06-24 12:00:07,183 - [http-nio-8080-exec-5] INFO       | com.oc.ly.PayMyBuddy.service.FriendServiceImpl               | --- friendDTO ID:- null (FriendServiceImpl.java:32)
+2021-06-24 12:00:07,183 - [http-nio-8080-exec-5] INFO       | com.oc.ly.PayMyBuddy.service.FriendServiceImpl               | --- friend ID:- null (FriendServiceImpl.java:33)
+2021-06-24 12:01:16,943 - [http-nio-8080-exec-3] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            |  --->   idFriend: 2 (ContactController.java:49)
+2021-06-24 12:01:16,947 - [http-nio-8080-exec-3] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            |  --->   (ContactController.java:53)
+2021-06-24 12:01:16,947 - [http-nio-8080-exec-3] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            | userOwner: lolo@email.com userFrriend: fanny@email.com (ContactController.java:54)
+2021-06-24 12:01:16,947 - [http-nio-8080-exec-3] INFO       | com.oc.ly.PayMyBuddy.service.FriendServiceImpl               | --- friendDTO ID:- null (FriendServiceImpl.java:32)
+2021-06-24 12:01:16,947 - [http-nio-8080-exec-3] INFO       | com.oc.ly.PayMyBuddy.service.FriendServiceImpl               | --- friend ID:- null (FriendServiceImpl.java:33)
+2021-06-24 12:02:00,261 - [http-nio-8080-exec-8] INFO       | com.oc.ly.PayMyBuddy.controller.TransactionController        |  ---> Launch of the request:  Post /home  (TransactionController.java:93)
+2021-06-24 12:02:00,265 - [http-nio-8080-exec-8] INFO       | com.oc.ly.PayMyBuddy.controller.TransactionController        |   ---> Data of Payer & Beneficiary found (TransactionController.java:109)
+2021-06-24 12:02:00,266 - [http-nio-8080-exec-8] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          | ---> processing of the request to add a transaction by the service   ! (TransactionServiceImpl.java:48)
+2021-06-24 12:02:00,274 - [http-nio-8080-exec-8] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          |    ---> ID of the transaction created:0 (TransactionServiceImpl.java:85)
+2021-06-24 12:02:00,279 - [http-nio-8080-exec-8] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          |   ---> Save transaction ok! Update Users ok! (TransactionServiceImpl.java:101)
+2021-06-24 12:03:48,707 - [main] INFO       | org.hibernate.jpa.internal.util.LogHelper                    | HHH000204: Processing PersistenceUnitInfo [name: default] (LogHelper.java:31)
+2021-06-24 12:03:48,755 - [main] INFO       | org.hibernate.Version                                        | HHH000412: Hibernate ORM core version 5.4.31.Final (Version.java:44)
+2021-06-24 12:03:48,877 - [main] INFO       | org.hibernate.annotations.common.Version                     | HCANN000001: Hibernate Commons Annotations {5.1.2.Final} (JavaReflectionManager.java:56)
+2021-06-24 12:03:49,273 - [main] INFO       | org.hibernate.dialect.Dialect                                | HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect (Dialect.java:175)
+2021-06-24 12:03:50,059 - [main] INFO       | org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator | HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] (JtaPlatformInitiator.java:52)
+2021-06-24 12:03:50,877 - [main] INFO       | com.oc.ly.PayMyBuddy.security.SecurityConfig                 | Hello World with Log4J 2 (SecurityConfig.java:39)
+2021-06-24 12:03:50,878 - [main] ERROR      | com.oc.ly.PayMyBuddy.security.SecurityConfig                 | Houston, we have a problem (SecurityConfig.java:42)
+2021-06-24 12:08:43,646 - [main] INFO       | org.hibernate.jpa.internal.util.LogHelper                    | HHH000204: Processing PersistenceUnitInfo [name: default] (LogHelper.java:31)
+2021-06-24 12:08:43,691 - [main] INFO       | org.hibernate.Version                                        | HHH000412: Hibernate ORM core version 5.4.31.Final (Version.java:44)
+2021-06-24 12:08:43,834 - [main] INFO       | org.hibernate.annotations.common.Version                     | HCANN000001: Hibernate Commons Annotations {5.1.2.Final} (JavaReflectionManager.java:56)
+2021-06-24 12:08:44,216 - [main] INFO       | org.hibernate.dialect.Dialect                                | HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect (Dialect.java:175)
+2021-06-24 12:08:45,015 - [main] INFO       | org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator | HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] (JtaPlatformInitiator.java:52)
+2021-06-24 12:08:45,781 - [main] INFO       | com.oc.ly.PayMyBuddy.security.SecurityConfig                 | Hello World with Log4J 2 (SecurityConfig.java:39)
+2021-06-24 12:08:45,781 - [main] ERROR      | com.oc.ly.PayMyBuddy.security.SecurityConfig                 | Houston, we have a problem (SecurityConfig.java:42)
+2021-06-24 12:09:04,371 - [http-nio-8080-exec-4] INFO       | com.oc.ly.PayMyBuddy.controller.HomeController               | -> Verification de l'identifiant ! (MyUserDetailService.java:35)
+2021-06-24 12:09:11,913 - [http-nio-8080-exec-7] INFO       | com.oc.ly.PayMyBuddy.controller.HomeController               | -> Verification de l'identifiant ! (MyUserDetailService.java:35)
+2021-06-24 12:09:57,346 - [http-nio-8080-exec-10] INFO       | com.oc.ly.PayMyBuddy.controller.HomeController               | -> Verification de l'identifiant ! (MyUserDetailService.java:35)
+2021-06-24 12:10:27,309 - [http-nio-8080-exec-6] INFO       | com.oc.ly.PayMyBuddy.controller.HomeController               | -> Verification de l'identifiant ! (MyUserDetailService.java:35)
+2021-06-24 12:10:27,321 - [http-nio-8080-exec-6] INFO       | com.oc.ly.PayMyBuddy.controller.HomeController               | ---> Utilisateur trouvé!  (MyUserDetailService.java:40)
+2021-06-24 12:10:27,422 - [http-nio-8080-exec-7] INFO       | com.oc.ly.PayMyBuddy.controller.HomeController               | ----->  /home  (HomeController.java:103)
+2021-06-24 12:10:34,163 - [http-nio-8080-exec-1] INFO       | com.oc.ly.PayMyBuddy.controller.HomeController               | ----->  /home  (HomeController.java:103)
+2021-06-24 12:11:09,200 - [http-nio-8080-exec-3] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          | --- montant du dto de Page<DTO> 50.0 (TransactionServiceImpl.java:151)
+2021-06-24 12:11:09,201 - [http-nio-8080-exec-3] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          | --- montant du dto de Page<DTO> 50.0 (TransactionServiceImpl.java:151)
+2021-06-24 12:11:09,201 - [http-nio-8080-exec-3] INFO       | com.oc.ly.PayMyBuddy.controller.HomeController               | ----->  /home  (HomeController.java:103)
+2021-06-24 12:11:17,281 - [http-nio-8080-exec-7] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            |  --->   idFriend: 4 (ContactController.java:49)
+2021-06-24 12:11:17,287 - [http-nio-8080-exec-7] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            |  --->   (ContactController.java:53)
+2021-06-24 12:11:17,287 - [http-nio-8080-exec-7] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            | userOwner: lolo@email.com userFrriend: mathieu@email.com (ContactController.java:54)
+2021-06-24 12:11:17,287 - [http-nio-8080-exec-7] INFO       | com.oc.ly.PayMyBuddy.service.FriendServiceImpl               | --- friendDTO ID:- null (FriendServiceImpl.java:32)
+2021-06-24 12:11:17,287 - [http-nio-8080-exec-7] INFO       | com.oc.ly.PayMyBuddy.service.FriendServiceImpl               | --- friend ID:- null (FriendServiceImpl.java:33)
+2021-06-24 12:11:17,327 - [http-nio-8080-exec-7] WARN       | org.hibernate.engine.jdbc.spi.SqlExceptionHelper             | SQL Error: 1062, SQLState: 23000 (SqlExceptionHelper.java:137)
+2021-06-24 12:11:17,328 - [http-nio-8080-exec-7] ERROR      | org.hibernate.engine.jdbc.spi.SqlExceptionHelper             | Duplicate entry '1' for key 'friend.PRIMARY' (SqlExceptionHelper.java:142)
+2021-06-24 12:11:20,306 - [http-nio-8080-exec-8] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          | --- montant du dto de Page<DTO> 50.0 (TransactionServiceImpl.java:151)
+2021-06-24 12:11:20,306 - [http-nio-8080-exec-8] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          | --- montant du dto de Page<DTO> 50.0 (TransactionServiceImpl.java:151)
+2021-06-24 12:11:20,306 - [http-nio-8080-exec-8] INFO       | com.oc.ly.PayMyBuddy.controller.HomeController               | ----->  /home  (HomeController.java:103)
+2021-06-24 12:13:43,024 - [http-nio-8080-exec-3] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            |  --->   idFriend: 4 (ContactController.java:49)
+2021-06-24 12:13:43,027 - [http-nio-8080-exec-3] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            |  --->   (ContactController.java:53)
+2021-06-24 12:13:43,027 - [http-nio-8080-exec-3] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            | userOwner: lolo@email.com userFrriend: mathieu@email.com (ContactController.java:54)
+2021-06-24 12:13:43,027 - [http-nio-8080-exec-3] INFO       | com.oc.ly.PayMyBuddy.service.FriendServiceImpl               | --- friendDTO ID:- null (FriendServiceImpl.java:32)
+2021-06-24 12:13:43,027 - [http-nio-8080-exec-3] INFO       | com.oc.ly.PayMyBuddy.service.FriendServiceImpl               | --- friend ID:- null (FriendServiceImpl.java:33)
+2021-06-24 12:13:43,032 - [http-nio-8080-exec-3] WARN       | org.hibernate.engine.jdbc.spi.SqlExceptionHelper             | SQL Error: 1062, SQLState: 23000 (SqlExceptionHelper.java:137)
+2021-06-24 12:13:43,033 - [http-nio-8080-exec-3] ERROR      | org.hibernate.engine.jdbc.spi.SqlExceptionHelper             | Duplicate entry '2' for key 'friend.PRIMARY' (SqlExceptionHelper.java:142)
+2021-06-24 12:13:43,996 - [http-nio-8080-exec-4] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          | --- montant du dto de Page<DTO> 50.0 (TransactionServiceImpl.java:151)
+2021-06-24 12:13:43,997 - [http-nio-8080-exec-4] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          | --- montant du dto de Page<DTO> 50.0 (TransactionServiceImpl.java:151)
+2021-06-24 12:13:43,997 - [http-nio-8080-exec-4] INFO       | com.oc.ly.PayMyBuddy.controller.HomeController               | ----->  /home  (HomeController.java:103)
+2021-06-24 12:15:36,924 - [main] INFO       | org.hibernate.jpa.internal.util.LogHelper                    | HHH000204: Processing PersistenceUnitInfo [name: default] (LogHelper.java:31)
+2021-06-24 12:15:36,965 - [main] INFO       | org.hibernate.Version                                        | HHH000412: Hibernate ORM core version 5.4.31.Final (Version.java:44)
+2021-06-24 12:15:37,096 - [main] INFO       | org.hibernate.annotations.common.Version                     | HCANN000001: Hibernate Commons Annotations {5.1.2.Final} (JavaReflectionManager.java:56)
+2021-06-24 12:15:37,490 - [main] INFO       | org.hibernate.dialect.Dialect                                | HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect (Dialect.java:175)
+2021-06-24 12:15:38,250 - [main] INFO       | org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator | HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] (JtaPlatformInitiator.java:52)
+2021-06-24 12:15:39,021 - [main] INFO       | com.oc.ly.PayMyBuddy.security.SecurityConfig                 | Hello World with Log4J 2 (SecurityConfig.java:39)
+2021-06-24 12:15:39,022 - [main] ERROR      | com.oc.ly.PayMyBuddy.security.SecurityConfig                 | Houston, we have a problem (SecurityConfig.java:42)
+2021-06-24 12:15:55,416 - [http-nio-8080-exec-4] INFO       | com.oc.ly.PayMyBuddy.controller.HomeController               | -> Verification de l'identifiant ! (MyUserDetailService.java:35)
+2021-06-24 12:16:02,139 - [http-nio-8080-exec-7] INFO       | com.oc.ly.PayMyBuddy.controller.HomeController               | -> Verification de l'identifiant ! (MyUserDetailService.java:35)
+2021-06-24 12:16:02,150 - [http-nio-8080-exec-7] INFO       | com.oc.ly.PayMyBuddy.controller.HomeController               | ---> Utilisateur trouvé!  (MyUserDetailService.java:40)
+2021-06-24 12:16:02,268 - [http-nio-8080-exec-8] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          | --- montant du dto de Page<DTO> 50.0 (TransactionServiceImpl.java:151)
+2021-06-24 12:16:02,269 - [http-nio-8080-exec-8] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          | --- montant du dto de Page<DTO> 50.0 (TransactionServiceImpl.java:151)
+2021-06-24 12:16:02,269 - [http-nio-8080-exec-8] INFO       | com.oc.ly.PayMyBuddy.controller.HomeController               | ----->  /home  (HomeController.java:103)
+2021-06-24 12:16:10,515 - [http-nio-8080-exec-2] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            |  --->   idFriend: 4 (ContactController.java:49)
+2021-06-24 12:16:10,523 - [http-nio-8080-exec-2] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            |  --->   (ContactController.java:53)
+2021-06-24 12:16:10,523 - [http-nio-8080-exec-2] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            | userOwner: lolo@email.com userFrriend: mathieu@email.com (ContactController.java:54)
+2021-06-24 12:16:10,523 - [http-nio-8080-exec-2] INFO       | com.oc.ly.PayMyBuddy.service.FriendServiceImpl               | --- friendDTO ID:- null (FriendServiceImpl.java:32)
+2021-06-24 12:16:10,523 - [http-nio-8080-exec-2] INFO       | com.oc.ly.PayMyBuddy.service.FriendServiceImpl               | --- friend ID:- null (FriendServiceImpl.java:33)
+2021-06-24 12:16:10,570 - [http-nio-8080-exec-2] WARN       | org.hibernate.engine.jdbc.spi.SqlExceptionHelper             | SQL Error: 1062, SQLState: 23000 (SqlExceptionHelper.java:137)
+2021-06-24 12:16:10,570 - [http-nio-8080-exec-2] ERROR      | org.hibernate.engine.jdbc.spi.SqlExceptionHelper             | Duplicate entry '3' for key 'friend.PRIMARY' (SqlExceptionHelper.java:142)
+2021-06-24 12:16:21,116 - [http-nio-8080-exec-3] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          | --- montant du dto de Page<DTO> 50.0 (TransactionServiceImpl.java:151)
+2021-06-24 12:16:21,117 - [http-nio-8080-exec-3] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          | --- montant du dto de Page<DTO> 50.0 (TransactionServiceImpl.java:151)
+2021-06-24 12:16:21,117 - [http-nio-8080-exec-3] INFO       | com.oc.ly.PayMyBuddy.controller.HomeController               | ----->  /home  (HomeController.java:103)
+2021-06-24 12:33:31,999 - [main] INFO       | org.hibernate.jpa.internal.util.LogHelper                    | HHH000204: Processing PersistenceUnitInfo [name: default] (LogHelper.java:31)
+2021-06-24 12:33:32,043 - [main] INFO       | org.hibernate.Version                                        | HHH000412: Hibernate ORM core version 5.4.31.Final (Version.java:44)
+2021-06-24 12:33:32,170 - [main] INFO       | org.hibernate.annotations.common.Version                     | HCANN000001: Hibernate Commons Annotations {5.1.2.Final} (JavaReflectionManager.java:56)
+2021-06-24 12:33:32,556 - [main] INFO       | org.hibernate.dialect.Dialect                                | HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect (Dialect.java:175)
+2021-06-24 12:33:33,208 - [main] INFO       | org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator | HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] (JtaPlatformInitiator.java:52)
+2021-06-24 12:33:33,951 - [main] INFO       | com.oc.ly.PayMyBuddy.security.SecurityConfig                 | Hello World with Log4J 2 (SecurityConfig.java:39)
+2021-06-24 12:33:33,951 - [main] ERROR      | com.oc.ly.PayMyBuddy.security.SecurityConfig                 | Houston, we have a problem (SecurityConfig.java:42)
+2021-06-24 12:33:49,973 - [http-nio-8080-exec-4] INFO       | com.oc.ly.PayMyBuddy.controller.HomeController               | -> Verification de l'identifiant ! (MyUserDetailService.java:35)
+2021-06-24 12:33:50,021 - [http-nio-8080-exec-4] INFO       | com.oc.ly.PayMyBuddy.controller.HomeController               | ---> Utilisateur trouvé!  (MyUserDetailService.java:40)
+2021-06-24 12:33:50,139 - [http-nio-8080-exec-5] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          | --- montant du dto de Page<DTO> 50.0 (TransactionServiceImpl.java:151)
+2021-06-24 12:33:50,139 - [http-nio-8080-exec-5] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          | --- montant du dto de Page<DTO> 50.0 (TransactionServiceImpl.java:151)
+2021-06-24 12:33:50,140 - [http-nio-8080-exec-5] INFO       | com.oc.ly.PayMyBuddy.controller.HomeController               | ----->  /home  (HomeController.java:103)
+2021-06-24 12:33:57,053 - [http-nio-8080-exec-9] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            |  --->   idFriend: 4 (ContactController.java:49)
+2021-06-24 12:33:57,058 - [http-nio-8080-exec-9] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            |  --->   (ContactController.java:53)
+2021-06-24 12:33:57,058 - [http-nio-8080-exec-9] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            | userOwner: lolo@email.com userFrriend: mathieu@email.com (ContactController.java:54)
+2021-06-24 12:33:57,059 - [http-nio-8080-exec-9] INFO       | com.oc.ly.PayMyBuddy.service.FriendServiceImpl               | --- friendDTO ID:- null (FriendServiceImpl.java:32)
+2021-06-24 12:33:57,059 - [http-nio-8080-exec-9] INFO       | com.oc.ly.PayMyBuddy.service.FriendServiceImpl               | --- friend ID:- null (FriendServiceImpl.java:33)
+2021-06-24 12:34:01,713 - [http-nio-8080-exec-5] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            |  --->   idFriend: 4 (ContactController.java:49)
+2021-06-24 12:34:01,717 - [http-nio-8080-exec-5] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            |  --->   (ContactController.java:53)
+2021-06-24 12:34:01,718 - [http-nio-8080-exec-5] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            | userOwner: lolo@email.com userFrriend: mathieu@email.com (ContactController.java:54)
+2021-06-24 12:34:01,718 - [http-nio-8080-exec-5] INFO       | com.oc.ly.PayMyBuddy.service.FriendServiceImpl               | --- friendDTO ID:- null (FriendServiceImpl.java:32)
+2021-06-24 12:34:01,718 - [http-nio-8080-exec-5] INFO       | com.oc.ly.PayMyBuddy.service.FriendServiceImpl               | --- friend ID:- null (FriendServiceImpl.java:33)
+2021-06-24 12:34:14,578 - [http-nio-8080-exec-3] INFO       | com.oc.ly.PayMyBuddy.controller.TransactionController        |  ---> Launch of the request:  Post /home  (TransactionController.java:93)
+2021-06-24 12:34:14,581 - [http-nio-8080-exec-3] INFO       | com.oc.ly.PayMyBuddy.controller.TransactionController        |   ---> Data of Payer & Beneficiary found (TransactionController.java:109)
+2021-06-24 12:34:14,582 - [http-nio-8080-exec-3] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          | ---> processing of the request to add a transaction by the service   ! (TransactionServiceImpl.java:48)
+2021-06-24 12:34:14,589 - [http-nio-8080-exec-3] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          |    ---> ID of the transaction created:0 (TransactionServiceImpl.java:85)
+2021-06-24 12:34:14,594 - [http-nio-8080-exec-3] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          |   ---> Save transaction ok! Update Users ok! (TransactionServiceImpl.java:101)
+2021-06-24 12:34:18,738 - [http-nio-8080-exec-10] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          | --- montant du dto de Page<DTO> 50.0 (TransactionServiceImpl.java:151)
+2021-06-24 12:34:18,738 - [http-nio-8080-exec-10] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          | --- montant du dto de Page<DTO> 50.0 (TransactionServiceImpl.java:151)
+2021-06-24 12:34:18,739 - [http-nio-8080-exec-10] INFO       | com.oc.ly.PayMyBuddy.controller.HomeController               | ----->  /home  (HomeController.java:103)
+2021-06-24 12:34:27,236 - [http-nio-8080-exec-2] INFO       | com.oc.ly.PayMyBuddy.service.BankAccountServiceImpl          |  ---> Launch of the search for a user's account (BankAccountServiceImpl.java:29)
+2021-06-24 12:34:27,240 - [http-nio-8080-exec-2] INFO       | com.oc.ly.PayMyBuddy.service.TransferServiceImpl             |  ---> Launch of the search for a user's transfers (TransferServiceImpl.java:74)
+2021-06-24 12:34:57,261 - [http-nio-8080-exec-4] INFO       | com.oc.ly.PayMyBuddy.controller.TransferController           |  ---> entrée dans /addBTransfer fr 1245 5414 5877 4588 N - 50.0 - CREDIT_WALLET (TransferController.java:106)
+2021-06-24 12:34:57,264 - [http-nio-8080-exec-4] INFO       | com.oc.ly.PayMyBuddy.service.TransferServiceImpl             | ----- résultat montant = true (TransferServiceImpl.java:125)
+2021-06-24 12:34:57,267 - [http-nio-8080-exec-4] INFO       | com.oc.ly.PayMyBuddy.service.TransferServiceImpl             | ----- résultat user = true (TransferServiceImpl.java:130)
+2021-06-24 12:34:57,267 - [http-nio-8080-exec-4] INFO       | com.oc.ly.PayMyBuddy.service.TransferServiceImpl             | ----- résultat type = true (TransferServiceImpl.java:137)
+2021-06-24 12:34:57,267 - [http-nio-8080-exec-4] INFO       | com.oc.ly.PayMyBuddy.service.TransferServiceImpl             | ----- resultat de sortie = true (TransferServiceImpl.java:139)
+2021-06-24 12:34:57,267 - [http-nio-8080-exec-4] INFO       | com.oc.ly.PayMyBuddy.service.TransferServiceImpl             | -----> on entre dans le if puisque verif est true (TransferServiceImpl.java:44)
+2021-06-24 12:34:57,268 - [http-nio-8080-exec-4] INFO       | com.oc.ly.PayMyBuddy.service.UserServiceImpl                 | -------> User save ! (UserServiceImpl.java:71)
+2021-06-24 12:34:57,268 - [http-nio-8080-exec-4] INFO       | com.oc.ly.PayMyBuddy.service.TransferServiceImpl             | ------> transfer save (TransferServiceImpl.java:50)
+2021-06-24 12:34:57,283 - [http-nio-8080-exec-5] INFO       | com.oc.ly.PayMyBuddy.service.BankAccountServiceImpl          |  ---> Launch of the search for a user's account (BankAccountServiceImpl.java:29)
+2021-06-24 12:34:57,285 - [http-nio-8080-exec-5] INFO       | com.oc.ly.PayMyBuddy.service.TransferServiceImpl             |  ---> Launch of the search for a user's transfers (TransferServiceImpl.java:74)
+2021-06-24 12:34:58,663 - [http-nio-8080-exec-7] INFO       | com.oc.ly.PayMyBuddy.service.BankAccountServiceImpl          |  ---> Launch of the search for a user's account (BankAccountServiceImpl.java:29)
+2021-06-24 12:34:58,664 - [http-nio-8080-exec-7] INFO       | com.oc.ly.PayMyBuddy.service.TransferServiceImpl             |  ---> Launch of the search for a user's transfers (TransferServiceImpl.java:74)
+2021-06-24 12:34:59,824 - [http-nio-8080-exec-9] INFO       | com.oc.ly.PayMyBuddy.service.BankAccountServiceImpl          |  ---> Launch of the search for a user's account (BankAccountServiceImpl.java:29)
+2021-06-24 12:34:59,826 - [http-nio-8080-exec-9] INFO       | com.oc.ly.PayMyBuddy.service.TransferServiceImpl             |  ---> Launch of the search for a user's transfers (TransferServiceImpl.java:74)
+2021-06-24 12:35:00,857 - [http-nio-8080-exec-1] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          | --- montant du dto de Page<DTO> 50.0 (TransactionServiceImpl.java:151)
+2021-06-24 12:35:00,857 - [http-nio-8080-exec-1] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          | --- montant du dto de Page<DTO> 50.0 (TransactionServiceImpl.java:151)
+2021-06-24 12:35:00,857 - [http-nio-8080-exec-1] INFO       | com.oc.ly.PayMyBuddy.controller.HomeController               | ----->  /home  (HomeController.java:103)
+2021-06-24 22:03:44,078 - [main] INFO       | org.hibernate.jpa.internal.util.LogHelper                    | HHH000204: Processing PersistenceUnitInfo [name: default] (LogHelper.java:31)
+2021-06-24 22:03:44,141 - [main] INFO       | org.hibernate.Version                                        | HHH000412: Hibernate ORM core version 5.4.31.Final (Version.java:44)
+2021-06-24 22:03:44,310 - [main] INFO       | org.hibernate.annotations.common.Version                     | HCANN000001: Hibernate Commons Annotations {5.1.2.Final} (JavaReflectionManager.java:56)
+2021-06-24 22:03:44,430 - [main] INFO       | org.hibernate.dialect.Dialect                                | HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect (Dialect.java:175)
+2021-06-24 22:03:45,102 - [main] INFO       | org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator | HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] (JtaPlatformInitiator.java:52)
+2021-06-24 22:03:45,927 - [main] INFO       | com.oc.ly.PayMyBuddy.security.SecurityConfig                 | Hello World with Log4J 2 (SecurityConfig.java:39)
+2021-06-24 22:03:45,928 - [main] ERROR      | com.oc.ly.PayMyBuddy.security.SecurityConfig                 | Houston, we have a problem (SecurityConfig.java:42)
+2021-06-24 22:03:56,409 - [http-nio-8080-exec-4] INFO       | com.oc.ly.PayMyBuddy.controller.HomeController               | -> Verification de l'identifiant ! (MyUserDetailService.java:35)
+2021-06-24 22:04:07,254 - [http-nio-8080-exec-6] INFO       | com.oc.ly.PayMyBuddy.controller.HomeController               | -> Verification de l'identifiant ! (MyUserDetailService.java:35)
+2021-06-24 22:08:39,067 - [main] INFO       | org.hibernate.jpa.internal.util.LogHelper                    | HHH000204: Processing PersistenceUnitInfo [name: default] (LogHelper.java:31)
+2021-06-24 22:08:39,115 - [main] INFO       | org.hibernate.Version                                        | HHH000412: Hibernate ORM core version 5.4.31.Final (Version.java:44)
+2021-06-24 22:08:39,241 - [main] INFO       | org.hibernate.annotations.common.Version                     | HCANN000001: Hibernate Commons Annotations {5.1.2.Final} (JavaReflectionManager.java:56)
+2021-06-24 22:08:39,344 - [main] INFO       | org.hibernate.dialect.Dialect                                | HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect (Dialect.java:175)
+2021-06-24 22:08:39,974 - [main] INFO       | org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator | HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] (JtaPlatformInitiator.java:52)
+2021-06-24 22:08:40,693 - [main] INFO       | com.oc.ly.PayMyBuddy.security.SecurityConfig                 | Hello World with Log4J 2 (SecurityConfig.java:39)
+2021-06-24 22:08:40,693 - [main] ERROR      | com.oc.ly.PayMyBuddy.security.SecurityConfig                 | Houston, we have a problem (SecurityConfig.java:42)
+2021-06-24 22:09:09,653 - [http-nio-8080-exec-9] INFO       | com.oc.ly.PayMyBuddy.controller.HomeController               | -> Verification de l'identifiant ! (MyUserDetailService.java:35)
+2021-06-24 22:09:09,702 - [http-nio-8080-exec-9] INFO       | com.oc.ly.PayMyBuddy.controller.HomeController               | ---> Utilisateur trouvé!  (MyUserDetailService.java:40)
+2021-06-24 22:09:09,821 - [http-nio-8080-exec-10] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          | --- montant du dto de Page<DTO> 50.0 (TransactionServiceImpl.java:151)
+2021-06-24 22:09:09,821 - [http-nio-8080-exec-10] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          | --- montant du dto de Page<DTO> 50.0 (TransactionServiceImpl.java:151)
+2021-06-24 22:09:09,821 - [http-nio-8080-exec-10] INFO       | com.oc.ly.PayMyBuddy.controller.HomeController               | ----->  /home  (HomeController.java:103)
+2021-06-24 22:09:38,397 - [http-nio-8080-exec-4] INFO       | com.oc.ly.PayMyBuddy.controller.TransactionController        |  ---> Launch of the request:  Post /home  (TransactionController.java:93)
+2021-06-24 22:09:38,401 - [http-nio-8080-exec-4] INFO       | com.oc.ly.PayMyBuddy.controller.TransactionController        |   ---> Data of Payer & Beneficiary found (TransactionController.java:109)
+2021-06-24 22:09:38,407 - [http-nio-8080-exec-4] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          | ---> processing of the request to add a transaction by the service   ! (TransactionServiceImpl.java:48)
+2021-06-24 22:09:38,434 - [http-nio-8080-exec-4] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          |    ---> ID of the transaction created:0 (TransactionServiceImpl.java:85)
+2021-06-24 22:09:38,439 - [http-nio-8080-exec-4] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          |   ---> Save transaction ok! Update Users ok! (TransactionServiceImpl.java:101)
+2021-06-24 22:09:42,911 - [http-nio-8080-exec-9] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          | --- montant du dto de Page<DTO> 50.0 (TransactionServiceImpl.java:151)
+2021-06-24 22:09:42,912 - [http-nio-8080-exec-9] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          | --- montant du dto de Page<DTO> 50.0 (TransactionServiceImpl.java:151)
+2021-06-24 22:09:42,912 - [http-nio-8080-exec-9] INFO       | com.oc.ly.PayMyBuddy.controller.HomeController               | ----->  /home  (HomeController.java:103)
+2021-06-24 22:10:00,175 - [http-nio-8080-exec-1] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            |  --->   idFriend: 3 (ContactController.java:49)
+2021-06-24 22:10:00,178 - [http-nio-8080-exec-1] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            |  --->   (ContactController.java:53)
+2021-06-24 22:10:00,178 - [http-nio-8080-exec-1] INFO       | com.oc.ly.PayMyBuddy.controller.ContactController            | userOwner: lolo@email.com userFrriend: flora@email.com (ContactController.java:54)
+2021-06-24 22:10:00,178 - [http-nio-8080-exec-1] INFO       | com.oc.ly.PayMyBuddy.service.FriendServiceImpl               | --- friendDTO ID:- null (FriendServiceImpl.java:32)
+2021-06-24 22:10:00,178 - [http-nio-8080-exec-1] INFO       | com.oc.ly.PayMyBuddy.service.FriendServiceImpl               | --- friend ID:- null (FriendServiceImpl.java:33)
+2021-06-24 22:10:06,191 - [http-nio-8080-exec-4] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          | --- montant du dto de Page<DTO> 50.0 (TransactionServiceImpl.java:151)
+2021-06-24 22:10:06,191 - [http-nio-8080-exec-4] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          | --- montant du dto de Page<DTO> 50.0 (TransactionServiceImpl.java:151)
+2021-06-24 22:10:06,191 - [http-nio-8080-exec-4] INFO       | com.oc.ly.PayMyBuddy.controller.HomeController               | ----->  /home  (HomeController.java:103)
+2021-06-24 22:10:11,463 - [http-nio-8080-exec-6] INFO       | com.oc.ly.PayMyBuddy.service.BankAccountServiceImpl          |  ---> Launch of the search for a user's account (BankAccountServiceImpl.java:29)
+2021-06-24 22:10:11,466 - [http-nio-8080-exec-6] INFO       | com.oc.ly.PayMyBuddy.service.TransferServiceImpl             |  ---> Launch of the search for a user's transfers (TransferServiceImpl.java:74)
+2021-06-24 22:10:18,636 - [http-nio-8080-exec-8] INFO       | com.oc.ly.PayMyBuddy.controller.TransferController           |  ---> entrée dans /addBTransfer fr 1245 5414 5877 4588 N - 30.0 - CREDIT_WALLET (TransferController.java:106)
+2021-06-24 22:10:18,638 - [http-nio-8080-exec-8] INFO       | com.oc.ly.PayMyBuddy.service.TransferServiceImpl             | ----- résultat montant = true (TransferServiceImpl.java:125)
+2021-06-24 22:10:18,641 - [http-nio-8080-exec-8] INFO       | com.oc.ly.PayMyBuddy.service.TransferServiceImpl             | ----- résultat user = true (TransferServiceImpl.java:130)
+2021-06-24 22:10:18,641 - [http-nio-8080-exec-8] INFO       | com.oc.ly.PayMyBuddy.service.TransferServiceImpl             | ----- résultat type = true (TransferServiceImpl.java:137)
+2021-06-24 22:10:18,641 - [http-nio-8080-exec-8] INFO       | com.oc.ly.PayMyBuddy.service.TransferServiceImpl             | ----- resultat de sortie = true (TransferServiceImpl.java:139)
+2021-06-24 22:10:18,642 - [http-nio-8080-exec-8] INFO       | com.oc.ly.PayMyBuddy.service.TransferServiceImpl             | -----> on entre dans le if puisque verif est true (TransferServiceImpl.java:44)
+2021-06-24 22:10:18,642 - [http-nio-8080-exec-8] INFO       | com.oc.ly.PayMyBuddy.service.UserServiceImpl                 | -------> User save ! (UserServiceImpl.java:71)
+2021-06-24 22:10:18,643 - [http-nio-8080-exec-8] INFO       | com.oc.ly.PayMyBuddy.service.TransferServiceImpl             | ------> transfer save (TransferServiceImpl.java:50)
+2021-06-24 22:10:18,658 - [http-nio-8080-exec-9] INFO       | com.oc.ly.PayMyBuddy.service.BankAccountServiceImpl          |  ---> Launch of the search for a user's account (BankAccountServiceImpl.java:29)
+2021-06-24 22:10:18,660 - [http-nio-8080-exec-9] INFO       | com.oc.ly.PayMyBuddy.service.TransferServiceImpl             |  ---> Launch of the search for a user's transfers (TransferServiceImpl.java:74)
+2021-06-24 22:10:26,674 - [http-nio-8080-exec-1] INFO       | com.oc.ly.PayMyBuddy.controller.TransferController           |  ---> entrée dans /addBTransfer fr 4587 4578 45578 5478 N - 1000.0 - DEBIT_WALLET (TransferController.java:106)
+2021-06-24 22:10:26,676 - [http-nio-8080-exec-1] INFO       | com.oc.ly.PayMyBuddy.service.TransferServiceImpl             | ----- résultat montant = true (TransferServiceImpl.java:125)
+2021-06-24 22:10:26,678 - [http-nio-8080-exec-1] INFO       | com.oc.ly.PayMyBuddy.service.TransferServiceImpl             | ----- résultat user = true (TransferServiceImpl.java:130)
+2021-06-24 22:10:26,678 - [http-nio-8080-exec-1] INFO       | com.oc.ly.PayMyBuddy.service.TransferServiceImpl             | ----- résultat type = true (TransferServiceImpl.java:137)
+2021-06-24 22:10:26,678 - [http-nio-8080-exec-1] INFO       | com.oc.ly.PayMyBuddy.service.TransferServiceImpl             | ----- resultat de sortie = true (TransferServiceImpl.java:139)
+2021-06-24 22:10:26,678 - [http-nio-8080-exec-1] INFO       | com.oc.ly.PayMyBuddy.service.TransferServiceImpl             | -----> on entre dans le if puisque verif est true (TransferServiceImpl.java:44)
+2021-06-24 22:10:26,678 - [http-nio-8080-exec-1] ERROR      | com.oc.ly.PayMyBuddy.exceptions.DataNotFoundException        | --> the amount exceeds the wallet (DataNotConformException.java:17)
+2021-06-24 22:10:26,684 - [http-nio-8080-exec-2] INFO       | com.oc.ly.PayMyBuddy.service.BankAccountServiceImpl          |  ---> Launch of the search for a user's account (BankAccountServiceImpl.java:29)
+2021-06-24 22:10:26,686 - [http-nio-8080-exec-2] INFO       | com.oc.ly.PayMyBuddy.service.TransferServiceImpl             |  ---> Launch of the search for a user's transfers (TransferServiceImpl.java:74)
+2021-06-24 22:10:30,411 - [http-nio-8080-exec-4] INFO       | com.oc.ly.PayMyBuddy.service.BankAccountServiceImpl          |  ---> Launch of the search for a user's account (BankAccountServiceImpl.java:29)
+2021-06-24 22:10:30,412 - [http-nio-8080-exec-4] INFO       | com.oc.ly.PayMyBuddy.service.TransferServiceImpl             |  ---> Launch of the search for a user's transfers (TransferServiceImpl.java:74)
+2021-06-24 22:10:31,744 - [http-nio-8080-exec-6] INFO       | com.oc.ly.PayMyBuddy.service.BankAccountServiceImpl          |  ---> Launch of the search for a user's account (BankAccountServiceImpl.java:29)
+2021-06-24 22:10:31,745 - [http-nio-8080-exec-6] INFO       | com.oc.ly.PayMyBuddy.service.TransferServiceImpl             |  ---> Launch of the search for a user's transfers (TransferServiceImpl.java:74)
+2021-06-24 22:10:38,461 - [http-nio-8080-exec-8] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          | --- montant du dto de Page<DTO> 50.0 (TransactionServiceImpl.java:151)
+2021-06-24 22:10:38,461 - [http-nio-8080-exec-8] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          | --- montant du dto de Page<DTO> 50.0 (TransactionServiceImpl.java:151)
+2021-06-24 22:10:38,461 - [http-nio-8080-exec-8] INFO       | com.oc.ly.PayMyBuddy.controller.HomeController               | ----->  /home  (HomeController.java:103)
+2021-06-24 22:11:02,858 - [http-nio-8080-exec-2] INFO       | com.oc.ly.PayMyBuddy.controller.TransactionController        |  ---> Launch of the request:  Post /home  (TransactionController.java:93)
+2021-06-24 22:11:02,861 - [http-nio-8080-exec-2] INFO       | com.oc.ly.PayMyBuddy.controller.TransactionController        |   ---> Data of Payer & Beneficiary found (TransactionController.java:109)
+2021-06-24 22:11:02,861 - [http-nio-8080-exec-2] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          | ---> processing of the request to add a transaction by the service   ! (TransactionServiceImpl.java:48)
+2021-06-24 22:11:02,866 - [http-nio-8080-exec-2] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          |    ---> ID of the transaction created:0 (TransactionServiceImpl.java:85)
+2021-06-24 22:11:02,867 - [http-nio-8080-exec-2] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          |   ---> Save transaction ok! Update Users ok! (TransactionServiceImpl.java:101)
+2021-06-24 22:11:07,456 - [http-nio-8080-exec-7] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          | --- montant du dto de Page<DTO> 50.0 (TransactionServiceImpl.java:151)
+2021-06-24 22:11:07,456 - [http-nio-8080-exec-7] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          | --- montant du dto de Page<DTO> 50.0 (TransactionServiceImpl.java:151)
+2021-06-24 22:11:07,456 - [http-nio-8080-exec-7] INFO       | com.oc.ly.PayMyBuddy.controller.HomeController               | ----->  /home  (HomeController.java:103)
+2021-06-24 22:11:15,411 - [http-nio-8080-exec-1] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          | --- montant du dto de Page<DTO> 50.0 (TransactionServiceImpl.java:151)
+2021-06-24 22:11:15,411 - [http-nio-8080-exec-1] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          | --- montant du dto de Page<DTO> 50.0 (TransactionServiceImpl.java:151)
+2021-06-24 22:11:15,411 - [http-nio-8080-exec-1] INFO       | com.oc.ly.PayMyBuddy.controller.HomeController               | ----->  /home  (HomeController.java:103)
+2021-06-24 22:11:16,348 - [http-nio-8080-exec-3] INFO       | com.oc.ly.PayMyBuddy.service.BankAccountServiceImpl          |  ---> Launch of the search for a user's account (BankAccountServiceImpl.java:29)
+2021-06-24 22:11:16,349 - [http-nio-8080-exec-3] INFO       | com.oc.ly.PayMyBuddy.service.TransferServiceImpl             |  ---> Launch of the search for a user's transfers (TransferServiceImpl.java:74)
+2021-06-24 22:11:22,631 - [http-nio-8080-exec-5] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          | --- montant du dto de Page<DTO> 50.0 (TransactionServiceImpl.java:151)
+2021-06-24 22:11:22,631 - [http-nio-8080-exec-5] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          | --- montant du dto de Page<DTO> 50.0 (TransactionServiceImpl.java:151)
+2021-06-24 22:11:22,631 - [http-nio-8080-exec-5] INFO       | com.oc.ly.PayMyBuddy.controller.HomeController               | ----->  /home  (HomeController.java:103)
+2021-06-24 22:11:36,168 - [main] INFO       | org.hibernate.jpa.internal.util.LogHelper                    | HHH000204: Processing PersistenceUnitInfo [name: default] (LogHelper.java:31)
+2021-06-24 22:11:36,214 - [main] INFO       | org.hibernate.Version                                        | HHH000412: Hibernate ORM core version 5.4.31.Final (Version.java:44)
+2021-06-24 22:11:36,342 - [main] INFO       | org.hibernate.annotations.common.Version                     | HCANN000001: Hibernate Commons Annotations {5.1.2.Final} (JavaReflectionManager.java:56)
+2021-06-24 22:11:36,450 - [main] INFO       | org.hibernate.dialect.Dialect                                | HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect (Dialect.java:175)
+2021-06-24 22:11:37,055 - [main] INFO       | org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator | HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] (JtaPlatformInitiator.java:52)
+2021-06-24 22:11:37,821 - [main] INFO       | com.oc.ly.PayMyBuddy.security.SecurityConfig                 | Hello World with Log4J 2 (SecurityConfig.java:39)
+2021-06-24 22:11:37,822 - [main] ERROR      | com.oc.ly.PayMyBuddy.security.SecurityConfig                 | Houston, we have a problem (SecurityConfig.java:42)
+2021-06-24 22:11:50,053 - [http-nio-8080-exec-4] INFO       | com.oc.ly.PayMyBuddy.controller.HomeController               | -> Verification de l'identifiant ! (MyUserDetailService.java:35)
+2021-06-24 22:11:50,099 - [http-nio-8080-exec-4] INFO       | com.oc.ly.PayMyBuddy.controller.HomeController               | ---> Utilisateur trouvé!  (MyUserDetailService.java:40)
+2021-06-24 22:11:50,215 - [http-nio-8080-exec-5] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          | --- montant du dto de Page<DTO> 50.0 (TransactionServiceImpl.java:151)
+2021-06-24 22:11:50,215 - [http-nio-8080-exec-5] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          | --- montant du dto de Page<DTO> 50.0 (TransactionServiceImpl.java:151)
+2021-06-24 22:11:50,215 - [http-nio-8080-exec-5] INFO       | com.oc.ly.PayMyBuddy.controller.HomeController               | ----->  /home  (HomeController.java:103)
+2021-06-24 22:13:35,629 - [main] INFO       | org.hibernate.jpa.internal.util.LogHelper                    | HHH000204: Processing PersistenceUnitInfo [name: default] (LogHelper.java:31)
+2021-06-24 22:13:35,687 - [main] INFO       | org.hibernate.Version                                        | HHH000412: Hibernate ORM core version 5.4.31.Final (Version.java:44)
+2021-06-24 22:13:35,836 - [main] INFO       | org.hibernate.annotations.common.Version                     | HCANN000001: Hibernate Commons Annotations {5.1.2.Final} (JavaReflectionManager.java:56)
+2021-06-24 22:13:35,953 - [main] INFO       | org.hibernate.dialect.Dialect                                | HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect (Dialect.java:175)
+2021-06-24 22:13:36,655 - [main] INFO       | org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator | HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] (JtaPlatformInitiator.java:52)
+2021-06-24 22:13:37,484 - [main] INFO       | com.oc.ly.PayMyBuddy.security.SecurityConfig                 | Hello World with Log4J 2 (SecurityConfig.java:39)
+2021-06-24 22:13:37,484 - [main] ERROR      | com.oc.ly.PayMyBuddy.security.SecurityConfig                 | Houston, we have a problem (SecurityConfig.java:42)
+2021-06-24 22:13:48,474 - [http-nio-8080-exec-4] INFO       | com.oc.ly.PayMyBuddy.controller.HomeController               | -> Verification de l'identifiant ! (MyUserDetailService.java:35)
+2021-06-24 22:13:48,524 - [http-nio-8080-exec-4] INFO       | com.oc.ly.PayMyBuddy.controller.HomeController               | ---> Utilisateur trouvé!  (MyUserDetailService.java:40)
+2021-06-24 22:13:48,641 - [http-nio-8080-exec-5] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          | --- montant du dto de Page<DTO> 50.0 (TransactionServiceImpl.java:151)
+2021-06-24 22:13:48,642 - [http-nio-8080-exec-5] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          | --- montant du dto de Page<DTO> 50.0 (TransactionServiceImpl.java:151)
+2021-06-24 22:13:48,642 - [http-nio-8080-exec-5] INFO       | com.oc.ly.PayMyBuddy.controller.HomeController               | ----->  /home  (HomeController.java:103)
+2021-06-24 22:14:06,807 - [http-nio-8080-exec-9] INFO       | com.oc.ly.PayMyBuddy.controller.TransactionController        |  ---> Launch of the request:  Post /home  (TransactionController.java:93)
+2021-06-24 22:14:06,811 - [http-nio-8080-exec-9] INFO       | com.oc.ly.PayMyBuddy.controller.TransactionController        |   ---> Data of Payer & Beneficiary found (TransactionController.java:109)
+2021-06-24 22:14:06,814 - [http-nio-8080-exec-9] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          | ---> processing of the request to add a transaction by the service   ! (TransactionServiceImpl.java:48)
+2021-06-24 22:14:06,843 - [http-nio-8080-exec-9] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          |    ---> ID of the transaction created:0 (TransactionServiceImpl.java:85)
+2021-06-24 22:14:06,849 - [http-nio-8080-exec-9] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          |   ---> Save transaction ok! Update Users ok! (TransactionServiceImpl.java:101)
+2021-06-24 22:14:10,936 - [http-nio-8080-exec-6] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          | --- montant du dto de Page<DTO> 50.0 (TransactionServiceImpl.java:151)
+2021-06-24 22:14:10,936 - [http-nio-8080-exec-6] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          | --- montant du dto de Page<DTO> 50.0 (TransactionServiceImpl.java:151)
+2021-06-24 22:14:10,936 - [http-nio-8080-exec-6] INFO       | com.oc.ly.PayMyBuddy.controller.HomeController               | ----->  /home  (HomeController.java:103)
+2021-06-24 22:14:14,167 - [http-nio-8080-exec-8] INFO       | com.oc.ly.PayMyBuddy.service.BankAccountServiceImpl          |  ---> Launch of the search for a user's account (BankAccountServiceImpl.java:29)
+2021-06-24 22:14:14,171 - [http-nio-8080-exec-8] INFO       | com.oc.ly.PayMyBuddy.service.TransferServiceImpl             |  ---> Launch of the search for a user's transfers (TransferServiceImpl.java:74)
+2021-06-24 22:14:37,948 - [http-nio-8080-exec-10] INFO       | com.oc.ly.PayMyBuddy.controller.TransferController           |  ---> entrée dans /addBankAccount fr 4587 14562 457 5474 GT (TransferController.java:94)
+2021-06-24 22:14:37,950 - [http-nio-8080-exec-10] INFO       | com.oc.ly.PayMyBuddy.service.BankAccountServiceImpl          |  ---> Launch of account creation (BankAccountServiceImpl.java:42)
+2021-06-24 22:14:37,961 - [http-nio-8080-exec-10] INFO       | com.oc.ly.PayMyBuddy.service.BankAccountServiceImpl          |  -----> BankAccount created! (BankAccountServiceImpl.java:46)
+2021-06-24 22:14:37,966 - [http-nio-8080-exec-1] INFO       | com.oc.ly.PayMyBuddy.service.BankAccountServiceImpl          |  ---> Launch of the search for a user's account (BankAccountServiceImpl.java:29)
+2021-06-24 22:14:37,967 - [http-nio-8080-exec-1] INFO       | com.oc.ly.PayMyBuddy.service.TransferServiceImpl             |  ---> Launch of the search for a user's transfers (TransferServiceImpl.java:74)
+2021-06-24 22:14:44,230 - [http-nio-8080-exec-3] INFO       | com.oc.ly.PayMyBuddy.controller.TransferController           |  ---> entrée dans /addBTransfer fr 4587 14562 457 5474 GT - 250.0 - CREDIT_WALLET (TransferController.java:106)
+2021-06-24 22:14:44,233 - [http-nio-8080-exec-3] INFO       | com.oc.ly.PayMyBuddy.service.TransferServiceImpl             | ----- résultat montant = true (TransferServiceImpl.java:125)
+2021-06-24 22:14:44,236 - [http-nio-8080-exec-3] INFO       | com.oc.ly.PayMyBuddy.service.TransferServiceImpl             | ----- résultat user = true (TransferServiceImpl.java:130)
+2021-06-24 22:14:44,237 - [http-nio-8080-exec-3] INFO       | com.oc.ly.PayMyBuddy.service.TransferServiceImpl             | ----- résultat type = true (TransferServiceImpl.java:137)
+2021-06-24 22:14:44,237 - [http-nio-8080-exec-3] INFO       | com.oc.ly.PayMyBuddy.service.TransferServiceImpl             | ----- resultat de sortie = true (TransferServiceImpl.java:139)
+2021-06-24 22:14:44,237 - [http-nio-8080-exec-3] INFO       | com.oc.ly.PayMyBuddy.service.TransferServiceImpl             | -----> on entre dans le if puisque verif est true (TransferServiceImpl.java:44)
+2021-06-24 22:14:44,238 - [http-nio-8080-exec-3] INFO       | com.oc.ly.PayMyBuddy.service.UserServiceImpl                 | -------> User save ! (UserServiceImpl.java:71)
+2021-06-24 22:14:44,238 - [http-nio-8080-exec-3] INFO       | com.oc.ly.PayMyBuddy.service.TransferServiceImpl             | ------> transfer save (TransferServiceImpl.java:50)
+2021-06-24 22:14:44,255 - [http-nio-8080-exec-4] INFO       | com.oc.ly.PayMyBuddy.service.BankAccountServiceImpl          |  ---> Launch of the search for a user's account (BankAccountServiceImpl.java:29)
+2021-06-24 22:14:44,257 - [http-nio-8080-exec-4] INFO       | com.oc.ly.PayMyBuddy.service.TransferServiceImpl             |  ---> Launch of the search for a user's transfers (TransferServiceImpl.java:74)
+2021-06-24 22:14:46,493 - [http-nio-8080-exec-6] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          | --- montant du dto de Page<DTO> 50.0 (TransactionServiceImpl.java:151)
+2021-06-24 22:14:46,493 - [http-nio-8080-exec-6] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          | --- montant du dto de Page<DTO> 50.0 (TransactionServiceImpl.java:151)
+2021-06-24 22:14:46,493 - [http-nio-8080-exec-6] INFO       | com.oc.ly.PayMyBuddy.controller.HomeController               | ----->  /home  (HomeController.java:103)
+2021-06-24 22:15:13,356 - [main] INFO       | org.hibernate.jpa.internal.util.LogHelper                    | HHH000204: Processing PersistenceUnitInfo [name: default] (LogHelper.java:31)
+2021-06-24 22:15:13,410 - [main] INFO       | org.hibernate.Version                                        | HHH000412: Hibernate ORM core version 5.4.31.Final (Version.java:44)
+2021-06-24 22:15:13,549 - [main] INFO       | org.hibernate.annotations.common.Version                     | HCANN000001: Hibernate Commons Annotations {5.1.2.Final} (JavaReflectionManager.java:56)
+2021-06-24 22:15:13,649 - [main] INFO       | org.hibernate.dialect.Dialect                                | HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect (Dialect.java:175)
+2021-06-24 22:15:14,276 - [main] INFO       | org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator | HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] (JtaPlatformInitiator.java:52)
+2021-06-24 22:15:15,023 - [main] INFO       | com.oc.ly.PayMyBuddy.security.SecurityConfig                 | Hello World with Log4J 2 (SecurityConfig.java:39)
+2021-06-24 22:15:15,024 - [main] ERROR      | com.oc.ly.PayMyBuddy.security.SecurityConfig                 | Houston, we have a problem (SecurityConfig.java:42)
+2021-06-24 22:15:32,528 - [http-nio-8080-exec-4] INFO       | com.oc.ly.PayMyBuddy.controller.HomeController               | -> Verification de l'identifiant ! (MyUserDetailService.java:35)
+2021-06-24 22:15:32,577 - [http-nio-8080-exec-4] INFO       | com.oc.ly.PayMyBuddy.controller.HomeController               | ---> Utilisateur trouvé!  (MyUserDetailService.java:40)
+2021-06-24 22:15:32,691 - [http-nio-8080-exec-5] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          | --- montant du dto de Page<DTO> 50.0 (TransactionServiceImpl.java:151)
+2021-06-24 22:15:32,691 - [http-nio-8080-exec-5] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          | --- montant du dto de Page<DTO> 50.0 (TransactionServiceImpl.java:151)
+2021-06-24 22:15:32,692 - [http-nio-8080-exec-5] INFO       | com.oc.ly.PayMyBuddy.controller.HomeController               | ----->  /home  (HomeController.java:103)
+2021-06-24 22:16:42,829 - [main] INFO       | org.hibernate.jpa.internal.util.LogHelper                    | HHH000204: Processing PersistenceUnitInfo [name: default] (LogHelper.java:31)
+2021-06-24 22:16:42,877 - [main] INFO       | org.hibernate.Version                                        | HHH000412: Hibernate ORM core version 5.4.31.Final (Version.java:44)
+2021-06-24 22:16:43,001 - [main] INFO       | org.hibernate.annotations.common.Version                     | HCANN000001: Hibernate Commons Annotations {5.1.2.Final} (JavaReflectionManager.java:56)
+2021-06-24 22:16:43,106 - [main] INFO       | org.hibernate.dialect.Dialect                                | HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect (Dialect.java:175)
+2021-06-24 22:16:43,767 - [main] INFO       | org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator | HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] (JtaPlatformInitiator.java:52)
+2021-06-24 22:16:44,529 - [main] INFO       | com.oc.ly.PayMyBuddy.security.SecurityConfig                 | Hello World with Log4J 2 (SecurityConfig.java:39)
+2021-06-24 22:16:44,529 - [main] ERROR      | com.oc.ly.PayMyBuddy.security.SecurityConfig                 | Houston, we have a problem (SecurityConfig.java:42)
+2021-06-24 22:16:54,380 - [http-nio-8080-exec-5] INFO       | com.oc.ly.PayMyBuddy.controller.HomeController               | -> Verification de l'identifiant ! (MyUserDetailService.java:35)
+2021-06-24 22:16:54,425 - [http-nio-8080-exec-5] INFO       | com.oc.ly.PayMyBuddy.controller.HomeController               | ---> Utilisateur trouvé!  (MyUserDetailService.java:40)
+2021-06-24 22:16:54,537 - [http-nio-8080-exec-4] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          | --- montant du dto de Page<DTO> 50.0 (TransactionServiceImpl.java:151)
+2021-06-24 22:16:54,538 - [http-nio-8080-exec-4] INFO       | com.oc.ly.PayMyBuddy.service.TransactionServiceImpl          | --- montant du dto de Page<DTO> 50.0 (TransactionServiceImpl.java:151)
+2021-06-24 22:16:54,538 - [http-nio-8080-exec-4] INFO       | com.oc.ly.PayMyBuddy.controller.HomeController               | ----->  /home  (HomeController.java:103)

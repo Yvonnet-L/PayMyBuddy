@@ -34,7 +34,18 @@ public class UserDTO {
         this.modifDate = modifDate;
     }
 
-    //---------------------------------------------------------
+    public UserDTO(String userName, String firstName, String password, String email, boolean active, String roles, Double wallet, LocalDate creationDate, LocalDate modifDate) {
+        this.userName = userName;
+        this.firstName = firstName;
+        this.password = password;
+        this.email = email;
+        this.active = active;
+        this.roles = roles;
+        this.wallet = wallet;
+        this.creationDate = creationDate;
+        this.modifDate = modifDate;
+    }
+//---------------------------------------------------------
 
     public int getId() {
         return id;

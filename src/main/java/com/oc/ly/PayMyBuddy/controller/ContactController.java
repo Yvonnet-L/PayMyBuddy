@@ -49,12 +49,12 @@ public class ContactController {
         logger.info(" --->   idFriend: " + idFriend );
         String emailSession = SecurityContextHolder.getContext().getAuthentication().getName();
         UserDTO userLog = userService.findUserByEmail(emailSession);
-        User uFriend = userService.findUserById(idFriend);
+        UserDTO uFriend = userService.findUserById(idFriend);
         logger.info(" --->  ");
         logger.info("userOwner: " + userLog.getEmail() +" userFrriend: " + uFriend.getEmail()   );
         LocalDate date = LocalDate.now();
         User owner = factory.constructUser(userLog);
-        FriendDTO newFriendDTO = new FriendDTO(owner, uFriend, date);
+        FriendDTO newFriendDTO = new FriendDTO(owner, factory.constructUser(uFriend), date);
         friendService.addFriend(newFriendDTO);
         return"redirect:/contact";
     }

@@ -18,6 +18,12 @@ public class BankAccountDTO {
         this.user = user;
         this.rib = rib;
     }
+
+    public BankAccountDTO(User user, String rib) {
+        this.user = user;
+        this.rib = rib;
+    }
+
     //--------------------------------------------------
 
     public Integer getIdBankAccount() {

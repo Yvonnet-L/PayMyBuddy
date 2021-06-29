@@ -34,9 +34,9 @@ public class UserServiceImpl implements IUserService{
     }
 
     @Override
-    public User findUserById(Integer id) {
+    public UserDTO findUserById(Integer id) {
         User user = userRepository.findUserById(id);
-        return user;
+        return factory.constructUserDTO(user);
     }
 
     @Override

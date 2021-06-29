@@ -1,6 +1,6 @@
+
 package com.oc.ly.PayMyBuddy.security;
 
-import com.oc.ly.PayMyBuddy.controller.HomeController;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,12 +50,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                     .antMatchers("/").permitAll()
                     .antMatchers("/css/**").permitAll()
-                    .antMatchers("/save**/**","/delete**/**","/admin,/management**/**").hasRole("ADMIN")
+                    .antMatchers("/save**/**","/delete**/**","/admin,/management/**").hasRole("ADMIN")
                     .anyRequest().authenticated();
 
         http.formLogin().loginPage("/login").defaultSuccessUrl("/home").failureUrl("/login?error=true").permitAll();
         http.logout().deleteCookies("JSESSIONID").logoutUrl("/logout").logoutSuccessUrl("/login");
         http.exceptionHandling().accessDeniedPage("/notAuthorized");
+
+       // CSRF mis sur disable pour les tests pour eviter l'erreur 403 de non authorisation
+        http.csrf().disable();
 
     }
 

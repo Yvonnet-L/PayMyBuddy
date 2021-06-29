@@ -5,8 +5,6 @@ import com.oc.ly.PayMyBuddy.dto.TransactionDTO;
 import com.oc.ly.PayMyBuddy.dto.UserDTO;
 import com.oc.ly.PayMyBuddy.exceptions.DataNotConformException;
 import com.oc.ly.PayMyBuddy.exceptions.DataNotFoundException;
-import com.oc.ly.PayMyBuddy.model.Friend;
-import com.oc.ly.PayMyBuddy.model.Transaction;
 import com.oc.ly.PayMyBuddy.model.User;
 import com.oc.ly.PayMyBuddy.service.IFriendService;
 import com.oc.ly.PayMyBuddy.service.ITransactionService;

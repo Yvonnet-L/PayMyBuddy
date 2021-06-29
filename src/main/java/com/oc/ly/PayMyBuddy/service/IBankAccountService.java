@@ -9,7 +9,7 @@ public interface IBankAccountService {
 
     public List<BankAccountDTO> findBankAccountByUser(UserDTO userDTO);
 
-    public void addAccount(String rib, UserDTO userDTO);
+    public BankAccountDTO addAccount(String rib, UserDTO userDTO);
 
     public void deleteAccount(Integer id);
 }

@@ -38,12 +38,14 @@ public class BankAccountServiceImpl implements IBankAccountService{
     }
 
     @Override
-    public void addAccount(String rib, UserDTO userDTO ) {
+    public BankAccountDTO addAccount(String rib, UserDTO userDTO ) {
         logger.info(" ---> Launch of account creation");
         User user = factory.constructUser(userDTO);
         BankAccount newBankAccount = new BankAccount(user,rib);
-        bankAccountRepository.save(newBankAccount);
+        BankAccount bankAccountAdd = bankAccountRepository.save(newBankAccount);
+        BankAccountDTO bankAccountDTO = factory.constructBankDTO(bankAccountAdd);
         logger.info(" -----> BankAccount created!");
+        return bankAccountDTO;
     }
 
     @Override
