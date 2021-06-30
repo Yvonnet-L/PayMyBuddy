@@ -73,9 +73,12 @@ public class TransferServiceImpl implements ITransferService{
     public Page<TransferDTO> findAllByUser(UserDTO userDTO, Pageable pageable) {
         logger.info(" ---> Launch of the search for a user's transfers");
         User user = factory.constructUser(userDTO);
-        Page<Transfer> pagesTransfer = transferRepository.findAllByUser(user, pageable);
+
         Page<TransferDTO> pagesTransferDTO = transferRepository.findAllByUser(user, pageable).map(factory::constructTransferDTO);
-       /* Page<TransferDTO> pagesTransferDTO= pagesTransfer.map(new Function<Transfer, TransferDTO>() {
+        return pagesTransferDTO;
+
+      /*Page<Transfer> pagesTransfer = transferRepository.findAllByUser(user, pageable);
+        Page<TransferDTO> pagesTransferDTO= pagesTransfer.map(new Function<Transfer, TransferDTO>() {
             @Override
             public TransferDTO apply(Transfer transfer) {
                 TransferDTO transferDTO = new TransferDTO();
@@ -83,7 +86,7 @@ public class TransferServiceImpl implements ITransferService{
                 return transferDTO;
             }
         }); */
-        return pagesTransferDTO;
+
     }
 
     @Override

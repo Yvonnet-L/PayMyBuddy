@@ -37,13 +37,13 @@ public class transferServiceTest {
 
     private static Logger logger = LogManager.getLogger(transferServiceTest.class);
 
-    @WithMockUser(username = "lolo@email.com")
+
     @Test
     @DisplayName("Test saveTransferCredit")
     public void saveTransferCreditTest(){
         //GIVEN
         listUserDTO = userService.findAll();
-        User userBeneficiary = factory.constructUser(listUserDTO.get(1));
+        User userBeneficiary = factory.constructUser(listUserDTO.get(2));
         Double walletBefore = userBeneficiary.getWallet();
         TransferDTO transferDTO = new TransferDTO();
         //WHEN
@@ -55,13 +55,13 @@ public class transferServiceTest {
         assertTrue( transferDTO.getIdTransfer() > 0);
     }
 
-    @WithMockUser(username = "lolo@email.com")
+
     @Test
     @DisplayName("Test saveTransferDebit")
     public void saveTransferDeditOkTest(){
         //GIVEN
         listUserDTO = userService.findAll();
-        User userBeneficiary = factory.constructUser(listUserDTO.get(1));
+        User userBeneficiary = factory.constructUser(listUserDTO.get(3));
         Double walletBefore = userBeneficiary.getWallet();
         TransferDTO transferDTO = new TransferDTO();
         //WHEN
@@ -73,7 +73,7 @@ public class transferServiceTest {
         assertTrue( transferDTO.getIdTransfer() > 0);
     }
 
-    @WithMockUser(username = "lolo@email.com")
+
     @Test
     @DisplayName("Test saveTransferDeditNotPossible")
     public void saveTransferDeditNotPossibleTest(){
@@ -90,7 +90,7 @@ public class transferServiceTest {
         assertEquals( newWallet,  walletBefore );
     }
 
-    @WithMockUser(username = "lolo@email.com")
+
     @Test
     @DisplayName("Test findAllByUser")
     public void findAllByUserTest(){
@@ -101,11 +101,10 @@ public class transferServiceTest {
         //WHEN
         Page<TransferDTO> pagesTransfer = transferService.findAllByUser(userDTO,  PageRequest.of(page,2));
         //THEN
-        assertThat( pagesTransfer.isEmpty());
-        assertThat( pagesTransfer.getTotalElements() == 0);
+        assertEquals(2,pagesTransfer.getContent().size());
     }
 
-    @WithMockUser(username = "lolo@email.com")
+
     @Test
     @DisplayName("Test theLastThreeTransfers")
     public void theLastThreeTransfersTest(){

@@ -25,6 +25,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.web.context.WebApplicationContext;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 
@@ -94,6 +95,7 @@ public class BankAccountControllerTest {
                 .accept(MediaType.APPLICATION_JSON)
                 .content(objectMapper.writeValueAsString(bankNull)))
                 .andExpect(status().isBadRequest());
+                      //  .andExpect(model().attributeExists());
     }
     //--------------------------------------------------------------------------------------------------------
     @WithMockUser(username = "lolo@email.com")
