@@ -157,10 +157,6 @@ public class TransactionServiceImpl implements ITransactionService {
                     return transactionDTO;
                 }
             });
-        for (TransactionDTO t: pagesTransactionDTO)
-        {
-            logger.info("--- montant du dto de Page<DTO> " + t.getAmount());
-        }
         return pagesTransactionDTO;
     }
 

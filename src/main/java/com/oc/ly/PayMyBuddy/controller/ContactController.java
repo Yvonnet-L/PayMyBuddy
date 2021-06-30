@@ -37,8 +37,9 @@ public class ContactController {
 
 
     @GetMapping("/deleteContact")
-    public String delete(Integer id){
-        friendService.deleteById(id);
+    public String delete(Integer idFriend){
+        logger.info(" --->   idFriend: " + idFriend );
+        friendService.deleteById(idFriend);
         return"redirect:/contact";
     }
 

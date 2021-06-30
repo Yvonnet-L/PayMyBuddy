@@ -58,6 +58,7 @@ public class FriendServiceImpl implements IFriendService{
 
     @Override
     public FriendDTO deleteById(Integer id) {
+        logger.info(" --->   idFriend: " + id);
         friendRepository.deleteById(id);
         return null;
     }

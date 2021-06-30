@@ -75,9 +75,6 @@ public class HomeController {
         return "redirect:/login?logout";
     }
 
-    @RequestMapping(value = { "/admin" }, method = RequestMethod.GET)
-    public String admin() { return  "admin";
-    }
 
 
     @RequestMapping(value = { "/home" }, method = RequestMethod.GET)

@@ -1,4 +1,4 @@
-package com.oc.ly.PayMyBuddy;
+package com.oc.ly.PayMyBuddy.controller;
 
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -25,7 +25,6 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.web.context.WebApplicationContext;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 
@@ -61,7 +60,7 @@ public class BankAccountControllerTest {
     @WithMockUser(username = "lolo@email.com")
     @Test
     @DisplayName("Test reponse 200 sur getBanks")
-    public void FindAllBankTest() throws Exception {
+    public void findAllBankTest() throws Exception {
         //String emailSession = SecurityContextHolder.getContext().getAuthentication().getName();
 
         mockMvc.perform(get("/management/bankAccounts")).andExpect(status().isOk());

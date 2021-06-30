@@ -46,7 +46,7 @@ public class TransferController {
     public Factory factory = new Factory();
 
     @RequestMapping(value = { "/transfer" }, method = RequestMethod.GET)
-    public String home(Model model,
+    public String transfer(Model model,
                        @RequestParam(name="page", defaultValue = "0") int page,
                        @RequestParam(name="motCle", defaultValue = "") String mc,
                        @RequestParam(name="errorMessage", defaultValue = "") String errorMessage)

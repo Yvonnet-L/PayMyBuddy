@@ -5,6 +5,7 @@ import com.oc.ly.PayMyBuddy.dto.TransactionDTO;
 import com.oc.ly.PayMyBuddy.dto.UserDTO;
 import com.oc.ly.PayMyBuddy.exceptions.DataNotConformException;
 import com.oc.ly.PayMyBuddy.exceptions.DataNotFoundException;
+import com.oc.ly.PayMyBuddy.exceptions.WalletNotEnoughException;
 import com.oc.ly.PayMyBuddy.model.User;
 import com.oc.ly.PayMyBuddy.service.IFriendService;
 import com.oc.ly.PayMyBuddy.service.ITransactionService;
@@ -47,7 +48,7 @@ public class TransactionController {
 
 
     @RequestMapping(value = { "/transaction" }, method = RequestMethod.GET)
-    public String home(Model model,
+    public String transaction(Model model,
                         @RequestParam(name="page", defaultValue = "0") int page,
                         @RequestParam(name="errorMessage", defaultValue = "") String errorMessage,
                         @RequestParam(name="amount", defaultValue = "") Double amount,
@@ -109,7 +110,7 @@ public class TransactionController {
                 TransactionDTO newTransactionDTO = new TransactionDTO(payer, beneficiary, amount, description);
                 transactionService.addTransaction(newTransactionDTO);
             }
-            catch (DataNotFoundException | DataNotConformException e){
+            catch (DataNotFoundException | DataNotConformException | WalletNotEnoughException e){
                 errorMessage = e.getMessage();
                 return"redirect:/transaction?page="+page+
                                 "&errorMessage="+errorMessage+
