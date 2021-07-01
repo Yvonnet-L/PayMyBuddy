@@ -61,7 +61,6 @@ public class TransactionServiceImpl implements ITransactionService {
                     throw new DataNotFoundException("Problem with the database, user payer not found");
                 }
 
-      //  try {
 
            //-- mise en place des données manquante pour la transaction
             LocalDateTime createDate = LocalDateTime.now();
@@ -104,10 +103,7 @@ public class TransactionServiceImpl implements ITransactionService {
             } else {
                 throw new WalletNotEnoughException("the amount exceeds the wallet");
             }
-     /*   }
-        catch (Exception e){
-           throw new DataNotFoundException("Problem with the DataBase");
-        }*/
+
     }
 
     @Override
@@ -118,10 +114,6 @@ public class TransactionServiceImpl implements ITransactionService {
             transactionDTOList.add(factory.constructTransactionDTO(transaction));
         }
         return transactionDTOList;
-    }
-
-    public Transaction deleteTransaction(Transaction transaction) {
-        return null;
     }
 
     @Override
@@ -178,7 +170,7 @@ public class TransactionServiceImpl implements ITransactionService {
     //---------------------------------------------------------------------------------------
     private Boolean walletOperation(TransactionDTO transactionDTO) {
         if ( transactionDTO.getAmount() == 0) {
-            throw new DataNotFoundException("Amount must be greater than 0");
+            throw new DataNotConformException("Amount must be greater than 0");
         }
         double wallet = transactionDTO.getPayer().getWallet();
         double amount = transactionDTO.getAmount();

@@ -1,14 +1,10 @@
 package com.oc.ly.PayMyBuddy.service;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import com.oc.ly.PayMyBuddy.dto.BankAccountDTO;
 import com.oc.ly.PayMyBuddy.dto.UserDTO;
 import com.oc.ly.PayMyBuddy.model.BankAccount;
 import com.oc.ly.PayMyBuddy.model.User;
 import com.oc.ly.PayMyBuddy.tool.Factory;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +13,9 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.test.context.support.WithMockUser;
 
 import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @SpringBootTest
 public class BankAccountServiceTest {
@@ -29,6 +28,7 @@ public class BankAccountServiceTest {
 
     public Factory factory = new Factory();
 
+    //--------------------------------------------------------------------------------------------------------
     @WithMockUser(username = "lolo@email.com")
     @Test
     @DisplayName("Test findBankAccountByUser")
@@ -38,7 +38,7 @@ public class BankAccountServiceTest {
         List<BankAccountDTO> listBankAccount = bankAccountService.findBankAccountByUser(userDTO);
         assertTrue(listBankAccount.size()>0);
     }
-
+    //--------------------------------------------------------------------------------------------------------
     @WithMockUser(username = "lolo@email.com")
     @Test
     @DisplayName("Test addAccount ")
@@ -56,7 +56,7 @@ public class BankAccountServiceTest {
         assertEquals(bankAccountAddDTO.getRib(), newBankAccountDTO.getRib());
 
     }
-
+    //--------------------------------------------------------------------------------------------------------
     @WithMockUser(username = "lolo@email.com")
     @Test
     @DisplayName("Test deleteAccount ")
@@ -72,5 +72,5 @@ public class BankAccountServiceTest {
         //THEN
         assertEquals(listBankAccountDTOBefore.size() - 1, listBankAccountDTOAfter.size());
     }
-
+    //--------------------------------------------------------------------------------------------------------
 }

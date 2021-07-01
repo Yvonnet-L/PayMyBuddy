@@ -37,7 +37,7 @@ public class transferServiceTest {
 
     private static Logger logger = LogManager.getLogger(transferServiceTest.class);
 
-
+    //--------------------------------------------------------------------------------------------------------
     @Test
     @DisplayName("Test saveTransferCredit")
     public void saveTransferCreditTest(){
@@ -55,7 +55,7 @@ public class transferServiceTest {
         assertTrue( transferDTO.getIdTransfer() > 0);
     }
 
-
+    //--------------------------------------------------------------------------------------------------------
     @Test
     @DisplayName("Test saveTransferDebit")
     public void saveTransferDeditOkTest(){
@@ -73,7 +73,7 @@ public class transferServiceTest {
         assertTrue( transferDTO.getIdTransfer() > 0);
     }
 
-
+    //--------------------------------------------------------------------------------------------------------
     @Test
     @DisplayName("Test saveTransferDeditNotPossible")
     public void saveTransferDeditNotPossibleTest(){
@@ -90,7 +90,7 @@ public class transferServiceTest {
         assertEquals( newWallet,  walletBefore );
     }
 
-
+    //--------------------------------------------------------------------------------------------------------
     @Test
     @DisplayName("Test findAllByUser")
     public void findAllByUserTest(){
@@ -104,7 +104,7 @@ public class transferServiceTest {
         assertEquals(2,pagesTransfer.getContent().size());
     }
 
-
+    //--------------------------------------------------------------------------------------------------------
     @Test
     @DisplayName("Test theLastThreeTransfers")
     public void theLastThreeTransfersTest(){
@@ -115,8 +115,9 @@ public class transferServiceTest {
         //WHEN
         Page<TransferDTO> pagesTransferDTO = transferService.theLastThreeTransfers(userDTO,  PageRequest.of(page,2));
         //THEN
-        assertThat( pagesTransferDTO.isEmpty());
-        assertThat( pagesTransferDTO.getTotalElements() == 0);
+        assertEquals(2,pagesTransferDTO.getContent().size());
+        assertEquals(2,pagesTransferDTO.getTotalElements());
     }
+    //--------------------------------------------------------------------------------------------------------
 
 }

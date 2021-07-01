@@ -24,6 +24,7 @@ public class UserServiceTest {
 
     public Factory factory = new Factory();
 
+    //--------------------------------------------------------------------------------------------------------
     @WithMockUser(username = "lolo@email.com")
     @Test
     @DisplayName("Test findUserByEmail")
@@ -35,7 +36,7 @@ public class UserServiceTest {
         //THEN
         assertEquals(userDTO.getEmail(), "lolo@email.com");
     }
-
+    //--------------------------------------------------------------------------------------------------------
     @WithMockUser(username = "lolo@email.com")
     @Test
     @DisplayName("Test findUserById")
@@ -48,8 +49,7 @@ public class UserServiceTest {
         //THEN
         assertEquals(userDTO.getEmail(), userFind.getEmail());
     }
-
-
+    //--------------------------------------------------------------------------------------------------------
     @WithMockUser(username = "lolo@email.com")
     @Test
     @DisplayName("Test findUserByEmail")
@@ -63,7 +63,7 @@ public class UserServiceTest {
         //THEN
         assertEquals(pagesTransferDTO.getTotalPages(),0);
     }
-
+    //--------------------------------------------------------------------------------------------------------
     @WithMockUser(username = "lolo@email.com")
     @Test
     @DisplayName("Test userExistById")
@@ -76,7 +76,7 @@ public class UserServiceTest {
         //THEN
         assertEquals(exist,true);
     }
-
+    //--------------------------------------------------------------------------------------------------------
     @WithMockUser(username = "lolo@email.com")
     @Test
     @DisplayName("Test saveUser")
@@ -91,7 +91,7 @@ public class UserServiceTest {
         //THEN
         assertTrue(newUserDTO.getId()>0);
     }
-
+    //--------------------------------------------------------------------------------------------------------
     @WithMockUser(username = "lolo@email.com")
     @Test
     @DisplayName("Test saveUser")
@@ -102,4 +102,5 @@ public class UserServiceTest {
         //THEN
         assertTrue(listUserDTO.size()>=4);
     }
+    //--------------------------------------------------------------------------------------------------------
 }

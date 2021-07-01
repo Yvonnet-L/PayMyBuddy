@@ -18,7 +18,7 @@ public class TransferDTO {
 
     public TransferDTO() {
     }
-
+/*
     public TransferDTO(int idTransfer, User user, String rib, LocalDateTime createDate, double amount, String type) {
         this.idTransfer = idTransfer;
         this.user = user;
@@ -35,6 +35,8 @@ public class TransferDTO {
         this.amount = amount;
         this.type = type;
     }
+
+ */
 //----------------------------------------------------------------
 
     public int getIdTransfer() {

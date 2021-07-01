@@ -30,7 +30,7 @@ public class Factory {
             usDTO.setCreationDate(u.getCreationDate());
             usDTO.setModifDate(u.getModifDate());
             return usDTO;
-        }else{
+       }else{
             throw new DataNotConformException(" **** User not be null ****");
         }
 
@@ -55,7 +55,6 @@ public class Factory {
         }
     }
 
-
    //----------  BANK -----------------------------------------------------
 
     public BankAccount constructBank(BankAccountDTO bankAccountDTO) {
@@ -75,7 +74,7 @@ public class Factory {
     }
 
     //----------  TRANSFER -----------------------------------------------------
-
+    /*
     public Transfer constructTransfer(TransferDTO transferDTO) {
         Transfer transfer = new Transfer();
         transfer.setIdTransfer(transferDTO.getIdTransfer());
@@ -86,7 +85,7 @@ public class Factory {
         transfer.setType(transferDTO.getType());
         return transfer;
     }
-
+    */
     public TransferDTO constructTransferDTO(Transfer transfer) {
         TransferDTO transferDTO = new TransferDTO();
         transferDTO.setIdTransfer(transfer.getIdTransfer());

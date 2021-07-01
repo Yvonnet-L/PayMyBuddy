@@ -12,13 +12,13 @@ public class BankAccountDTO {
 
     public BankAccountDTO() {
     }
-
+/*
     public BankAccountDTO(Integer idBankAccount, User user, String rib) {
         this.idBankAccount = idBankAccount;
         this.user = user;
         this.rib = rib;
     }
-
+*/
     public BankAccountDTO(User user, String rib) {
         this.user = user;
         this.rib = rib;

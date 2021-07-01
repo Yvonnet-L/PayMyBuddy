@@ -27,7 +27,7 @@ public class FriendServiceTest {
 
     public Factory factory = new Factory();
 
-
+    //--------------------------------------------------------------------------------------------------------
     @WithMockUser(username = "lolo@email.com")
     @Test
     @DisplayName("Test findFriendByOwner")
@@ -37,7 +37,7 @@ public class FriendServiceTest {
         List<FriendDTO> listFriendDTO = friendService.findFriendByOwner(userDTO);
         assertTrue(listFriendDTO.size()>0);
     }
-
+    //--------------------------------------------------------------------------------------------------------
     @WithMockUser(username = "lolo@email.com")
     @Test
     @DisplayName("Test addFriend")
@@ -54,7 +54,7 @@ public class FriendServiceTest {
         //THEN
         assertEquals(listFriendDTO.size(),listFriendDTOAfterAdd.size() -1);
     }
-
+    //--------------------------------------------------------------------------------------------------------
     @WithMockUser(username = "lolo@email.com")
     @Test
     @DisplayName("Test deleteFriend")
@@ -70,4 +70,5 @@ public class FriendServiceTest {
         //THEN
         assertEquals(listFriendDTO.size(),listFriendDTOAfterDelete.size() + 1);
     }
+    //--------------------------------------------------------------------------------------------------------
 }

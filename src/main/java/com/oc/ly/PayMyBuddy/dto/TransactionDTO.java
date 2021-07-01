@@ -20,7 +20,7 @@ public class TransactionDTO {
 
     public TransactionDTO() {
     }
-
+/*
     public TransactionDTO(int idTransaction, User payer, User beneficiary, LocalDateTime creationDate, double amount, String description, double fee) {
         this.idTransaction = idTransaction;
         this.payer = payer;
@@ -39,7 +39,7 @@ public class TransactionDTO {
         this.description = description;
         this.fee = fee;
     }
-
+*/
     public TransactionDTO(User payer, User beneficiary, double amount, String description) {
         this.payer = payer;
         this.beneficiary = beneficiary;

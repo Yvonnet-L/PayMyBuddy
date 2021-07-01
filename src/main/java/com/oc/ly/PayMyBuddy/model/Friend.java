@@ -29,7 +29,7 @@ public class Friend {
     public Friend() {
         super();
     }
-
+/*
     public Friend(User owner, User friend, LocalDate creationDate) {
         this.owner = owner;
         this.friend = friend;
@@ -42,6 +42,9 @@ public class Friend {
         this.friend = friend;
         this.creationDate = creationDate;
     }
+
+
+ */
 //--------------------------------------------------------------------------
 
     public Integer getIdFriend() {

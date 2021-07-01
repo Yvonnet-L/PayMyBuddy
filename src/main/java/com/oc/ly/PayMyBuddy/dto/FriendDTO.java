@@ -30,7 +30,7 @@ public class FriendDTO {
             this.creationDate= creationDate;
         }
 
-
+/*
         public FriendDTO(Integer idFriend, User owner, User friend) {
             super();
             this.idFriend = idFriend;
@@ -44,6 +44,7 @@ public class FriendDTO {
         this.friend = friend;
         this.creationDate = creationDate;
     }
+    */
 //--------------------------------------------------------------------------
 
     public Integer getIdFriend() {

@@ -1,6 +1,7 @@
 package com.oc.ly.PayMyBuddy.service;
 
 import com.oc.ly.PayMyBuddy.dto.UserDTO;
+import com.oc.ly.PayMyBuddy.exceptions.DataNotFoundException;
 import com.oc.ly.PayMyBuddy.model.User;
 import com.oc.ly.PayMyBuddy.repository.UserRepository;
 import com.oc.ly.PayMyBuddy.tool.Factory;
@@ -41,6 +42,10 @@ public class UserServiceImpl implements IUserService{
     @Override
     public UserDTO findUserById(Integer id) {
         User user = userRepository.findUserById(id);
+        if (user == null) {
+            logger.info(" *** User not found ***");
+            throw new DataNotFoundException("Problem request: findUserById --> user not found");
+        }
         return factory.constructUserDTO(user);
     }
 

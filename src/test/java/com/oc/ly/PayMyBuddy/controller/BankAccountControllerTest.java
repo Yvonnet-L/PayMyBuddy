@@ -94,7 +94,7 @@ public class BankAccountControllerTest {
                 .accept(MediaType.APPLICATION_JSON)
                 .content(objectMapper.writeValueAsString(bankNull)))
                 .andExpect(status().isBadRequest());
-                      //  .andExpect(model().attributeExists());
+
     }
     //--------------------------------------------------------------------------------------------------------
     @WithMockUser(username = "lolo@email.com")
