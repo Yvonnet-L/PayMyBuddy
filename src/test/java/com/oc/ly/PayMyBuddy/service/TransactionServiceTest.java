@@ -1,6 +1,5 @@
 package com.oc.ly.PayMyBuddy.service;
 
-import com.oc.ly.PayMyBuddy.constants.TransferType;
 import com.oc.ly.PayMyBuddy.dto.TransactionDTO;
 import com.oc.ly.PayMyBuddy.dto.UserDTO;
 import com.oc.ly.PayMyBuddy.exceptions.DataNotConformException;
@@ -12,7 +11,6 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.security.test.context.support.WithMockUser;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,7 +30,6 @@ public class TransactionServiceTest {
 
     List<UserDTO> listUserDTO = new ArrayList<UserDTO>();
     //-----------------------------------------------------------------------------------------------------
-    @WithMockUser(username = "lolo@email.com")
     @Test
     @DisplayName("Test deleteById")
     public void deleteByIdTest(){
@@ -47,7 +44,6 @@ public class TransactionServiceTest {
         assertEquals(sizeBeforeDelete, sizeAfterDelete + 1);
     }
     //-----------------------------------------------------------------------------------------------------
-    @WithMockUser(username = "lolo@email.com")
     @Test
     @DisplayName("Test addTransaction")
     public void addTransactionTest(){
@@ -67,7 +63,6 @@ public class TransactionServiceTest {
         assertTrue(  walleBeneficiarytAfter ==  walleBeneficiarytBefore + 15 );
     }
     //-----------------------------------------------------------------------------------------------------
-    @WithMockUser(username = "lolo@email.com")
     @Test
     @DisplayName("Test addTransactionNegativeTest")
     public void addTransactionNegativeTest(){
@@ -87,7 +82,6 @@ public class TransactionServiceTest {
         assertTrue(  walleBeneficiarytAfter ==  walleBeneficiarytBefore );
     }
     //-----------------------------------------------------------------------------------------------------
-    @WithMockUser(username = "lolo@email.com")
     @Test
     @DisplayName("Test addTransactionOneUserNotFoundTest")
     public void addTransactionOneUserNotFoundTest() {
@@ -108,7 +102,6 @@ public class TransactionServiceTest {
         assertTrue(walleBeneficiarytAfter == walleBeneficiarytBefore);
     }
     //-----------------------------------------------------------------------------------------------------
-    @WithMockUser(username = "lolo@email.com")
     @Test
     @DisplayName("Test addTransactionDescriptionNotConformTest")
     public void addTransactionDescriptionNotConformTest() {

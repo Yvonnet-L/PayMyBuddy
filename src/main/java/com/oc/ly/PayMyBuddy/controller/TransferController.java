@@ -6,8 +6,6 @@ import com.oc.ly.PayMyBuddy.dto.TransferDTO;
 import com.oc.ly.PayMyBuddy.dto.UserDTO;
 import com.oc.ly.PayMyBuddy.exceptions.DataNotConformException;
 import com.oc.ly.PayMyBuddy.exceptions.DataNotFoundException;
-import com.oc.ly.PayMyBuddy.model.BankAccount;
-import com.oc.ly.PayMyBuddy.model.Transfer;
 import com.oc.ly.PayMyBuddy.model.User;
 import com.oc.ly.PayMyBuddy.service.IBankAccountService;
 import com.oc.ly.PayMyBuddy.service.IFriendService;
@@ -29,8 +27,6 @@ import java.util.List;
 @Controller
 public class TransferController {
 
-    private static Logger logger = LogManager.getLogger(TransferController.class);
-
     @Autowired
     IFriendService friendService;
 
@@ -45,6 +41,9 @@ public class TransferController {
 
     public Factory factory = new Factory();
 
+    private static Logger logger = LogManager.getLogger(TransferController.class);
+
+    //--------------------------------------------------------------------------------------------
     @RequestMapping(value = { "/transfer" }, method = RequestMethod.GET)
     public String transfer(Model model,
                        @RequestParam(name="page", defaultValue = "0") int page,
@@ -76,18 +75,13 @@ public class TransferController {
 
         return "transfer";
     }
-
-
-   // ----  /deleteAccount  ----------------
-
+    //--------------------------------------------------------------------------------------------
     @GetMapping("/deleteAccount")
     public String delete(Integer id){
         bankAccountService.deleteAccount(id);
         return"redirect:/transfer";
     }
-
-    // ----- /addAccount   ----------------
-
+    //--------------------------------------------------------------------------------------------
     @PostMapping(value = { "/addBankAccount" })
     public String addAccount(Model model, @RequestParam(name="page", defaultValue = "0") int page, String rib){
 
@@ -98,7 +92,7 @@ public class TransferController {
         bankAccountService.addAccount( rib ,userLog);
         return"redirect:/transfer";
     }
-
+    //--------------------------------------------------------------------------------------------
     @PostMapping(value = { "/addTransfer" })
     public String addTransfer(Model model, @RequestParam(name="page", defaultValue = "0") int page,
                               String rib, double amount, String type, String errorMessage){
@@ -121,4 +115,5 @@ public class TransferController {
         return"redirect:/transfer?page="+page+
                 "&errorMessage="+errorMessage;
     }
+    //--------------------------------------------------------------------------------------------
 }

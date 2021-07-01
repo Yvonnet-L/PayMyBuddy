@@ -58,7 +58,6 @@ public class homeControllerTest {
                 .andExpect(status().isOk());
     }
     //--------------------------------------------------------------------------------------------------------
-    @WithMockUser(username="lolo@email.com", roles={"ADMIN"})
     @Test
     @DisplayName("Test /logout")
     public void logoutTest() throws Exception {

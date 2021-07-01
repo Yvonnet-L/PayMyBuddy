@@ -26,9 +26,6 @@ import java.util.List;
 @Controller
 public class TransactionController {
 
-
-    private static Logger logger = LogManager.getLogger(TransactionController.class);
-
     @Autowired
     IFriendService friendService;
 
@@ -40,13 +37,15 @@ public class TransactionController {
 
     Factory factory = new Factory();
 
+    private static Logger logger = LogManager.getLogger(TransactionController.class);
+
+    //--------------------------------------------------------------------------------------------
     @GetMapping("/deleteTransaction")
     public String delete(Integer id, int page){
         transactionService.deleteById(id);
         return"redirect:/transaction?page="+page;
     }
-
-
+    //--------------------------------------------------------------------------------------------
     @RequestMapping(value = { "/transaction" }, method = RequestMethod.GET)
     public String transaction(Model model,
                         @RequestParam(name="page", defaultValue = "0") int page,
@@ -55,8 +54,6 @@ public class TransactionController {
                         @RequestParam(name="friendEmail", defaultValue = "") String friendEmail,
                         @RequestParam(name="description", defaultValue = "") String description )
     {
-
-
             String emailSession = SecurityContextHolder.getContext().getAuthentication().getName();
 
             UserDTO userLog = userService.findUserByEmail(emailSession);
@@ -84,7 +81,7 @@ public class TransactionController {
 
             return "transaction";
     }
-
+    //--------------------------------------------------------------------------------------------
     @PostMapping(value = { "/transaction" })
     public String addTransaction(Model model, @RequestParam(name="page", defaultValue = "0") int page, Double amount,
                                  String friendEmail, String description, String errorMessage)
@@ -127,5 +124,5 @@ public class TransactionController {
                     "&description="+description;
 
     }
-
+    //--------------------------------------------------------------------------------------------
 }

@@ -14,30 +14,12 @@ public class TransferDTO {
     private double amount;
     private String type;
 
-    //----------------------------------------------------------------
+    //------------------------------------------------------------------------------------------
 
     public TransferDTO() {
     }
-/*
-    public TransferDTO(int idTransfer, User user, String rib, LocalDateTime createDate, double amount, String type) {
-        this.idTransfer = idTransfer;
-        this.user = user;
-        this.rib = rib;
-        this.createDate = createDate;
-        this.amount = amount;
-        this.type = type;
-    }
 
-    public TransferDTO(User user, String rib, LocalDateTime createDate, double amount, String type) {
-        this.user = user;
-        this.rib = rib;
-        this.createDate = createDate;
-        this.amount = amount;
-        this.type = type;
-    }
-
- */
-//----------------------------------------------------------------
+    //------------------------------------------------------------------------------------------
 
     public int getIdTransfer() {
         return idTransfer;
@@ -87,6 +69,5 @@ public class TransferDTO {
         this.type = type;
     }
 
-
-    //----------------------------------------------------------------
+    //------------------------------------------------------------------------------------------
 }

@@ -1,21 +1,17 @@
 package com.oc.ly.PayMyBuddy.service;
 
-import static org.assertj.core.api.Assertions.assertThat;
 import com.oc.ly.PayMyBuddy.constants.TransferType;
 import com.oc.ly.PayMyBuddy.dto.TransferDTO;
 import com.oc.ly.PayMyBuddy.dto.UserDTO;
 import com.oc.ly.PayMyBuddy.exceptions.DataNotConformException;
 import com.oc.ly.PayMyBuddy.model.User;
 import com.oc.ly.PayMyBuddy.tool.Factory;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.security.test.context.support.WithMockUser;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,8 +30,6 @@ public class transferServiceTest {
     public Factory factory  = new Factory();
 
     List<UserDTO> listUserDTO = new ArrayList<UserDTO>();
-
-    private static Logger logger = LogManager.getLogger(transferServiceTest.class);
 
     //--------------------------------------------------------------------------------------------------------
     @Test

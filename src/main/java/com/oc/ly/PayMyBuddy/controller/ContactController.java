@@ -25,8 +25,6 @@ import java.util.List;
 @Controller
 public class ContactController {
 
-    private static Logger logger = LogManager.getLogger(ContactController.class);
-
     @Autowired
     IFriendService friendService;
 
@@ -35,15 +33,16 @@ public class ContactController {
 
     public Factory factory = new Factory();
 
+    private static Logger logger = LogManager.getLogger(ContactController.class);
 
+    //-----------------------------------------------------------------------------------------------
     @GetMapping("/deleteContact")
     public String delete(Integer idFriend){
         logger.info(" --->   idFriend: " + idFriend );
         friendService.deleteById(idFriend);
         return"redirect:/contact";
     }
-
-
+    //-----------------------------------------------------------------------------------------------
     @GetMapping("/addContact")
     public String add(Integer idFriend){
         //-- Security Context - récupération du userLog
@@ -59,7 +58,7 @@ public class ContactController {
         friendService.addFriend(newFriendDTO);
         return"redirect:/contact";
     }
-
+    //-----------------------------------------------------------------------------------------------
     @RequestMapping(value = { "/contact" }, method = RequestMethod.GET)
     public String home(Model model,
                        @RequestParam(name="page", defaultValue = "0") int page,
@@ -90,5 +89,5 @@ public class ContactController {
 
         return "contact";
     }
-
+    //-----------------------------------------------------------------------------------------------
 }

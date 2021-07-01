@@ -1,6 +1,5 @@
 package com.oc.ly.PayMyBuddy.controller.rest;
 
-import com.oc.ly.PayMyBuddy.controller.HomeController;
 import com.oc.ly.PayMyBuddy.dto.BankAccountDTO;
 import com.oc.ly.PayMyBuddy.model.BankAccount;
 import com.oc.ly.PayMyBuddy.repository.BankAccountRepository;

@@ -15,11 +15,11 @@ public class UserDTO {
     private LocalDate creationDate;
     private LocalDate modifDate;
 
-    //---------------------------------------------------------
+    //------------------------------------------------------------------------------------------
 
     public UserDTO() {
     }
-
+/*
     public UserDTO(int id, String userName, String firstName, String password, String email, boolean active,
                    String roles, Double wallet, LocalDate creationDate, LocalDate modifDate) {
         this.id = id;
@@ -45,7 +45,9 @@ public class UserDTO {
         this.creationDate = creationDate;
         this.modifDate = modifDate;
     }
-//---------------------------------------------------------
+
+ */
+    //------------------------------------------------------------------------------------------
 
     public int getId() {
         return id;

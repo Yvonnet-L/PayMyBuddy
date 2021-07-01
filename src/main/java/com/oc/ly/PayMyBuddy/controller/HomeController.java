@@ -31,9 +31,6 @@ import java.util.List;
 @Controller
 public class HomeController {
 
-
-    private static Logger logger = LogManager.getLogger(HomeController.class);
-
     @Autowired
     IFriendService friendService;
 
@@ -46,40 +43,12 @@ public class HomeController {
     @Autowired
     ITransferService transferService;
 
+    private static Logger logger = LogManager.getLogger(HomeController.class);
 
-    @RequestMapping(value = { "/login" }, method = RequestMethod.GET)
-    public String login(Model model)
-    {
-        return "login";
-    }
-
-    @RequestMapping(value = { "/save" }, method = RequestMethod.GET)
-    public String save(Model model)
-    {
-        return "login";
-    }
-
-    @RequestMapping(value = { "/index" }, method = RequestMethod.GET)
-    public String index(Model model)
-    {
-        return "login";
-    }
-
-    @RequestMapping(value = { "/logout" }, method = RequestMethod.GET)
-    public String logout(HttpServletRequest request, HttpServletResponse response)
-    {
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        if (auth != null){
-            new SecurityContextLogoutHandler().logout(request, response, auth);
-        }
-        return "redirect:/login?logout";
-    }
-
-
-
+    //-----------------------------------------------------------------------------------------------
     @RequestMapping(value = { "/home" }, method = RequestMethod.GET)
     public String home(Model model, @RequestParam(name="page", defaultValue = "0") int page,
-                                Double amount, String friendEmail, String description,String errorMessage)
+                       Double amount, String friendEmail, String description,String errorMessage)
     {
         String emailSession = SecurityContextHolder.getContext().getAuthentication().getName();
         UserDTO userLogDTO = userService.findUserByEmail(emailSession);
@@ -109,6 +78,36 @@ public class HomeController {
         model.addAttribute("currentPage", page);
         return "home";
     }
+    //-----------------------------------------------------------------------------------------------
+    //-----------------------------------------------------------------------------------------------
+    @RequestMapping(value = { "/login" }, method = RequestMethod.GET)
+    public String login(Model model)
+    {
+        return "login";
+    }
+    //-----------------------------------------------------------------------------------------------
+    @RequestMapping(value = { "/save" }, method = RequestMethod.GET)
+    public String save(Model model)
+    {
+        return "login";
+    }
+    //-----------------------------------------------------------------------------------------------
+    @RequestMapping(value = { "/index" }, method = RequestMethod.GET)
+    public String index(Model model)
+    {
+        return "login";
+    }
+    //-----------------------------------------------------------------------------------------------
+    @RequestMapping(value = { "/logout" }, method = RequestMethod.GET)
+    public String logout(HttpServletRequest request, HttpServletResponse response)
+    {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        if (auth != null){
+            new SecurityContextLogoutHandler().logout(request, response, auth);
+        }
+        return "redirect:/login?logout";
+    }
+
 }
 
 

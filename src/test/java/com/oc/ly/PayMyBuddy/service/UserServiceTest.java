@@ -1,7 +1,6 @@
 package com.oc.ly.PayMyBuddy.service;
 
 import com.oc.ly.PayMyBuddy.dto.UserDTO;
-import com.oc.ly.PayMyBuddy.tool.Factory;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,8 +20,6 @@ public class UserServiceTest {
 
     @Autowired
     IUserService userService;
-
-    public Factory factory = new Factory();
 
     //--------------------------------------------------------------------------------------------------------
     @WithMockUser(username = "lolo@email.com")

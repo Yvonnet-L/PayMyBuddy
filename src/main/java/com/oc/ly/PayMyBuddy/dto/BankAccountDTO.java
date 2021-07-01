@@ -8,23 +8,17 @@ public class BankAccountDTO {
     private User user;
     private String rib;
 
-    //--------------------------------------------------
+    //------------------------------------------------------------------------------------------
 
     public BankAccountDTO() {
     }
-/*
-    public BankAccountDTO(Integer idBankAccount, User user, String rib) {
-        this.idBankAccount = idBankAccount;
-        this.user = user;
-        this.rib = rib;
-    }
-*/
+
     public BankAccountDTO(User user, String rib) {
         this.user = user;
         this.rib = rib;
     }
 
-    //--------------------------------------------------
+    //------------------------------------------------------------------------------------------
 
     public Integer getIdBankAccount() {
         return idBankAccount;
@@ -50,6 +44,5 @@ public class BankAccountDTO {
         this.rib = rib;
     }
 
-
-    //--------------------------------------------------
+    //------------------------------------------------------------------------------------------
 }

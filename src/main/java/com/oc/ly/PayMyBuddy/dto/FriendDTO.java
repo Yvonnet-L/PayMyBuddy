@@ -7,18 +7,12 @@ import java.time.LocalDate;
 
 public class FriendDTO {
 
+    private Integer idFriend;
+    private User owner;
+    private User friend;
+    private LocalDate creationDate = LocalDate.now();
 
-        private Integer idFriend;
-
-        private User owner;
-
-        private User friend;
-
-        private LocalDate creationDate = LocalDate.now();
-
-
-        //--------------------------------------------------------------------------
-
+    //------------------------------------------------------------------------------------------
 
     public FriendDTO() {
     }
@@ -30,22 +24,7 @@ public class FriendDTO {
             this.creationDate= creationDate;
         }
 
-/*
-        public FriendDTO(Integer idFriend, User owner, User friend) {
-            super();
-            this.idFriend = idFriend;
-            this.owner = owner;
-            this.friend = friend;
-        }
-
-    public FriendDTO(Integer idFriend, User owner, User friend, LocalDate creationDate) {
-        this.idFriend = idFriend;
-        this.owner = owner;
-        this.friend = friend;
-        this.creationDate = creationDate;
-    }
-    */
-//--------------------------------------------------------------------------
+    //------------------------------------------------------------------------------------------
 
     public Integer getIdFriend() {
         return idFriend;

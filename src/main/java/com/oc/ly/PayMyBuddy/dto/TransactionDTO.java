@@ -1,9 +1,7 @@
 package com.oc.ly.PayMyBuddy.dto;
 
-import com.oc.ly.PayMyBuddy.exceptions.DataNotFoundException;
 import com.oc.ly.PayMyBuddy.model.User;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class TransactionDTO {
@@ -16,37 +14,18 @@ public class TransactionDTO {
     private String description;
     private double fee;
 
-    //---------------------------------------------------------
+    //------------------------------------------------------------------------------------------
 
     public TransactionDTO() {
     }
-/*
-    public TransactionDTO(int idTransaction, User payer, User beneficiary, LocalDateTime creationDate, double amount, String description, double fee) {
-        this.idTransaction = idTransaction;
-        this.payer = payer;
-        this.beneficiary = beneficiary;
-        this.creationDate = creationDate;
-        this.amount = amount;
-        this.description = description;
-        this.fee = fee;
-    }
 
-    public TransactionDTO(User payer, User beneficiary, LocalDateTime creationDate, double amount, String description, double fee) {
-        this.payer = payer;
-        this.beneficiary = beneficiary;
-        this.creationDate = creationDate;
-        this.amount = amount;
-        this.description = description;
-        this.fee = fee;
-    }
-*/
     public TransactionDTO(User payer, User beneficiary, double amount, String description) {
         this.payer = payer;
         this.beneficiary = beneficiary;
         this.amount = amount;
         this.description = description;
     }
-//---------------------------------------------------------
+    //--------------------------------------------------------------------------------------------
 
     public int getIdTransaction() {
         return idTransaction;
@@ -104,6 +83,6 @@ public class TransactionDTO {
         this.fee = fee;
     }
 
-    //---------------------------------------------------------
+    //------------------------------------------------------------------------------------------
 
 }
