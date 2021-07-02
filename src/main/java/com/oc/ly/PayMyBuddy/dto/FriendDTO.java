@@ -59,4 +59,14 @@ public class FriendDTO {
     }
 
     //--------------------------------------------------------------------------
+
+    @Override
+    public String toString() {
+        return "FriendDTO{" +
+                "idFriend=" + idFriend +
+                ", owner=" + owner +
+                ", friend=" + friend +
+                ", creationDate=" + creationDate +
+                '}';
+    }
 }

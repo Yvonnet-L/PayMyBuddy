@@ -12,6 +12,6 @@ public class WalletNotEnoughException extends RuntimeException{
 
     public WalletNotEnoughException(String message) {
         super(message);
-        logger.error("--> " + message);
+        logger.error("  **--> " + message);
     }
 }

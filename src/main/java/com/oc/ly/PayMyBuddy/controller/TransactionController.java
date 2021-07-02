@@ -42,6 +42,7 @@ public class TransactionController {
     //--------------------------------------------------------------------------------------------
     @GetMapping("/deleteTransaction")
     public String delete(Integer id, int page){
+        logger.info("--> Launch '/'deleteTransaction transactionID: " + id);
         transactionService.deleteById(id);
         return"redirect:/transaction?page="+page;
     }
@@ -54,6 +55,8 @@ public class TransactionController {
                         @RequestParam(name="friendEmail", defaultValue = "") String friendEmail,
                         @RequestParam(name="description", defaultValue = "") String description )
     {
+             logger.info("--> Launch /transaction");
+
             String emailSession = SecurityContextHolder.getContext().getAuthentication().getName();
 
             UserDTO userLog = userService.findUserByEmail(emailSession);
@@ -86,7 +89,7 @@ public class TransactionController {
     public String addTransaction(Model model, @RequestParam(name="page", defaultValue = "0") int page, Double amount,
                                  String friendEmail, String description, String errorMessage)
     {
-        logger.info(" ---> Launch of the request:  Post /home ");
+        logger.info("--> Launch  Post /transaction ");
         String emailSession = SecurityContextHolder.getContext().getAuthentication().getName();
 
         UserDTO userLog = new UserDTO();

@@ -66,7 +66,7 @@ public class HomeController {
         if ( authorisation.equals("ROLE_ADMIN") ) {
             role = "admin";
         }
-        logger.info("----->  /home ");
+        logger.info("--> Launch /home ");
         model.addAttribute("admin", role);
         model.addAttribute("friends", friends);
         model.addAttribute("transactions", pageTransactions);
@@ -79,10 +79,10 @@ public class HomeController {
         return "home";
     }
     //-----------------------------------------------------------------------------------------------
-    //-----------------------------------------------------------------------------------------------
     @RequestMapping(value = { "/login" }, method = RequestMethod.GET)
     public String login(Model model)
     {
+        logger.info("--> Launch /login ");
         return "login";
     }
     //-----------------------------------------------------------------------------------------------
@@ -101,6 +101,7 @@ public class HomeController {
     @RequestMapping(value = { "/logout" }, method = RequestMethod.GET)
     public String logout(HttpServletRequest request, HttpServletResponse response)
     {
+        logger.info("--> Launch /logout ");
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         if (auth != null){
             new SecurityContextLogoutHandler().logout(request, response, auth);

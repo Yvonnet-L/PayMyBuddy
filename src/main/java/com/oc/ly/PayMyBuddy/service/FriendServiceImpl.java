@@ -28,17 +28,16 @@ public class FriendServiceImpl implements IFriendService{
 
     @Override
     public FriendDTO addFriend(FriendDTO friendDTO) {
+        logger.info("---> Launch addFriend");
         Friend friend = factory.constructFriend(friendDTO);
-        logger.info("--- friendDTO ID:- "+ friendDTO.getIdFriend()  );
-        logger.info("--- friend ID:- "+ friend.getIdFriend()  );
         friendDTO = factory.constructFriendDTO(friendRepository.save(friend));
-
+        logger.info("----> Friend saved id: " + friendDTO.getIdFriend());
         return friendDTO;
     }
 
     @Override
     public List<FriendDTO> findFriendByOwner(UserDTO ownerDTO) {
-
+        logger.info(" ---> Launch findFriendByowner");
         List<FriendDTO> friendsDTOList= new ArrayList<>();
         User owner = factory.constructUser(ownerDTO);
         List<Friend> friendsList = friendRepository.findListFriendByOwner(owner);
@@ -58,8 +57,9 @@ public class FriendServiceImpl implements IFriendService{
 
     @Override
     public FriendDTO deleteById(Integer id) {
-        logger.info(" --->   idFriend: " + id);
+        logger.info(" --->  Launch deletteById with idFriend: " + id);
         friendRepository.deleteById(id);
+        logger.info(" ---->  friend deleted  -- ");
         return null;
     }
 

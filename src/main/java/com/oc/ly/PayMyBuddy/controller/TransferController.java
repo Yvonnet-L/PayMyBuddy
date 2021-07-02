@@ -50,6 +50,7 @@ public class TransferController {
                        @RequestParam(name="motCle", defaultValue = "") String mc,
                        @RequestParam(name="errorMessage", defaultValue = "") String errorMessage)
     {
+        logger.info("--> Launch /transfer");
         //-- Security Context - récupération du userLog
         String emailSession = SecurityContextHolder.getContext().getAuthentication().getName();
         UserDTO userLog = userService.findUserByEmail(emailSession);
@@ -78,6 +79,7 @@ public class TransferController {
     //--------------------------------------------------------------------------------------------
     @GetMapping("/deleteAccount")
     public String delete(Integer id){
+        logger.info("--> Launch /deleteAccount");
         bankAccountService.deleteAccount(id);
         return"redirect:/transfer";
     }
@@ -85,7 +87,7 @@ public class TransferController {
     @PostMapping(value = { "/addBankAccount" })
     public String addAccount(Model model, @RequestParam(name="page", defaultValue = "0") int page, String rib){
 
-        logger.info(" ---> entrée dans /addBankAccount " + rib);
+        logger.info(" ---> Launch /addBankAccount rib: " + rib);
         //-- Security Context - récupération du userLog
         String emailSession = SecurityContextHolder.getContext().getAuthentication().getName();
         UserDTO userLog = userService.findUserByEmail(emailSession);
@@ -97,7 +99,7 @@ public class TransferController {
     public String addTransfer(Model model, @RequestParam(name="page", defaultValue = "0") int page,
                               String rib, double amount, String type, String errorMessage){
 
-        logger.info(" ---> entrée dans /addBTransfer " + rib + " - " + amount + " - " + type);
+        logger.info(" ---> LAunch /addBTransfer : " + rib + " - " + amount + " - " + type);
         //-- Security Context - récupération du userLog
         String emailSession = SecurityContextHolder.getContext().getAuthentication().getName();
         UserDTO userLog = userService.findUserByEmail(emailSession);

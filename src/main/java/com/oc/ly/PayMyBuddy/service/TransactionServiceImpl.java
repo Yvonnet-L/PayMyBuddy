@@ -9,7 +9,6 @@ import com.oc.ly.PayMyBuddy.exceptions.WalletNotEnoughException;
 import com.oc.ly.PayMyBuddy.model.Transaction;
 import com.oc.ly.PayMyBuddy.model.User;
 import com.oc.ly.PayMyBuddy.repository.TransactionRepository;
-import com.oc.ly.PayMyBuddy.repository.UserRepository;
 import com.oc.ly.PayMyBuddy.tool.Factory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -47,7 +46,7 @@ public class TransactionServiceImpl implements ITransactionService {
     @Transactional(propagation = Propagation.REQUIRES_NEW, readOnly = false, rollbackFor = RuntimeException.class)
     public TransactionDTO addTransaction(TransactionDTO transactionDTO) {
 
-        logger.info("---> processing of the request to add a transaction by the service   !");
+        logger.info(" ---> Launch addTransaction ");
 
             //-- Vérification de la validitée des données
                 if (transactionDTO.getDescription().length() > 30) {
@@ -80,9 +79,9 @@ public class TransactionServiceImpl implements ITransactionService {
                     transactionRepository.save(transaction);
 
                 //- Récuperation des données venant de la DB en réinjectant dans le DTO
-                   // factory.constructTransactionDTO(transactionDTO, transaction);
+                    transactionDTO = factory.constructTransactionDTO(transaction);
                 //- Controle par l'ID reçu
-                    logger.info("   ---> ID of the transaction created:"+ transactionDTO.getIdTransaction());
+                    logger.info("   ---> ID transaction created:"+ transactionDTO.getIdTransaction());
                 //- Update des wallets des Users: benneficyary et payer
                     //- benneficyary
                     transactionDTO.getBeneficiary().setWallet((transactionDTO.getBeneficiary().getWallet() + transactionDTO.getAmount()));
@@ -98,7 +97,7 @@ public class TransactionServiceImpl implements ITransactionService {
 
                     userService.saveUser(factory.constructUserDTO(transactionDTO.getPayer()));
                     userService.saveUser(factory.constructUserDTO(transactionDTO.getBeneficiary()));
-                    logger.info("  ---> Save transaction ok! Update Users ok!");
+                    logger.info("  ----> Save transaction ok! Update Users ok!");
                 return transactionDTO;
             } else {
                 throw new WalletNotEnoughException("the amount exceeds the wallet");
@@ -108,6 +107,7 @@ public class TransactionServiceImpl implements ITransactionService {
 
     @Override
     public List<TransactionDTO> findAll() {
+        logger.info(" ---> Launch findAll ");
         List<Transaction> transactionList = transactionRepository.findAll();
         List<TransactionDTO> transactionDTOList = new ArrayList<TransactionDTO>();
         for (Transaction transaction: transactionList){
@@ -118,12 +118,15 @@ public class TransactionServiceImpl implements ITransactionService {
 
     @Override
     public Transaction deleteById(int idTransactionDTO) {
+        logger.info(" ---> Launch deleteById ");
         transactionRepository.deleteById(idTransactionDTO);
+        logger.info(" ----> transaction deleted ");
         return null;
     }
 
     @Override
     public Page<TransactionDTO> theLastThreeTransactions(UserDTO userDTO, Pageable pageable) {
+        logger.info(" ---> Launch theLastThreeTransactions ");
         User user = factory.constructUser(userDTO);
         Page<Transaction> pagesTransaction = transactionRepository.theLastThreeTransactions(user, pageable);
         Page<TransactionDTO> pagesTransactionDTO= pagesTransaction.map(new Function<Transaction, TransactionDTO>() {
@@ -139,6 +142,7 @@ public class TransactionServiceImpl implements ITransactionService {
 
     @Override
     public Page<TransactionDTO> theLastThreeTransactionsBeneficiary(UserDTO userDTO, Pageable pageable) {
+        logger.info(" ---> Launch theLastThreeTransactionsBeneficiary ");
         User user = factory.constructUser(userDTO);
         Page<Transaction> pagesTransaction =transactionRepository.theLastThreeTransactionsBeneficiary(user, pageable);
             Page<TransactionDTO> pagesTransactionDTO= pagesTransaction.map(new Function<Transaction, TransactionDTO>() {
@@ -154,6 +158,7 @@ public class TransactionServiceImpl implements ITransactionService {
 
     @Override
     public Page<TransactionDTO> findAllByPayer(UserDTO payerDTO, Pageable pageable) {
+        logger.info(" ---> Launch findAllByPayer ");
         User payer = factory.constructUser(payerDTO);
         Page<Transaction> pagesTransaction = transactionRepository.findAllByPayer(payer, pageable);
         Page<TransactionDTO> pagesTransactionDTO= pagesTransaction.map(new Function<Transaction, TransactionDTO>() {
@@ -169,6 +174,7 @@ public class TransactionServiceImpl implements ITransactionService {
 
     //---------------------------------------------------------------------------------------
     private Boolean walletOperation(TransactionDTO transactionDTO) {
+        logger.info("  ----> Launch walletOperation");
         if ( transactionDTO.getAmount() == 0) {
             throw new DataNotConformException("Amount must be greater than 0");
         }
