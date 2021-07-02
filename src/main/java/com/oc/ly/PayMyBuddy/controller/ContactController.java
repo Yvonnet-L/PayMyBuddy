@@ -25,8 +25,6 @@ import java.util.List;
 @Controller
 public class ContactController {
 
-    private static Logger logger = LogManager.getLogger(ContactController.class);
-
     @Autowired
     IFriendService friendService;
 
@@ -35,36 +33,38 @@ public class ContactController {
 
     public Factory factory = new Factory();
 
+    private static Logger logger = LogManager.getLogger(ContactController.class);
 
+    //-----------------------------------------------------------------------------------------------
     @GetMapping("/deleteContact")
-    public String delete(Integer id){
-        friendService.deleteById(id);
+    public String delete(Integer idFriend){
+        logger.info(" --->  Launch '/'deleteContact idFriend: " + idFriend );
+        friendService.deleteById(idFriend);
         return"redirect:/contact";
     }
-
-
+    //-----------------------------------------------------------------------------------------------
     @GetMapping("/addContact")
     public String add(Integer idFriend){
         //-- Security Context - récupération du userLog
-        logger.info(" --->   idFriend: " + idFriend );
+        logger.info(" --->  Launch '/'addContact idFriend: " + idFriend );
         String emailSession = SecurityContextHolder.getContext().getAuthentication().getName();
         UserDTO userLog = userService.findUserByEmail(emailSession);
         UserDTO uFriend = userService.findUserById(idFriend);
-        logger.info(" --->  ");
-        logger.info("userOwner: " + userLog.getEmail() +" userFrriend: " + uFriend.getEmail()   );
+
         LocalDate date = LocalDate.now();
         User owner = factory.constructUser(userLog);
         FriendDTO newFriendDTO = new FriendDTO(owner, factory.constructUser(uFriend), date);
         friendService.addFriend(newFriendDTO);
         return"redirect:/contact";
     }
-
+    //-----------------------------------------------------------------------------------------------
     @RequestMapping(value = { "/contact" }, method = RequestMethod.GET)
     public String home(Model model,
                        @RequestParam(name="page", defaultValue = "0") int page,
                        @RequestParam(name="motCle", defaultValue = "") String mc,
                        @RequestParam(name="errorMessage", defaultValue = "") String errorMessage)
     {
+        logger.info("--> Launch /contact ");
         //-- Security Context - récupération du userLog
         String emailSession = SecurityContextHolder.getContext().getAuthentication().getName();
         UserDTO userLog = userService.findUserByEmail(emailSession);
@@ -89,5 +89,5 @@ public class ContactController {
 
         return "contact";
     }
-
+    //-----------------------------------------------------------------------------------------------
 }

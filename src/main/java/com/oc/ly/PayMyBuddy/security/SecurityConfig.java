@@ -27,20 +27,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 
         auth.userDetailsService(userDetailsService);
-
-        Logger logger = LogManager.getLogger(SecurityConfig.class);
-
-        PasswordEncoder passwordEncoder = passwordEncoder();
-        System.out.println("*************************");
-        System.out.println(passwordEncoder.encode("rootroot"));
-        System.out.println("*************************");
-        System.out.println(userDetailsService.getClass().getName());
-        // On produit un log de niveau informatif.
-        logger.info( "Hello World with Log4J 2" );
-
-        // On produit un log de niveau erreur.
-        logger.error( "Houston, we have a problem" );
-
     }
 
     @Override
@@ -53,7 +39,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .antMatchers("/save**/**","/delete**/**","/admin,/management/**").hasRole("ADMIN")
                     .anyRequest().authenticated();
 
-        http.formLogin().loginPage("/login").defaultSuccessUrl("/home").failureUrl("/login?error=true").permitAll();
+        http.formLogin().loginPage("/login").defaultSuccessUrl("/home").failureUrl("/login?error=true").failureForwardUrl("/join").permitAll();
         http.logout().deleteCookies("JSESSIONID").logoutUrl("/logout").logoutSuccessUrl("/login");
         http.exceptionHandling().accessDeniedPage("/notAuthorized");
 
@@ -74,6 +60,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     Dans le code avec un appel @Autowired et pour le remplissage direct il suffit s'uttiliser une simple passwordEncoder.encode() dans syso.
      ex : System.out.println(passwordEncoder.encode("1234"));
     il nous restera juste à récuperer la donnée cryptée dans la console puis de la sauvegarder en base.
+    ex:        PasswordEncoder passwordEncoder = passwordEncoder();
+                System.out.println(passwordEncoder.encode("rootroot"));
      */
 
 }

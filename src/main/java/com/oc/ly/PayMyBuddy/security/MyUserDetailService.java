@@ -32,12 +32,12 @@ public class MyUserDetailService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException, DataAccessException {
 
-        logger.info("-> Verification de l'identifiant !");
+        logger.info("---> Identifier verification: " + email);
         Optional<User> user = userRepository.findByEmail(email);
 
         user.orElseThrow(() -> new UsernameNotFoundException("Not Found: " + email));
 
-        logger.info("---> Utilisateur trouvé! ");
+        logger.info("---> User "+ email + " Find ");
 
         return user.map(MyUserDetails::new).get();
     }

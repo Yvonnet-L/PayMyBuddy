@@ -1,6 +1,7 @@
 package com.oc.ly.PayMyBuddy.service;
 
 import com.oc.ly.PayMyBuddy.dto.UserDTO;
+import com.oc.ly.PayMyBuddy.exceptions.DataNotFoundException;
 import com.oc.ly.PayMyBuddy.model.User;
 import com.oc.ly.PayMyBuddy.repository.UserRepository;
 import com.oc.ly.PayMyBuddy.tool.Factory;
@@ -29,6 +30,7 @@ public class UserServiceImpl implements IUserService{
 
     @Override
     public List<UserDTO> findAll() {
+        logger.info(" ---> Launch findAll");
         List<User> listUser = userRepository.findAll();
         List<UserDTO> listUserDTO = new ArrayList<UserDTO>();
         for (User user: listUser) {
@@ -40,12 +42,18 @@ public class UserServiceImpl implements IUserService{
 
     @Override
     public UserDTO findUserById(Integer id) {
+        logger.info(" ---> Launch findUserById");
         User user = userRepository.findUserById(id);
+        if (user == null) {
+            logger.info(" *** User not found ***");
+            throw new DataNotFoundException("Problem request: findUserById --> user not found");
+        }
         return factory.constructUserDTO(user);
     }
 
     @Override
     public UserDTO findUserByEmail(String email) {
+        logger.info(" ---> Launch finUserByEmail");
          User user = userRepository.findUserByEmail(email);
          return factory.constructUserDTO(user);
     }
@@ -53,6 +61,7 @@ public class UserServiceImpl implements IUserService{
 
     @Override
     public Page<UserDTO> listUserNotFriend(UserDTO userDTO, String mc,Pageable pageable) {
+        logger.info(" ---> Launch listUserNotFriend");
         User user = factory.constructUser(userDTO);
         Page<User> pagesUsers = userRepository.listUserNotFriend(user,mc,pageable);
         Page<UserDTO> pagesUsersDTO= pagesUsers.map(new Function<User, UserDTO>() {
@@ -68,12 +77,13 @@ public class UserServiceImpl implements IUserService{
 
     @Override
     public Boolean userExistById(Integer id) {
+        logger.info(" ---> Launch userExistById");
         return userRepository.existsById(id);
     }
 
     @Override
     public UserDTO saveUser(UserDTO userDTO) {
-        logger.info("-------> User save !");
+        logger.info(" ---> Launch saveUser");
         User userAdd = userRepository.save(factory.constructUser(userDTO));
         return factory.constructUserDTO(userAdd);
     }

@@ -16,6 +16,8 @@ public class MyUserDetails implements UserDetails {
     private boolean active;
     private List<GrantedAuthority> authorities;
 
+    //------------------------------------------------------------------------------------------
+
     public MyUserDetails(User user){
         this.userName = user.getEmail();
         this.password = user.getPassword();
@@ -24,12 +26,8 @@ public class MyUserDetails implements UserDetails {
                 .map(SimpleGrantedAuthority::new)
                 .collect(Collectors.toList());
     }
-
-    public MyUserDetails(String userName, String password) {
-        this.userName = userName;
-        this.password = password;
-    }
-//on modifie les return apres voir injecté les methodes
+    //------------------------------------------------------------------------------------------
+    //on modifie les return apres voir injecté les methodes
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -65,4 +63,6 @@ public class MyUserDetails implements UserDetails {
     public boolean isEnabled() {
         return active;
     }
+
+    //------------------------------------------------------------------------------------------
 }

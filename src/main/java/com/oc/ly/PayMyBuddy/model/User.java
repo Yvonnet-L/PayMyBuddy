@@ -39,36 +39,12 @@ public class User {
     @Column(name= "modif_date")
     private LocalDate modifDate = LocalDate.now();
 
-    //---------------------------------------------------------------------
+    //------------------------------------------------------------------------------------------
 
     public User() {
     }
 
-    public User(int id, String userName, String firstName, String password, String email, boolean active, String roles, Double wallet, LocalDate creationDate, LocalDate modifDate) {
-        this.id = id;
-        this.userName = userName;
-        this.firstName = firstName;
-        this.password = password;
-        this.email = email;
-        this.active = active;
-        this.roles = roles;
-        this.wallet = wallet;
-        this.creationDate = creationDate;
-        this.modifDate = modifDate;
-    }
-
-    public User(String userName, String firstName, String password, String email, boolean active, String roles, Double wallet, LocalDate creationDate, LocalDate modifDate) {
-        this.userName = userName;
-        this.firstName = firstName;
-        this.password = password;
-        this.email = email;
-        this.active = active;
-        this.roles = roles;
-        this.wallet = wallet;
-        this.creationDate = creationDate;
-        this.modifDate = modifDate;
-    }
-//---------------------------------------------------------------------
+    //------------------------------------------------------------------------------------------
 
     public int getId() {
         return id;
@@ -150,22 +126,6 @@ public class User {
         this.creationDate = creationDate;
     }
 
-    //---------------------------------------------------------
+    //------------------------------------------------------------------------------------------
 
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", userName='" + userName + '\'' +
-                ", firstName='" + firstName + '\'' +
-                ", password='" + password + '\'' +
-                ", email='" + email + '\'' +
-                ", active=" + active +
-                ", roles='" + roles + '\'' +
-                ", wallet=" + wallet +
-                ", creationDate=" + creationDate +
-                ", modifDate=" + modifDate +
-                '}';
-    }
 }

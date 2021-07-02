@@ -5,6 +5,7 @@ import com.oc.ly.PayMyBuddy.dto.TransactionDTO;
 import com.oc.ly.PayMyBuddy.dto.UserDTO;
 import com.oc.ly.PayMyBuddy.exceptions.DataNotConformException;
 import com.oc.ly.PayMyBuddy.exceptions.DataNotFoundException;
+import com.oc.ly.PayMyBuddy.exceptions.WalletNotEnoughException;
 import com.oc.ly.PayMyBuddy.model.User;
 import com.oc.ly.PayMyBuddy.service.IFriendService;
 import com.oc.ly.PayMyBuddy.service.ITransactionService;
@@ -25,9 +26,6 @@ import java.util.List;
 @Controller
 public class TransactionController {
 
-
-    private static Logger logger = LogManager.getLogger(TransactionController.class);
-
     @Autowired
     IFriendService friendService;
 
@@ -39,22 +37,25 @@ public class TransactionController {
 
     Factory factory = new Factory();
 
+    private static Logger logger = LogManager.getLogger(TransactionController.class);
+
+    //--------------------------------------------------------------------------------------------
     @GetMapping("/deleteTransaction")
     public String delete(Integer id, int page){
+        logger.info("--> Launch '/'deleteTransaction transactionID: " + id);
         transactionService.deleteById(id);
         return"redirect:/transaction?page="+page;
     }
-
-
+    //--------------------------------------------------------------------------------------------
     @RequestMapping(value = { "/transaction" }, method = RequestMethod.GET)
-    public String home(Model model,
+    public String transaction(Model model,
                         @RequestParam(name="page", defaultValue = "0") int page,
                         @RequestParam(name="errorMessage", defaultValue = "") String errorMessage,
                         @RequestParam(name="amount", defaultValue = "") Double amount,
                         @RequestParam(name="friendEmail", defaultValue = "") String friendEmail,
                         @RequestParam(name="description", defaultValue = "") String description )
     {
-
+             logger.info("--> Launch /transaction");
 
             String emailSession = SecurityContextHolder.getContext().getAuthentication().getName();
 
@@ -83,12 +84,12 @@ public class TransactionController {
 
             return "transaction";
     }
-
+    //--------------------------------------------------------------------------------------------
     @PostMapping(value = { "/transaction" })
     public String addTransaction(Model model, @RequestParam(name="page", defaultValue = "0") int page, Double amount,
                                  String friendEmail, String description, String errorMessage)
     {
-        logger.info(" ---> Launch of the request:  Post /home ");
+        logger.info("--> Launch  Post /transaction ");
         String emailSession = SecurityContextHolder.getContext().getAuthentication().getName();
 
         UserDTO userLog = new UserDTO();
@@ -109,7 +110,7 @@ public class TransactionController {
                 TransactionDTO newTransactionDTO = new TransactionDTO(payer, beneficiary, amount, description);
                 transactionService.addTransaction(newTransactionDTO);
             }
-            catch (DataNotFoundException | DataNotConformException e){
+            catch (DataNotFoundException | DataNotConformException | WalletNotEnoughException e){
                 errorMessage = e.getMessage();
                 return"redirect:/transaction?page="+page+
                                 "&errorMessage="+errorMessage+
@@ -126,5 +127,5 @@ public class TransactionController {
                     "&description="+description;
 
     }
-
+    //--------------------------------------------------------------------------------------------
 }

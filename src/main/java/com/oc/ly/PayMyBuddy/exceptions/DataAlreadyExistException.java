@@ -14,6 +14,6 @@ public class DataAlreadyExistException extends RuntimeException{
 
     public DataAlreadyExistException(String message) {
         super(message);
-        logger.error("--> " + message);
+        logger.error("  **--> " + message);
     }
 }

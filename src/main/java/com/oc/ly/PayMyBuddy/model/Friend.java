@@ -24,25 +24,13 @@ public class Friend {
     @Column(name= "creation_date", updatable=false)
     private LocalDate creationDate = LocalDate.now();
 
-    //--------------------------------------------------------------------------
+    //------------------------------------------------------------------------------------------
 
     public Friend() {
         super();
     }
 
-    public Friend(User owner, User friend, LocalDate creationDate) {
-        this.owner = owner;
-        this.friend = friend;
-        this.creationDate = creationDate;
-    }
-
-    public Friend(Integer idFriend, User owner, User friend, LocalDate creationDate) {
-        this.idFriend = idFriend;
-        this.owner = owner;
-        this.friend = friend;
-        this.creationDate = creationDate;
-    }
-//--------------------------------------------------------------------------
+    //------------------------------------------------------------------------------------------
 
     public Integer getIdFriend() {
         return idFriend;
@@ -75,4 +63,6 @@ public class Friend {
     public void setCreationDate(LocalDate creationDate) {
         this.creationDate = creationDate;
     }
+
+    //------------------------------------------------------------------------------------------
 }

@@ -38,27 +38,28 @@ public class TransferServiceImpl implements ITransferService{
     @Override
     @Transactional(propagation = Propagation.REQUIRES_NEW, readOnly = false)
     public TransferDTO addTransfer(String rib, String type, double amount, User user) {
-
+        logger.info(" ---> Launch addTransfer");
         Transfer transfer = new Transfer(user, rib, LocalDateTime.now(), amount, type);
         if (tranferDataVerification(transfer)) {
-               logger.info("-----> on entre dans le if puisque verif est true");
+               logger.info(" ----> Verification transfer ok");
                     if (transfer.getType().equals(TransferType.CREDIT_WALLET.toString())) {
                         Double newWallet =  (double)Math.round((transfer.getUser().getWallet() + transfer.getAmount())*100)/100;
                         transfer.getUser().setWallet(newWallet);
 
-                        userService.saveUser(factory.constructUserDTO(transfer.getUser()));
-                        logger.info("------> transfer save");
                         transferRepository.save(transfer);
-                       // transferRepository.save(null);
+                        logger.info(" ------> transfer saved");
+                        userService.saveUser(factory.constructUserDTO(transfer.getUser()));
+                        logger.info(" ------> user (new wallet) saved");
                     } else {
                         if (walletOperation(transfer)) {
                             Double newWallet =  (double)Math.round((transfer.getUser().getWallet() - transfer.getAmount())*100)/100;
                             transfer.getUser().setWallet(newWallet);
                             transfer.getUser().setModifDate(LocalDate.now());
 
-                            userService.saveUser(factory.constructUserDTO(transfer.getUser()));
-                            logger.info("------> transfer save");
                             transferRepository.save(transfer);
+                            logger.info(" ------> transfer saved");
+                            userService.saveUser(factory.constructUserDTO(transfer.getUser()));
+                            logger.info(" ------> user (new wallet) saved");
                         } else {
                             throw new DataNotConformException("the amount exceeds the wallet");
                         }
@@ -71,7 +72,7 @@ public class TransferServiceImpl implements ITransferService{
 
     @Override
     public Page<TransferDTO> findAllByUser(UserDTO userDTO, Pageable pageable) {
-        logger.info(" ---> Launch of the search for a user's transfers");
+        logger.info(" ---> Launch findAllByUser");
         User user = factory.constructUser(userDTO);
 
         Page<TransferDTO> pagesTransferDTO = transferRepository.findAllByUser(user, pageable).map(factory::constructTransferDTO);
@@ -91,6 +92,7 @@ public class TransferServiceImpl implements ITransferService{
 
     @Override
     public Page<TransferDTO> theLastThreeTransfers(UserDTO userDTO, Pageable pageable) {
+        logger.info(" ---> Launch theLastThreeTransfers");
         User user = factory.constructUser(userDTO);
         Page<Transfer> pagesTransfer = transferRepository.theLastThreeTransfers(user, pageable);
         Page<TransferDTO> pagesTransferDTO= pagesTransfer.map(new Function<Transfer, TransferDTO>() {
@@ -108,6 +110,7 @@ public class TransferServiceImpl implements ITransferService{
     //--------------------------------------------------------------------------------------------
 
     private Boolean walletOperation(Transfer transfer) {
+        logger.info("  -----> Launch walletOperation");
         if ( transfer.getAmount() == 0) {
             throw new DataNotFoundException("Amount must be greater than 0");
         }
@@ -123,24 +126,25 @@ public class TransferServiceImpl implements ITransferService{
     }
     //----------- verification data transfer valid -----------------------------------------------
     private Boolean tranferDataVerification(Transfer transfer){
+        logger.info("  -----> Launch tranferDataVerification");
         Boolean resultat = false;
         if (transfer.getAmount() > 0 ) {
             resultat = true;
-            logger.info("----- résultat montant = "+resultat);
+            logger.info("   ----->  result ammount = "+resultat);
         } ;
 
         if (transfer.getUser() !=null){
            resultat = userService.userExistById(transfer.getUser().getId());
-            logger.info("----- résultat user = "+resultat);
+            logger.info("   ----->  result user = "+resultat);
 
         }else { resultat=false; }
 
         String type = transfer.getType();
         if ( type.equals("CREDIT_WALLET") || type.equals("DEBIT_WALLET")) {
             resultat = true;
-            logger.info("----- résultat type = "+resultat);
+            logger.info("   ----->   result type = "+resultat);
         }else{ resultat=false; }
-        logger.info("----- resultat de sortie = "+resultat);
+        logger.info("   ----->   result tranferDataVerification= "+resultat);
         return resultat;
     }
 

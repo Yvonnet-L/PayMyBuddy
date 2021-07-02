@@ -1,7 +1,6 @@
 package com.oc.ly.PayMyBuddy.service;
 
 import com.oc.ly.PayMyBuddy.dto.UserDTO;
-import com.oc.ly.PayMyBuddy.tool.Factory;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,8 +21,7 @@ public class UserServiceTest {
     @Autowired
     IUserService userService;
 
-    public Factory factory = new Factory();
-
+    //--------------------------------------------------------------------------------------------------------
     @WithMockUser(username = "lolo@email.com")
     @Test
     @DisplayName("Test findUserByEmail")
@@ -35,7 +33,7 @@ public class UserServiceTest {
         //THEN
         assertEquals(userDTO.getEmail(), "lolo@email.com");
     }
-
+    //--------------------------------------------------------------------------------------------------------
     @WithMockUser(username = "lolo@email.com")
     @Test
     @DisplayName("Test findUserById")
@@ -48,8 +46,7 @@ public class UserServiceTest {
         //THEN
         assertEquals(userDTO.getEmail(), userFind.getEmail());
     }
-
-
+    //--------------------------------------------------------------------------------------------------------
     @WithMockUser(username = "lolo@email.com")
     @Test
     @DisplayName("Test findUserByEmail")
@@ -63,7 +60,7 @@ public class UserServiceTest {
         //THEN
         assertEquals(pagesTransferDTO.getTotalPages(),0);
     }
-
+    //--------------------------------------------------------------------------------------------------------
     @WithMockUser(username = "lolo@email.com")
     @Test
     @DisplayName("Test userExistById")
@@ -76,7 +73,7 @@ public class UserServiceTest {
         //THEN
         assertEquals(exist,true);
     }
-
+    //--------------------------------------------------------------------------------------------------------
     @WithMockUser(username = "lolo@email.com")
     @Test
     @DisplayName("Test saveUser")
@@ -91,7 +88,7 @@ public class UserServiceTest {
         //THEN
         assertTrue(newUserDTO.getId()>0);
     }
-
+    //--------------------------------------------------------------------------------------------------------
     @WithMockUser(username = "lolo@email.com")
     @Test
     @DisplayName("Test saveUser")
@@ -102,4 +99,5 @@ public class UserServiceTest {
         //THEN
         assertTrue(listUserDTO.size()>=4);
     }
+    //--------------------------------------------------------------------------------------------------------
 }

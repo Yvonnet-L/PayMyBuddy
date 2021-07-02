@@ -1,21 +1,17 @@
 package com.oc.ly.PayMyBuddy.service;
 
-import static org.assertj.core.api.Assertions.assertThat;
 import com.oc.ly.PayMyBuddy.constants.TransferType;
 import com.oc.ly.PayMyBuddy.dto.TransferDTO;
 import com.oc.ly.PayMyBuddy.dto.UserDTO;
 import com.oc.ly.PayMyBuddy.exceptions.DataNotConformException;
 import com.oc.ly.PayMyBuddy.model.User;
 import com.oc.ly.PayMyBuddy.tool.Factory;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.security.test.context.support.WithMockUser;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,9 +31,7 @@ public class transferServiceTest {
 
     List<UserDTO> listUserDTO = new ArrayList<UserDTO>();
 
-    private static Logger logger = LogManager.getLogger(transferServiceTest.class);
-
-
+    //--------------------------------------------------------------------------------------------------------
     @Test
     @DisplayName("Test saveTransferCredit")
     public void saveTransferCreditTest(){
@@ -55,7 +49,7 @@ public class transferServiceTest {
         assertTrue( transferDTO.getIdTransfer() > 0);
     }
 
-
+    //--------------------------------------------------------------------------------------------------------
     @Test
     @DisplayName("Test saveTransferDebit")
     public void saveTransferDeditOkTest(){
@@ -73,7 +67,7 @@ public class transferServiceTest {
         assertTrue( transferDTO.getIdTransfer() > 0);
     }
 
-
+    //--------------------------------------------------------------------------------------------------------
     @Test
     @DisplayName("Test saveTransferDeditNotPossible")
     public void saveTransferDeditNotPossibleTest(){
@@ -90,7 +84,7 @@ public class transferServiceTest {
         assertEquals( newWallet,  walletBefore );
     }
 
-
+    //--------------------------------------------------------------------------------------------------------
     @Test
     @DisplayName("Test findAllByUser")
     public void findAllByUserTest(){
@@ -104,7 +98,7 @@ public class transferServiceTest {
         assertEquals(2,pagesTransfer.getContent().size());
     }
 
-
+    //--------------------------------------------------------------------------------------------------------
     @Test
     @DisplayName("Test theLastThreeTransfers")
     public void theLastThreeTransfersTest(){
@@ -115,8 +109,9 @@ public class transferServiceTest {
         //WHEN
         Page<TransferDTO> pagesTransferDTO = transferService.theLastThreeTransfers(userDTO,  PageRequest.of(page,2));
         //THEN
-        assertThat( pagesTransferDTO.isEmpty());
-        assertThat( pagesTransferDTO.getTotalElements() == 0);
+        assertEquals(2,pagesTransferDTO.getContent().size());
+        assertEquals(2,pagesTransferDTO.getTotalElements());
     }
+    //--------------------------------------------------------------------------------------------------------
 
 }

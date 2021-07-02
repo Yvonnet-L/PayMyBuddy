@@ -6,8 +6,6 @@ import com.oc.ly.PayMyBuddy.dto.TransferDTO;
 import com.oc.ly.PayMyBuddy.dto.UserDTO;
 import com.oc.ly.PayMyBuddy.exceptions.DataNotConformException;
 import com.oc.ly.PayMyBuddy.exceptions.DataNotFoundException;
-import com.oc.ly.PayMyBuddy.model.BankAccount;
-import com.oc.ly.PayMyBuddy.model.Transfer;
 import com.oc.ly.PayMyBuddy.model.User;
 import com.oc.ly.PayMyBuddy.service.IBankAccountService;
 import com.oc.ly.PayMyBuddy.service.IFriendService;
@@ -29,8 +27,6 @@ import java.util.List;
 @Controller
 public class TransferController {
 
-    private static Logger logger = LogManager.getLogger(TransferController.class);
-
     @Autowired
     IFriendService friendService;
 
@@ -45,12 +41,16 @@ public class TransferController {
 
     public Factory factory = new Factory();
 
+    private static Logger logger = LogManager.getLogger(TransferController.class);
+
+    //--------------------------------------------------------------------------------------------
     @RequestMapping(value = { "/transfer" }, method = RequestMethod.GET)
-    public String home(Model model,
+    public String transfer(Model model,
                        @RequestParam(name="page", defaultValue = "0") int page,
                        @RequestParam(name="motCle", defaultValue = "") String mc,
                        @RequestParam(name="errorMessage", defaultValue = "") String errorMessage)
     {
+        logger.info("--> Launch /transfer");
         //-- Security Context - récupération du userLog
         String emailSession = SecurityContextHolder.getContext().getAuthentication().getName();
         UserDTO userLog = userService.findUserByEmail(emailSession);
@@ -76,34 +76,30 @@ public class TransferController {
 
         return "transfer";
     }
-
-
-   // ----  /deleteAccount  ----------------
-
+    //--------------------------------------------------------------------------------------------
     @GetMapping("/deleteAccount")
     public String delete(Integer id){
+        logger.info("--> Launch /deleteAccount");
         bankAccountService.deleteAccount(id);
         return"redirect:/transfer";
     }
-
-    // ----- /addAccount   ----------------
-
+    //--------------------------------------------------------------------------------------------
     @PostMapping(value = { "/addBankAccount" })
     public String addAccount(Model model, @RequestParam(name="page", defaultValue = "0") int page, String rib){
 
-        logger.info(" ---> entrée dans /addBankAccount " + rib);
+        logger.info(" ---> Launch /addBankAccount rib: " + rib);
         //-- Security Context - récupération du userLog
         String emailSession = SecurityContextHolder.getContext().getAuthentication().getName();
         UserDTO userLog = userService.findUserByEmail(emailSession);
         bankAccountService.addAccount( rib ,userLog);
         return"redirect:/transfer";
     }
-
+    //--------------------------------------------------------------------------------------------
     @PostMapping(value = { "/addTransfer" })
     public String addTransfer(Model model, @RequestParam(name="page", defaultValue = "0") int page,
                               String rib, double amount, String type, String errorMessage){
 
-        logger.info(" ---> entrée dans /addBTransfer " + rib + " - " + amount + " - " + type);
+        logger.info(" ---> LAunch /addBTransfer : " + rib + " - " + amount + " - " + type);
         //-- Security Context - récupération du userLog
         String emailSession = SecurityContextHolder.getContext().getAuthentication().getName();
         UserDTO userLog = userService.findUserByEmail(emailSession);
@@ -121,4 +117,5 @@ public class TransferController {
         return"redirect:/transfer?page="+page+
                 "&errorMessage="+errorMessage;
     }
+    //--------------------------------------------------------------------------------------------
 }

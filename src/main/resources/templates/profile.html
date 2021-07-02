@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          th:href="@{https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css}">
+
+
+    <title>Profile</title>
+
+    <link rel="stylesheet" th:href="@{/css/home.css}"/>
+</head>
+
+<body>
+<center>
+    <div class="home">
+        <div class="menu">
+            <div class="greenButton">
+                <a class="button1" href="${pageContext.request.contextPath}login">Pay My Buddy</a>
+            </div>
+            <div class="hrefs">
+                <a href="#" th:href="@{/home}">Home</a>
+                <a href="#" th:href="@{/transaction}">Transaction</a>
+                <a href="#" th:href="@{/profile}">Profile</a>
+                <a href="#" th:href="@{/contact}">Contact</a>
+                <a href="#" th:href="@{/logout}">Log off</a>
+            </div>
+        </div>
+
+        <div class="subMenu">
+            <a class="aHome" th:href="@{/home}">Home</a>
+            <a> / </a>
+            <a th:href="@{/profile}">Profile</a>
+        </div>
+
+        <div class="send">
+            <div class="send-a">
+                <a>Profile</a>
+            </div>
+        </div>
+        <div th:if="${errorMessage}" th:utext="${errorMessage}"
+             style="color:red;font-style:italic;"> </div>
+        <div class="createTrans">
+            </br>
+            <div style="font-size:1.4em; font-weight: bold;">Your Profile</div>
+            <div th:utext="${firstName}" style="color:#DC7633; font-size:1.4em; font-weight: bold;"></div>
+        </div>
+        <div class="consTrans">
+                <form method="post" action="update">
+                    <fieldset>
+                        <div class="form-group">
+                                <label for="firstName">First name <span class="requis">*</span></label>
+                                <input type="text"  class="form-control" id="firstName" name="userName" th:value="${firstName}" size="20" maxlength="20" />
+                        </div>
+                        <div class="form-group">
+                                 <label for="lastName">Last name <span class="requis">*</span></label>
+                                <input type="text" class="form-control" id="lastName" name="lastName" th:value="${lastName}" size="20" maxlength="20" />
+                        </div>
+                        <div class="form-group">
+                                <label for="email">Email <span class="requis">*</span></label>
+
+                                <input type="text" class="form-control" id="email" name="email" th:value="${email}" size="20" maxlength="60" />
+                        </div>
+                        <div class="form-group">
+                                <label for="password">Password <span class="requis">*</span></label>
+                                <input type="password" class="form-control" id="password" name="password" th:value="${password}" size="20" maxlength="20" />
+                        </div>
+                        <div class="form-group">
+                                <label for="confirmation">Confirmation Pass <span class="requis">*</span></label>
+                                 <input type="password" class="form-control" id="confirmation" name="confirmation" th:value="${confirmation}" size="20" maxlength="20" />
+                        </div>
+                        <button type="submit" class="btn btn-primary">Update</button>
+
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</center>
+</body>
+<footer>
+    <Center>
+        <a style="color: #F5CBA7P;"> MyBuddy-Inc - V 0.2 ( 2021 ) </a>
+    </Center>
+</footer>
+
+</html>
