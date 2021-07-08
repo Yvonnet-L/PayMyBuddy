@@ -94,7 +94,6 @@ public class Factory {
         transferDTO.setCreateDate(transfer.getCreateDate());
         transferDTO.setAmount(transfer.getAmount());
         transferDTO.setType(transfer.getType());
-       // transferDTO.setType(TransferType.valueOf(transfer.getType()));
         return transferDTO;
     }
 

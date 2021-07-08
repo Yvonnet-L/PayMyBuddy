@@ -1,17 +1,23 @@
 package com.oc.ly.PayMyBuddy.service;
 
 import com.oc.ly.PayMyBuddy.dto.UserDTO;
+import com.oc.ly.PayMyBuddy.exceptions.DataAlreadyExistException;
+import com.oc.ly.PayMyBuddy.exceptions.DataNotConformException;
 import com.oc.ly.PayMyBuddy.exceptions.DataNotFoundException;
 import com.oc.ly.PayMyBuddy.model.User;
 import com.oc.ly.PayMyBuddy.repository.UserRepository;
 import com.oc.ly.PayMyBuddy.tool.Factory;
+import com.oc.ly.PayMyBuddy.tool.StringUtilsService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Function;
@@ -23,7 +29,12 @@ public class UserServiceImpl implements IUserService{
     @Autowired
     UserRepository userRepository;
 
-    public Factory factory= new Factory();
+    @Autowired
+    PasswordEncoder passwordEncoder;
+
+    public Factory factory = new Factory();
+
+    StringUtilsService stringUtilsService = new StringUtilsService();
 
     private static Logger logger = LogManager.getLogger(UserServiceImpl.class);
 
@@ -84,8 +95,33 @@ public class UserServiceImpl implements IUserService{
     @Override
     public UserDTO saveUser(UserDTO userDTO) {
         logger.info(" ---> Launch saveUser");
-        User userAdd = userRepository.save(factory.constructUser(userDTO));
-        return factory.constructUserDTO(userAdd);
+        User userAdd = new User();
+            userAdd = userRepository.save(factory.constructUser(userDTO));
+            return factory.constructUserDTO(userAdd);
+
+
+    }
+
+    @Override
+    public UserDTO saveNewUser(UserDTO userDTO) {
+        logger.info(" ---> Launch saveNewUser");
+        User userAdd = new User();
+        if(stringUtilsService.checkStringEmail(userDTO.getEmail())==false){
+            throw new DataNotConformException("it is not a email!");
+        }
+        if (userRepository.findUserByEmail(userDTO.getEmail())==null){
+            userDTO.setRoles("ROLE_USER");
+            userDTO.setWallet(0.0);
+            userDTO.setActive(true);
+            userDTO.setCreationDate(LocalDate.now());
+            userDTO.setPassword(passwordEncoder.encode(userDTO.getPassword()));
+            logger.info(userDTO.getPassword());
+            userAdd = userRepository.save(factory.constructUser(userDTO));
+            return factory.constructUserDTO(userAdd);
+        }else{
+            throw new DataAlreadyExistException("This email already exist !");
+        }
+
     }
 
 }

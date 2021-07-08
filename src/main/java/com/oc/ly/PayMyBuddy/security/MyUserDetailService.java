@@ -25,8 +25,6 @@ public class MyUserDetailService implements UserDetailsService {
     @Autowired
     UserRepository userRepository;
 
-
-
     private static Logger logger = LogManager.getLogger(HomeController.class);
 
     @Override

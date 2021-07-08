@@ -19,7 +19,15 @@ public class UserDTO {
 
     public UserDTO() {
     }
-/*
+
+    public UserDTO(String userName, String firstName, String password, String email) {
+        this.userName = userName;
+        this.firstName = firstName;
+        this.password = password;
+        this.email = email;
+    }
+
+    /*
     public UserDTO(int id, String userName, String firstName, String password, String email, boolean active,
                    String roles, Double wallet, LocalDate creationDate, LocalDate modifDate) {
         this.id = id;
