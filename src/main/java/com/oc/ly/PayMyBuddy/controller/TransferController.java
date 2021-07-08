@@ -101,6 +101,12 @@ public class TransferController {
 
         logger.info(" ---> LAunch /addBTransfer : " + rib + " - " + amount + " - " + type);
         //-- Security Context - récupération du userLog
+        if(rib==null){
+            errorMessage = "You must created an account";
+            return"redirect:/transfer?page="+page+
+                    "&errorMessage="+errorMessage;
+
+        }
         String emailSession = SecurityContextHolder.getContext().getAuthentication().getName();
         UserDTO userLog = userService.findUserByEmail(emailSession);
         User user = factory.constructUser(userLog);

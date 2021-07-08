@@ -106,6 +106,10 @@ public class UserServiceImpl implements IUserService{
     public UserDTO saveNewUser(UserDTO userDTO) {
         logger.info(" ---> Launch saveNewUser");
         User userAdd = new User();
+        if(stringUtilsService.checkStringName(userDTO.getUserName())==false ||
+                        stringUtilsService.checkStringName(userDTO.getFirstName())==false){
+            throw new DataNotConformException("Names should be only alphanumeric");
+        }
         if(stringUtilsService.checkStringEmail(userDTO.getEmail())==false){
             throw new DataNotConformException("it is not a email!");
         }

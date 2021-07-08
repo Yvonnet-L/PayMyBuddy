@@ -50,7 +50,7 @@
         <div class="createTrans2">
           <div class="trans-friends" th:object="${friends}">
             <select class="form-control" id="rib" name="rib" >
-              <option th:value="${bankAccount}"  name="bankAccount" th:if="${bankAccount}" th:utext="${bankAccount}":>Select a RIB</option>
+              <option th:value="${bankAccount}"  name="bankAccount" th:if="${bankAccount}" th:utext="${bankAccount}">Select a RIB</option>
               <option th:each="bankAccount  : ${bankAccounts}"
                       th:value="${bankAccount.rib}"
                       th:text="${bankAccount.rib}"  required="true"></option>
