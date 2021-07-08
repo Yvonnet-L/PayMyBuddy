@@ -1,40 +1,56 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
-
 <html lang="en">
 <head>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
         th:href="@{https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css}">
   <meta charset="utf-8" />
   <title>Inscription</title>
-  <link type="text/css" rel="stylesheet" href="form.css" />
+  <link rel="stylesheet" th:href="@{/css/home.css}"/>
 </head>
 <body>
-<form method="post" action="inscription">
-  <fieldset>
-    <legend>Inscription</legend>
-    <p>Vous pouvez vous inscrire via ce formulaire.</p>
+<center>
+    <div class="createTrans">
+      </br>
+      <div class="green">Pay My Buddy</div>
+      <br/>
+      <br/>
+      <legend>Inscription</legend>
+      <p>You can register via this form.</p>
+    </div>
+    <div class="consTrans">
+      <form method="post" action="update">
+        <fieldset>
+          <div class="form-group">
+            <label for="firstName">First name <span class="requis">*</span></label>
+            <input type="text"  class="form-control" id="firstName" name="userName" th:value="${firstName}" size="20" maxlength="20"  required="true" />
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last name <span class="requis">*</span></label>
+            <input type="text" class="form-control" id="lastName" name="lastName" th:value="${lastName}" size="20" maxlength="20"  required="true"/>
+          </div>
+          <div class="form-group">
+            <label for="email">Email <span class="requis">*</span></label>
+            <input type="text" class="form-control" id="email" name="email" th:value="${email}" size="20" maxlength="50"  required="true"/>
+          </div>
+          <div class="form-group">
+            <label for="password">Password <span class="requis">*</span></label>
+            <input type="password" class="form-control" id="password" name="password" th:value="${password}" size="60" maxlength="60"  required="true"/>
+          </div>
+          <div class="form-group">
+            <label for="confirmation">Confirmation Pass <span class="requis">*</span></label>
+            <input type="password" class="form-control" id="confirmation" name="confirmation" th:value="${confirmation}" size="20" maxlength="20"  required="true"/>
+          </div>
+          <button type="submit" class="btn btn-primary"  onclick="return confirm( 'an account validation email has been sent to you.')">Sign in</button>
 
-    <label for="email">Adresse email <span class="requis">*</span></label>
-    <input type="text" id="email" name="email" value="" size="20" maxlength="60" />
-    <br />
 
-    <label for="motdepasse">Mot de passe <span class="requis">*</span></label>
-    <input type="password" id="motdepasse" name="motdepasse" value="" size="20" maxlength="20" />
-    <br />
-
-    <label for="confirmation">Confirmation du mot de passe <span class="requis">*</span></label>
-    <input type="password" id="confirmation" name="confirmation" value="" size="20" maxlength="20" />
-    <br />
-
-    <label for="nom">Nom d'utilisateur</label>
-    <input type="text" id="nom" name="nom" value="" size="20" maxlength="20" />
-    <br />
-
-    <input type="submit" value="Inscription" class="sansLabel" />
-    <br />
-  </fieldset>
-</form>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</center>
 </body>
+<footer>
+</footer>
 </html>>

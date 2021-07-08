@@ -85,6 +85,13 @@ public class HomeController {
         logger.info("--> Launch /login ");
         return "login";
     }
+    //------------------------------------------------------------------------------------------------
+    @RequestMapping(value = { "/join" }, method = RequestMethod.GET)
+    public String join(Model model)
+    {
+        logger.info("--> Launch /join ");
+        return "join";
+    }
     //-----------------------------------------------------------------------------------------------
     @RequestMapping(value = { "/save" }, method = RequestMethod.GET)
     public String save(Model model)

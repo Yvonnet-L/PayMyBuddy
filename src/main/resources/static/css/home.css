@@ -380,3 +380,19 @@ footer a
   {
      right: 5px;
  }
+
+ div.green {
+   position: relative;
+   display: flex;
+   top: 20px;
+   height: 30px;
+   width: 100px;
+   background-color: #7BC54F;
+   border: 1px solid #7BC54F;
+   border-radius: 5px;
+   color: white;
+   text-align: center;
+   margin: 0 auto;
+   justify-content: center;
+   padding-top: 4px;
+ }

@@ -74,19 +74,9 @@ public class TransferServiceImpl implements ITransferService{
     public Page<TransferDTO> findAllByUser(UserDTO userDTO, Pageable pageable) {
         logger.info(" ---> Launch findAllByUser");
         User user = factory.constructUser(userDTO);
-
-        Page<TransferDTO> pagesTransferDTO = transferRepository.findAllByUser(user, pageable).map(factory::constructTransferDTO);
+        Page<TransferDTO> pagesTransferDTO = transferRepository.findAllByUser(user, pageable)
+                                                                    .map(factory::constructTransferDTO);
         return pagesTransferDTO;
-
-      /*Page<Transfer> pagesTransfer = transferRepository.findAllByUser(user, pageable);
-        Page<TransferDTO> pagesTransferDTO= pagesTransfer.map(new Function<Transfer, TransferDTO>() {
-            @Override
-            public TransferDTO apply(Transfer transfer) {
-                TransferDTO transferDTO = new TransferDTO();
-                transferDTO = factory.constructTransferDTO(transfer);
-                return transferDTO;
-            }
-        }); */
 
     }
 
@@ -94,15 +84,8 @@ public class TransferServiceImpl implements ITransferService{
     public Page<TransferDTO> theLastThreeTransfers(UserDTO userDTO, Pageable pageable) {
         logger.info(" ---> Launch theLastThreeTransfers");
         User user = factory.constructUser(userDTO);
-        Page<Transfer> pagesTransfer = transferRepository.theLastThreeTransfers(user, pageable);
-        Page<TransferDTO> pagesTransferDTO= pagesTransfer.map(new Function<Transfer, TransferDTO>() {
-            @Override
-            public TransferDTO apply(Transfer transfer) {
-                TransferDTO transferDTO = new TransferDTO();
-                transferDTO = factory.constructTransferDTO(transfer);
-                return transferDTO;
-            }
-        });
+        Page<TransferDTO> pagesTransferDTO = transferRepository.theLastThreeTransfers(user, pageable)
+                                                                    .map(factory::constructTransferDTO);
         return pagesTransferDTO;
     }
 
@@ -127,23 +110,26 @@ public class TransferServiceImpl implements ITransferService{
     //----------- verification data transfer valid -----------------------------------------------
     private Boolean tranferDataVerification(Transfer transfer){
         logger.info("  -----> Launch tranferDataVerification");
-        Boolean resultat = false;
-        if (transfer.getAmount() > 0 ) {
-            resultat = true;
-            logger.info("   ----->  result ammount = "+resultat);
+        Boolean resultat = true;
+        if (transfer.getAmount() <= 0 ) {
+            resultat = false;
         } ;
-
-        if (transfer.getUser() !=null){
-           resultat = userService.userExistById(transfer.getUser().getId());
-            logger.info("   ----->  result user = "+resultat);
-
-        }else { resultat=false; }
+        logger.info("   ----->  result ammount = "+resultat);
+        if (transfer.getUser() !=null) {
+            if (userService.userExistById(transfer.getUser().getId()) == false) {
+                resultat = false;
+            }
+        }else {
+            resultat = false;
+        }
+        logger.info("   ----->  result user = "+resultat);
 
         String type = transfer.getType();
         if ( type.equals("CREDIT_WALLET") || type.equals("DEBIT_WALLET")) {
-            resultat = true;
-            logger.info("   ----->   result type = "+resultat);
-        }else{ resultat=false; }
+        }else{
+            resultat=false;
+        }
+        logger.info("   ----->   result type = "+resultat);
         logger.info("   ----->   result tranferDataVerification= "+resultat);
         return resultat;
     }

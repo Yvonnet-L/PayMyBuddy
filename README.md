@@ -35,6 +35,9 @@ Install MySql
 After downloading and installing, you'll finally be ready to import the code into an IDE of your choice and run App.java to launch the app.
 
 To run the tests from maven, go to the folder that contains the pom.xml file and execute the below command.
+
+ * mvn test
+
 ### To initialize the database
 
 
