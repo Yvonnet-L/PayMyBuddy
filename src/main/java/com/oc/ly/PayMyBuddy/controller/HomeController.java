@@ -85,7 +85,6 @@ public class HomeController {
         logger.info("--> Launch /login ");
         return "login";
     }
-    //------------------------------------------------------------------------------------------------
     //-----------------------------------------------------------------------------------------------
     @RequestMapping(value = { "/save" }, method = RequestMethod.GET)
     public String save(Model model)
@@ -109,7 +108,7 @@ public class HomeController {
         }
         return "redirect:/login?logout";
     }
-
+    //-----------------------------------------------------------------------------------------------
 }
 
 

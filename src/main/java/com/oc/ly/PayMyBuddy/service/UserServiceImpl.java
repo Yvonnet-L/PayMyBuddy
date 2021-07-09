@@ -17,7 +17,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Function;
@@ -38,7 +37,7 @@ public class UserServiceImpl implements IUserService{
 
     private static Logger logger = LogManager.getLogger(UserServiceImpl.class);
 
-
+    //-----------------------------------------------------------------------------------------------
     @Override
     public List<UserDTO> findAll() {
         logger.info(" ---> Launch findAll");
@@ -50,7 +49,7 @@ public class UserServiceImpl implements IUserService{
         }
         return listUserDTO;
     }
-
+    //-----------------------------------------------------------------------------------------------
     @Override
     public UserDTO findUserById(Integer id) {
         logger.info(" ---> Launch findUserById");
@@ -61,15 +60,14 @@ public class UserServiceImpl implements IUserService{
         }
         return factory.constructUserDTO(user);
     }
-
+    //-----------------------------------------------------------------------------------------------
     @Override
     public UserDTO findUserByEmail(String email) {
         logger.info(" ---> Launch finUserByEmail");
          User user = userRepository.findUserByEmail(email);
          return factory.constructUserDTO(user);
     }
-
-
+    //-----------------------------------------------------------------------------------------------
     @Override
     public Page<UserDTO> listUserNotFriend(UserDTO userDTO, String mc,Pageable pageable) {
         logger.info(" ---> Launch listUserNotFriend");
@@ -85,13 +83,13 @@ public class UserServiceImpl implements IUserService{
         });
         return pagesUsersDTO;
     }
-
+    //-----------------------------------------------------------------------------------------------
     @Override
     public Boolean userExistById(Integer id) {
         logger.info(" ---> Launch userExistById");
         return userRepository.existsById(id);
     }
-
+    //-----------------------------------------------------------------------------------------------
     @Override
     public UserDTO saveUser(UserDTO userDTO) {
         logger.info(" ---> Launch saveUser");
@@ -101,7 +99,7 @@ public class UserServiceImpl implements IUserService{
 
 
     }
-
+    //-----------------------------------------------------------------------------------------------
     @Override
     public UserDTO saveNewUser(UserDTO userDTO, String confirmationPass) {
         logger.info(" ---> Launch saveNewUser");
@@ -128,7 +126,7 @@ public class UserServiceImpl implements IUserService{
         }else{
             throw new DataAlreadyExistException("This email already exist !");
         }
-
     }
+    //-----------------------------------------------------------------------------------------------
 
 }

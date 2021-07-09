@@ -58,13 +58,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     /*
     Important:
-    Une fois PasswirdEncoder mis en place, spring security appliquera celui si sur la donneé entrante du mot de passe.
-    En gros il va crypter la donnée grace à  BCryptPasswordEncoder(), il faut donc encoder aussi les passwords de la base avec celui ci.
-    Dans le code avec un appel @Autowired et pour le remplissage direct il suffit s'uttiliser une simple passwordEncoder.encode() dans syso.
-     ex : System.out.println(passwordEncoder.encode("1234"));
-    il nous restera juste à récuperer la donnée cryptée dans la console puis de la sauvegarder en base.
-    ex:        PasswordEncoder passwordEncoder = passwordEncoder();
-                System.out.println(passwordEncoder.encode("rootroot"));
+    Une fois PasswordEncoder mis en place, spring security appliquera celui si sur la donneé entrante du mot de passe.
+    Il va crypter la donnée grace à  BCryptPasswordEncoder(), il faut donc encoder aussi les passwords de la base avec celui ci.
+    Dans le code avec un appel @Autowired PasswordEncoder passwordEncoder et pour la transition il suffit d'uttiliser
+    une simple passwordEncoder.encode()
+         ex :   userDTO.setPassword(passwordEncoder.encode(userDTO.getPassword()));
      */
 
 }

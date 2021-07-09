@@ -9,8 +9,6 @@ import com.oc.ly.PayMyBuddy.tool.Factory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -26,6 +24,7 @@ public class FriendServiceImpl implements IFriendService{
 
     public Factory factory = new Factory();
 
+    //-----------------------------------------------------------------------------------------------
     @Override
     public FriendDTO addFriend(FriendDTO friendDTO) {
         logger.info("---> Launch addFriend");
@@ -34,7 +33,7 @@ public class FriendServiceImpl implements IFriendService{
         logger.info("----> Friend saved id: " + friendDTO.getIdFriend());
         return friendDTO;
     }
-
+    //-----------------------------------------------------------------------------------------------
     @Override
     public List<FriendDTO> findFriendByOwner(UserDTO ownerDTO) {
         logger.info(" ---> Launch findFriendByowner");
@@ -54,7 +53,7 @@ public class FriendServiceImpl implements IFriendService{
         }
 
     }
-
+    //-----------------------------------------------------------------------------------------------
     @Override
     public FriendDTO deleteById(Integer id) {
         logger.info(" --->  Launch deletteById with idFriend: " + id);
@@ -62,5 +61,6 @@ public class FriendServiceImpl implements IFriendService{
         logger.info(" ---->  friend deleted  -- ");
         return null;
     }
+    //-----------------------------------------------------------------------------------------------
 
 }

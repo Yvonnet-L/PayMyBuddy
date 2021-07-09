@@ -35,6 +35,7 @@ public class TransferServiceImpl implements ITransferService{
 
     private static Logger logger = LogManager.getLogger(TransferServiceImpl.class);
 
+    //-----------------------------------------------------------------------------------------------
     @Override
     @Transactional(propagation = Propagation.REQUIRES_NEW, readOnly = false)
     public TransferDTO addTransfer(String rib, String type, double amount, User user) {
@@ -69,7 +70,7 @@ public class TransferServiceImpl implements ITransferService{
             throw new DataNotConformException("invalid transfer, data problem !");
         }
     }
-
+    //-----------------------------------------------------------------------------------------------
     @Override
     public Page<TransferDTO> findAllByUser(UserDTO userDTO, Pageable pageable) {
         logger.info(" ---> Launch findAllByUser");
@@ -79,7 +80,7 @@ public class TransferServiceImpl implements ITransferService{
         return pagesTransferDTO;
 
     }
-
+    //-----------------------------------------------------------------------------------------------
     @Override
     public Page<TransferDTO> theLastThreeTransfers(UserDTO userDTO, Pageable pageable) {
         logger.info(" ---> Launch theLastThreeTransfers");
@@ -88,10 +89,8 @@ public class TransferServiceImpl implements ITransferService{
                                                                     .map(factory::constructTransferDTO);
         return pagesTransferDTO;
     }
-
-
     //--------------------------------------------------------------------------------------------
-
+    //-----------------------------------------------------------------------------------------------
     private Boolean walletOperation(Transfer transfer) {
         logger.info("  -----> Launch walletOperation");
         if ( transfer.getAmount() == 0) {
@@ -105,7 +104,6 @@ public class TransferServiceImpl implements ITransferService{
         }else {
             return false;
         }
-
     }
     //----------- verification data transfer valid -----------------------------------------------
     private Boolean tranferDataVerification(Transfer transfer){

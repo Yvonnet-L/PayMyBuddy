@@ -40,20 +40,7 @@ public class User {
     private LocalDate modifDate = LocalDate.now();
 
     //------------------------------------------------------------------------------------------
-
     public User() {
-    }
-
-    public User(String userName, String firstName, String password, String email, boolean active, String roles, Double wallet, LocalDate creationDate, LocalDate modifDate) {
-        this.userName = userName;
-        this.firstName = firstName;
-        this.password = password;
-        this.email = email;
-        this.active = active;
-        this.roles = roles;
-        this.wallet = wallet;
-        this.creationDate = creationDate;
-        this.modifDate = modifDate;
     }
     //------------------------------------------------------------------------------------------
 

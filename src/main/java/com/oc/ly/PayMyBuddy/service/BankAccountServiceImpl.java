@@ -24,6 +24,7 @@ public class BankAccountServiceImpl implements IBankAccountService{
 
     public Factory factory = new Factory();
 
+    //-----------------------------------------------------------------------------------------------
     @Override
     public List<BankAccountDTO> findBankAccountByUser(UserDTO userDTO) {
         logger.info(" ---> Launch of the search for a user's account");
@@ -36,7 +37,7 @@ public class BankAccountServiceImpl implements IBankAccountService{
         }
         return listBankAccountDTO  ;
     }
-
+    //-----------------------------------------------------------------------------------------------
     @Override
     public BankAccountDTO addAccount(String rib, UserDTO userDTO ) {
         logger.info(" ---> Launch of account creation");
@@ -47,11 +48,12 @@ public class BankAccountServiceImpl implements IBankAccountService{
         logger.info(" -----> BankAccount created!");
         return bankAccountDTO;
     }
-
+    //-----------------------------------------------------------------------------------------------
     @Override
     public void deleteAccount(Integer id) {
         logger.info(" ---> Launch of account deletion ");
         bankAccountRepository.deleteById(id);
         logger.info(" -----> BankAccount deleted!");
     }
+    //-----------------------------------------------------------------------------------------------
 }

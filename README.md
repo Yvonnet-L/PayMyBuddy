@@ -3,7 +3,7 @@ PayMyBuddy  V1.0
 ![Java Version](https://img.shields.io/badge/Java-1.8-blue)
 ![Maven Version](https://img.shields.io/badge/Maven-2.7.7-yellow)
 ![SpringBoot Version](https://img.shields.io/badge/Spring%20Boot-2.4.3-red)
-![MySQL](https://img.shields.io/badge/MySQL-0-cyan)
+![MySQL](https://img.shields.io/badge/MySQL--cyan)
 ![TomCat](https://img.shields.io/badge/TomCat:8080-9.0.41-brightgreen)
 
 Description
@@ -40,13 +40,13 @@ To run the tests from maven, go to the folder that contains the pom.xml file and
 
 ### To initialize the database
 
+The application runs on the on-board Tomcat server, on port 8080. The application works with a MySQL database.
 
-Go to the application.properties folder on line 11 (Warning: the folder which is in main ^^). 
-
-Remove the "#" to make this line operational.
-This will allow the database to be initialized.
-
-In order to persist the data it will make you enter line 11 again with the "#".
+Two possibilities to install the database
+ * you can run the project's SQL script: src / main / resources / Data.sql
+ * Or Go to the application.properties folder on line 11 (Warning: the folder which is in main ^^). 
+   Remove the "#" to make this line operational. This will allow the database to be initialized.
+   In order to persist the data it will make you enter line 11 again with the "#".
 
 
 ## Modelization

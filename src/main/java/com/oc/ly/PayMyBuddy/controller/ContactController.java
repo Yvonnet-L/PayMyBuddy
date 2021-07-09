@@ -64,7 +64,7 @@ public class ContactController {
                        @RequestParam(name="motCle", defaultValue = "") String mc,
                        @RequestParam(name="errorMessage", defaultValue = "") String errorMessage)
     {
-        logger.info("--> Launch /contact ");
+        logger.info("---> Launch Get /contact ");
         //-- Security Context - récupération du userLog
         String emailSession = SecurityContextHolder.getContext().getAuthentication().getName();
         UserDTO userLog = userService.findUserByEmail(emailSession);

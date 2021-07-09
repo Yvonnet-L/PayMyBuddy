@@ -30,19 +30,22 @@ public class BankAccountController {
     //--------------------------------------------------------------------------------------------------------
     @GetMapping("/bankAccounts")
     public Iterable<BankAccount> getbankAccounts() {
+        logger.info(" ---> Launch getbankAccounts");
         Iterable<BankAccount> bankAccounts = bankAccountRepository.findAll();
         return bankAccounts;
     }
     //--------------------------------------------------------------------------------------------------------
     @PostMapping(value = "/bankAccount")
     public ResponseEntity<BankAccountDTO> ajouterBank(@Validated @RequestBody BankAccountDTO bankAccountDTO) {
-       BankAccount bankAccount = factory.constructBank(bankAccountDTO);
+        logger.info(" ---> Launch ajouterBank");
+        BankAccount bankAccount = factory.constructBank(bankAccountDTO);
         BankAccount newBankAccount = bankAccountRepository.save(bankAccount);
         return new ResponseEntity<BankAccountDTO>(factory.constructBankDTO(newBankAccount), HttpStatus.CREATED);
     }
     //--------------------------------------------------------------------------------------------------------
     @DeleteMapping(value= "/bankAccount")
     public ResponseEntity<BankAccountDTO> deletePerson(@RequestBody BankAccountDTO bankAccountDTO) {
+        logger.info(" ---> Launch deletePerson");
         BankAccount bankAccount = factory.constructBank(bankAccountDTO);
         bankAccountRepository.delete(bankAccount);
         return new ResponseEntity<>(bankAccountDTO, HttpStatus.OK);
@@ -50,6 +53,7 @@ public class BankAccountController {
     //--------------------------------------------------------------------------------------------------------
     @PutMapping(value= "/bankAccount")
     public ResponseEntity<BankAccountDTO> MofidierPerson(@Validated @RequestBody BankAccountDTO bankAccountDTO) {
+        logger.info(" ---> Launch MofidierPerson");
         BankAccount bankAccount = factory.constructBank(bankAccountDTO);
         BankAccount bankAccountPut= bankAccountRepository.save(bankAccount);
         return new ResponseEntity<BankAccountDTO>(factory.constructBankDTO(bankAccountPut), HttpStatus.CREATED);

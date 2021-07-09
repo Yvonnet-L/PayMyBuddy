@@ -42,6 +42,7 @@ public class TransactionServiceImpl implements ITransactionService {
 
     LocalDate today = LocalDate.now();
 
+    //-----------------------------------------------------------------------------------------------
     @Override
     @Transactional(propagation = Propagation.REQUIRES_NEW, readOnly = false, rollbackFor = RuntimeException.class)
     public TransactionDTO addTransaction(TransactionDTO transactionDTO) {
@@ -104,7 +105,7 @@ public class TransactionServiceImpl implements ITransactionService {
             }
 
     }
-
+    //-----------------------------------------------------------------------------------------------
     @Override
     public List<TransactionDTO> findAll() {
         logger.info(" ---> Launch findAll ");
@@ -115,7 +116,7 @@ public class TransactionServiceImpl implements ITransactionService {
         }
         return transactionDTOList;
     }
-
+    //-----------------------------------------------------------------------------------------------
     @Override
     public Transaction deleteById(int idTransactionDTO) {
         logger.info(" ---> Launch deleteById ");
@@ -123,7 +124,7 @@ public class TransactionServiceImpl implements ITransactionService {
         logger.info(" ----> transaction deleted ");
         return null;
     }
-
+    //-----------------------------------------------------------------------------------------------
     @Override
     public Page<TransactionDTO> theLastThreeTransactions(UserDTO userDTO, Pageable pageable) {
         logger.info(" ---> Launch theLastThreeTransactions ");
@@ -139,7 +140,7 @@ public class TransactionServiceImpl implements ITransactionService {
         });
         return pagesTransactionDTO;
     }
-
+    //-----------------------------------------------------------------------------------------------
     @Override
     public Page<TransactionDTO> theLastThreeTransactionsBeneficiary(UserDTO userDTO, Pageable pageable) {
         logger.info(" ---> Launch theLastThreeTransactionsBeneficiary ");
@@ -155,7 +156,7 @@ public class TransactionServiceImpl implements ITransactionService {
             });
         return pagesTransactionDTO;
     }
-
+    //-----------------------------------------------------------------------------------------------
     @Override
     public Page<TransactionDTO> findAllByPayer(UserDTO payerDTO, Pageable pageable) {
         logger.info(" ---> Launch findAllByPayer ");
@@ -171,7 +172,6 @@ public class TransactionServiceImpl implements ITransactionService {
         });
         return pagesTransactionDTO;
     }
-
     //---------------------------------------------------------------------------------------
     private Boolean walletOperation(TransactionDTO transactionDTO) {
         logger.info("  ----> Launch walletOperation");
@@ -187,6 +187,6 @@ public class TransactionServiceImpl implements ITransactionService {
         }else {
             return false;
         }
-
     }
+    //-----------------------------------------------------------------------------------------------
 }
