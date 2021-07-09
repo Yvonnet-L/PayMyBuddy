@@ -103,12 +103,15 @@ public class UserServiceImpl implements IUserService{
     }
 
     @Override
-    public UserDTO saveNewUser(UserDTO userDTO) {
+    public UserDTO saveNewUser(UserDTO userDTO, String confirmationPass) {
         logger.info(" ---> Launch saveNewUser");
         User userAdd = new User();
+        if(userDTO.getPassword().equals(confirmationPass)==false){
+            throw new DataNotConformException("Password not confirmed");
+        }
         if(stringUtilsService.checkStringName(userDTO.getUserName())==false ||
                         stringUtilsService.checkStringName(userDTO.getFirstName())==false){
-            throw new DataNotConformException("Names should be only alphanumeric");
+            throw new DataNotConformException("Names must be only alphanumeric");
         }
         if(stringUtilsService.checkStringEmail(userDTO.getEmail())==false){
             throw new DataNotConformException("it is not a email!");

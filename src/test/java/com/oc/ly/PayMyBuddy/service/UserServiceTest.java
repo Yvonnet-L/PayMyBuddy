@@ -96,7 +96,7 @@ public class UserServiceTest {
         //GIVEN
         UserDTO userDTO = new UserDTO("Do","Nathy","0123456789","nathy@email.com");
         //WHEN
-        UserDTO newUserDTO = userService.saveNewUser(userDTO);
+        UserDTO newUserDTO = userService.saveNewUser(userDTO,"0123456789");
         //THEN
         assertTrue(newUserDTO.getId()>0);
     }
@@ -108,7 +108,7 @@ public class UserServiceTest {
         UserDTO userDTO = new UserDTO("Do","Nathy","0123456789","badEmail.com");
         //WHEN
         //THEN
-        assertThrows(DataNotConformException.class, () -> userService.saveNewUser(userDTO));
+        assertThrows(DataNotConformException.class, () -> userService.saveNewUser(userDTO, "0123456789"));
 
     }
     //--------------------------------------------------------------------------------------------------------
@@ -119,11 +119,21 @@ public class UserServiceTest {
         UserDTO userDTO = new UserDTO("Do?=!oo","Nathy","0123456789","nathy@email.com");
         //WHEN
         //THEN
-        assertThrows(DataNotConformException.class, () -> userService.saveNewUser(userDTO));
+        assertThrows(DataNotConformException.class, () -> userService.saveNewUser(userDTO,"0123456789"));
 
     }
     //--------------------------------------------------------------------------------------------------------
+    @Test
+    @DisplayName("Test saveNewUser with bad confirmationPass")
+    public void saveNewUserWithBadConfirmationPassTest(){
+        //GIVEN
+        UserDTO userDTO = new UserDTO("Do?=!oo","Nathy","0123456789","nathy@email.com");
+        //WHEN
+        //THEN
+        assertThrows(DataNotConformException.class, () -> userService.saveNewUser(userDTO,"badConfirmation"));
 
+    }
+    //--------------------------------------------------------------------------------------------------------
     @WithMockUser(username = "lolo@email.com")
     @Test
     @DisplayName("Test saveUser")

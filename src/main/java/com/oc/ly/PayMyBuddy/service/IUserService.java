@@ -24,7 +24,7 @@ public interface IUserService {
 
     public Boolean userExistById ( Integer id );
 
-    public UserDTO saveNewUser(UserDTO userDTO);
+    public UserDTO saveNewUser(UserDTO userDTO, String confirmationPass);
 
 
 }

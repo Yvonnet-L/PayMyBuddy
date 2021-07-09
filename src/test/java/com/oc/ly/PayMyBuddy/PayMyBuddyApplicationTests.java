@@ -13,4 +13,9 @@ class PayMyBuddyApplicationTests {
 	void contextLoads() {
 	}
 
+	@Test
+	public void main() {
+		PayMyBuddyApplication.main(new String[] {});
+	}
+
 }

@@ -3,7 +3,6 @@ package com.oc.ly.PayMyBuddy.controller;
 import com.oc.ly.PayMyBuddy.dto.UserDTO;
 import com.oc.ly.PayMyBuddy.exceptions.DataAlreadyExistException;
 import com.oc.ly.PayMyBuddy.exceptions.DataNotConformException;
-import com.oc.ly.PayMyBuddy.exceptions.DataNotFoundException;
 import com.oc.ly.PayMyBuddy.service.IUserService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -43,10 +42,9 @@ public class JoinController {
     {
         logger.info("--> Launch POST /join ");
 
-        if (password.equals(confirmation)){
             try {
                 UserDTO newUserDTO = new UserDTO(lastName,firstName, password, email);
-                userService.saveNewUser(newUserDTO);
+                userService.saveNewUser(newUserDTO, confirmation);
                 return"redirect:/login";
             }
             catch (DataNotConformException | DataAlreadyExistException e){
@@ -59,19 +57,6 @@ public class JoinController {
                         "&confirmation="+confirmation+
                         "&errorMessage="+errorMessage;
             }
-
-
-        }else{
-            errorMessage = "Password not confirmed";
-            logger.info(" --> " + errorMessage);
-            return "redirect:/join?" +
-                    "&firstName="+firstName+
-                    "&lastName="+lastName+
-                    "&email="+email+
-                    "&password="+password+
-                    "&confirmation="+confirmation+
-                    "&errorMessage="+errorMessage;
-        }
 
     }
     //-----------------------------------------------------------------------------------------------
