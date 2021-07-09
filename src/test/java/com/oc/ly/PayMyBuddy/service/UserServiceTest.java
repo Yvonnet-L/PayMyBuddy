@@ -1,6 +1,8 @@
 package com.oc.ly.PayMyBuddy.service;
 
+import com.oc.ly.PayMyBuddy.constants.TransferType;
 import com.oc.ly.PayMyBuddy.dto.UserDTO;
+import com.oc.ly.PayMyBuddy.exceptions.DataNotConformException;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,8 +14,7 @@ import org.springframework.security.test.context.support.WithMockUser;
 
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 public class UserServiceTest {
@@ -89,6 +90,40 @@ public class UserServiceTest {
         assertTrue(newUserDTO.getId()>0);
     }
     //--------------------------------------------------------------------------------------------------------
+    @Test
+    @DisplayName("Test saveNewUser")
+    public void saveNewUserTest(){
+        //GIVEN
+        UserDTO userDTO = new UserDTO("Do","Nathy","0123456789","nathy@email.com");
+        //WHEN
+        UserDTO newUserDTO = userService.saveNewUser(userDTO);
+        //THEN
+        assertTrue(newUserDTO.getId()>0);
+    }
+    //--------------------------------------------------------------------------------------------------------
+    @Test
+    @DisplayName("Test saveNewUser with bad email")
+    public void saveNewUserWithBadEmailTest(){
+        //GIVEN
+        UserDTO userDTO = new UserDTO("Do","Nathy","0123456789","badEmail.com");
+        //WHEN
+        //THEN
+        assertThrows(DataNotConformException.class, () -> userService.saveNewUser(userDTO));
+
+    }
+    //--------------------------------------------------------------------------------------------------------
+    @Test
+    @DisplayName("Test saveNewUser with bad name")
+    public void saveNewUserWithBadNameTest(){
+        //GIVEN
+        UserDTO userDTO = new UserDTO("Do?=!oo","Nathy","0123456789","nathy@email.com");
+        //WHEN
+        //THEN
+        assertThrows(DataNotConformException.class, () -> userService.saveNewUser(userDTO));
+
+    }
+    //--------------------------------------------------------------------------------------------------------
+
     @WithMockUser(username = "lolo@email.com")
     @Test
     @DisplayName("Test saveUser")
