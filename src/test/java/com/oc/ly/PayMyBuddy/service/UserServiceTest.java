@@ -2,6 +2,7 @@ package com.oc.ly.PayMyBuddy.service;
 
 import com.oc.ly.PayMyBuddy.constants.TransferType;
 import com.oc.ly.PayMyBuddy.dto.UserDTO;
+import com.oc.ly.PayMyBuddy.exceptions.DataAlreadyExistException;
 import com.oc.ly.PayMyBuddy.exceptions.DataNotConformException;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -131,6 +132,18 @@ public class UserServiceTest {
         //WHEN
         //THEN
         assertThrows(DataNotConformException.class, () -> userService.saveNewUser(userDTO,"badConfirmation"));
+
+    }
+    //--------------------------------------------------------------------------------------------------------
+    //--------------------------------------------------------------------------------------------------------
+    @Test
+    @DisplayName("Test saveNewUser with email existing")
+    public void saveNewUserWithEmailExistingTest(){
+        //GIVEN
+        UserDTO userDTO = new UserDTO("Do","Nathy","0123456789","lolo@email.com");
+        //WHEN
+        //THEN
+        assertThrows(DataAlreadyExistException.class, () -> userService.saveNewUser(userDTO,"0123456789"));
 
     }
     //--------------------------------------------------------------------------------------------------------
