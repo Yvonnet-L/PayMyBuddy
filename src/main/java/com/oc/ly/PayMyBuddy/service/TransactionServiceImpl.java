@@ -44,11 +44,9 @@ public class TransactionServiceImpl implements ITransactionService {
 
     //-----------------------------------------------------------------------------------------------
     @Override
-    @Transactional(propagation = Propagation.REQUIRES_NEW, readOnly = false, rollbackFor = RuntimeException.class)
+    @Transactional(propagation = Propagation.REQUIRES_NEW, readOnly = false)
     public TransactionDTO addTransaction(TransactionDTO transactionDTO) {
-
         logger.info(" ---> Launch addTransaction ");
-
             //-- Vérification de la validitée des données
                 if (transactionDTO.getDescription().length() > 30) {
                     throw new DataNotConformException("The name is too big! (30 characters maximum)");
@@ -56,29 +54,22 @@ public class TransactionServiceImpl implements ITransactionService {
                 if (transactionDTO.getAmount() <= 0) {
                     throw new WalletNotEnoughException("The amount must be positive");
                 }
-
                 if (userService.findUserById(transactionDTO.getPayer().getId())==null) {
                     throw new DataNotFoundException("Problem with the database, user payer not found");
                 }
-
-
            //-- mise en place des données manquante pour la transaction
             LocalDateTime createDate = LocalDateTime.now();
             Double fee = (double)Math.round((transactionDTO.getAmount()*0.005)*100)/100;
             transactionDTO.setCreationDate(createDate);
             transactionDTO.setFee(fee);
-
             //-- Appel de la methode de vérification de la provision du wallet
             Boolean bUserWalletOperation = walletOperation(transactionDTO);
-
-
             if (bUserWalletOperation == true){
                 //-- déclaration de la transaction
                     Transaction transaction = new Transaction();
                 //- sauvegarde de la transaction
                     transaction = factory.constructTransaction(transactionDTO);
                     transactionRepository.save(transaction);
-
                 //- Récuperation des données venant de la DB en réinjectant dans le DTO
                     transactionDTO = factory.constructTransactionDTO(transaction);
                 //- Controle par l'ID reçu
@@ -86,12 +77,10 @@ public class TransactionServiceImpl implements ITransactionService {
                 //- Update des wallets des Users: benneficyary et payer
                     //- benneficyary
                     transactionDTO.getBeneficiary().setWallet((transactionDTO.getBeneficiary().getWallet() + transactionDTO.getAmount()));
-
-                    //- payer : on utilise Math.round pour arondir le calcul
+                //- payer : on utilise Math.round pour arondir le calcul
                     Double newWallet = (transactionDTO.getPayer().getWallet() - (transactionDTO.getAmount() + transactionDTO.getFee()) );
                     newWallet = (double)Math.round((newWallet)*100)/100;
                     transactionDTO.getPayer().setWallet(newWallet);
-
                 //- ajout de la date de modification chez les Users
                     transactionDTO.getBeneficiary().setModifDate(today);
                     transactionDTO.getPayer().setModifDate(today);
@@ -103,7 +92,6 @@ public class TransactionServiceImpl implements ITransactionService {
             } else {
                 throw new WalletNotEnoughException("the amount exceeds the wallet");
             }
-
     }
     //-----------------------------------------------------------------------------------------------
     @Override

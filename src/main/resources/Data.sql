@@ -17,7 +17,7 @@ CREATE TABLE user (
   firstname VARCHAR(50) NOT NULL,
   creation_date DATE NOT NULL,
   modif_date DATE NULL DEFAULT NULL,
-  wallet DOUBLE NULL DEFAULT NULL);
+  wallet DOUBLE(5,2) NULL DEFAULT NULL);
 
 
 -- -----------------------------------------------------
@@ -54,7 +54,7 @@ CREATE TABLE IF NOT EXISTS paymybuddydb.transaction (
   amount DOUBLE NOT NULL,
   date DATETIME NULL DEFAULT NULL,
   description VARCHAR(200) NOT NULL,
-  fee DOUBLE NOT NULL,
+  fee DOUBLE(5,2) NOT NULL,
   beneficiary_id INT NOT NULL,
   payer_id INT NOT NULL,
 		CONSTRAINT fk_beneficiary
@@ -70,7 +70,7 @@ CREATE TABLE IF NOT EXISTS paymybuddydb.transaction (
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS paymybuddydb.transfer (
   id_transfer INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-  amount DOUBLE NOT NULL,
+  amount DOUBLE(5,2) NOT NULL,
   date DATE NOT NULL,
   rib VARCHAR(255) NOT NULL,
   type ENUM('CREDIT_WALLET', 'DEBIT_WALLET') NOT NULL,
@@ -94,10 +94,10 @@ CREATE TABLE IF NOT EXISTS paymybuddydb.hibernate_sequence (
 -- Table `paymybuddydb`.`user`
 -- -----------------------------------------------------
 INSERT INTO `paymybuddydb`.`user` (`active`, `email`, `password`, `roles`, `user_name`, `firstname`, `creation_date`, `modif_date`, `wallet`) VALUES
-(b'1', 'lolo@email.com', '$2a$10$VTa4iffylpLoUTmiGX5Xn.hSzWI83ggJN257w54hFe6Q0CO9kBtUe', 'ROLE_ADMIN', 'Do', 'Laurent', '2021-06-03', '2021-06-16', '200.0'),
-(b'1', 'fanny@email.com', '$2a$10$VTa4iffylpLoUTmiGX5Xn.hSzWI83ggJN257w54hFe6Q0CO9kBtUe', 'ROLE_USER', 'Durant', 'Fanny', '2021-06-03', '2021-06-16', '200.0'),
-(b'1', 'flora@email.com', '$2a$10$VTa4iffylpLoUTmiGX5Xn.hSzWI83ggJN257w54hFe6Q0CO9kBtUe', 'ROLE_USER', 'Dupont', 'Flora', '2021-06-03', '2021-06-16', '200.0'),
-(b'1', 'mathieu@email.com', '$2a$10$VTa4iffylpLoUTmiGX5Xn.hSzWI83ggJN257w54hFe6Q0CO9kBtUe', 'ROLE_USER', 'Tutor', 'Mathieu', '2021-06-03', '2021-06-16', '200.0');
+(b'1', 'lolo@email.com', '$2a$10$VTa4iffylpLoUTmiGX5Xn.hSzWI83ggJN257w54hFe6Q0CO9kBtUe', 'ROLE_ADMIN', 'Do', 'Laurent', '2021-06-03', '2021-06-16', '200.00'),
+(b'1', 'fanny@email.com', '$2a$10$VTa4iffylpLoUTmiGX5Xn.hSzWI83ggJN257w54hFe6Q0CO9kBtUe', 'ROLE_USER', 'Durant', 'Fanny', '2021-06-03', '2021-06-16', '200.00'),
+(b'1', 'flora@email.com', '$2a$10$VTa4iffylpLoUTmiGX5Xn.hSzWI83ggJN257w54hFe6Q0CO9kBtUe', 'ROLE_USER', 'Dupont', 'Flora', '2021-06-03', '2021-06-16', '200.00'),
+(b'1', 'mathieu@email.com', '$2a$10$VTa4iffylpLoUTmiGX5Xn.hSzWI83ggJN257w54hFe6Q0CO9kBtUe', 'ROLE_USER', 'Tutor', 'Mathieu', '2021-06-03', '2021-06-16', '200.00');
 commit;
 
 -- -----------------------------------------------------
@@ -129,29 +129,29 @@ commit;
 -- Table `paymybuddydb`.`transaction`
 -- -----------------------------------------------------
 INSERT INTO `paymybuddydb`.`transaction` (`amount`, `date`, `description`, `fee`, `beneficiary_id`, `payer_id`) VALUES
-('50', '2021-06-22 13:12:35', 'cinéma', '0.25', '2', '1'),
-('50', '2021-06-23 13:12:35', 'restaurant', '0.25', '2', '1'),
-('50', '2021-06-22 13:10:35', 'Cadeau d anniv Mathieu', '0.25', '3', '1'),
-('50', '2021-06-23 13:12:35', 'restaurant', '0.25', '1', '2'),
-('50', '2021-06-22 13:09:35', 'cinéma', '0.25', '3', '2'),
-('50', '2021-06-22 13:11:35', 'Cadeau d anniv Mathieu', '0.25', '4', '2'),
-('50', '2021-06-23 13:10:35', 'restaurant', '0.25', '1', '2'),
-('50', '2021-06-22 13:12:35', 'cinéma', '0.25', '3', '2'),
-('50', '2021-06-19 13:12:35', 'théatre', '0.25', '3', '1');
+('50.00', '2021-06-22 13:12:35', 'cinéma', '0.25', '2', '1'),
+('50.12', '2021-06-23 13:12:35', 'restaurant', '0.25', '2', '1'),
+('50.15', '2021-06-22 13:10:35', 'Cadeau d anniv Mathieu', '0.25', '3', '1'),
+('50.99', '2021-06-23 13:12:35', 'restaurant', '0.25', '1', '2'),
+('50.55', '2021-06-22 13:09:35', 'cinéma', '0.25', '3', '2'),
+('50.78', '2021-06-22 13:11:35', 'Cadeau d anniv Mathieu', '0.25', '4', '2'),
+('50.69', '2021-06-23 13:10:35', 'restaurant', '0.25', '1', '2'),
+('50.78', '2021-06-22 13:12:35', 'cinéma', '0.25', '3', '2'),
+('50.12', '2021-06-19 13:12:35', 'théatre', '0.25', '3', '1');
 commit;
 
 -- -----------------------------------------------------
 -- Table `paymybuddydb`.`transfer`
 -- -----------------------------------------------------
 INSERT INTO `paymybuddydb`.`transfer` (`amount`, `date`, `rib`, `type`, `user_id`) VALUES
-('500', '2021-06-23', 'fr 4445 88989 898989 8989', 'CREDIT_WALLET', '1'),
-('100', '2021-06-23', 'fr 4445 88989 898989 8989', 'DEBIT_WALLET', '1'),
-('500', '2021-06-23', 'fr 4445 88989 898989 8989', 'CREDIT_WALLET', '2'),
-('100', '2021-06-23', 'fr 4445 88989 898989 8989', 'DEBIT_WALLET', '2'),
-('500', '2021-06-23', 'fr 4445 88989 898989 8989', 'CREDIT_WALLET', '3'),
-('100', '2021-06-23', 'fr 4445 88989 898989 8989', 'DEBIT_WALLET', '3'),
-('500', '2021-06-23', 'fr 4445 88989 898989 8989', 'CREDIT_WALLET', '4'),
-('100', '2021-06-23', 'fr 4445 88989 898989 8989', 'DEBIT_WALLET', '4');
+('500.55', '2021-06-23', 'fr 4445 88989 898989 8989', 'CREDIT_WALLET', '1'),
+('100.75', '2021-06-23', 'fr 4445 88989 898989 8989', 'DEBIT_WALLET', '1'),
+('500.79', '2021-06-23', 'fr 4445 88989 898989 8989', 'CREDIT_WALLET', '2'),
+('100.86', '2021-06-23', 'fr 4445 88989 898989 8989', 'DEBIT_WALLET', '2'),
+('500.13', '2021-06-23', 'fr 4445 88989 898989 8989', 'CREDIT_WALLET', '3'),
+('100.88', '2021-06-23', 'fr 4445 88989 898989 8989', 'DEBIT_WALLET', '3'),
+('500.00', '2021-06-23', 'fr 4445 88989 898989 8989', 'CREDIT_WALLET', '4'),
+('100.00', '2021-06-23', 'fr 4445 88989 898989 8989', 'DEBIT_WALLET', '4');
 commit;
 
 INSERT INTO paymybuddydb.hibernate_sequence (next_val) VALUES

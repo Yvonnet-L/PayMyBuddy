@@ -61,7 +61,9 @@
                           </div>
                                 <div class="trans-amount">
                                       <span class="input-euro right">
-                                         <input type="number" name="amount"  th:value="${amount}" min="5" max="10000" placeholder="5€" required="true"/>
+                                         <input type="number" name="amount"  th:value="${amount}"
+                                                onchange="(function(el){el.value=parseFloat(el.value).toFixed(2);})(this)"
+                                                min="0.00" max="10000.00" placeholder="5.00€" step="0.01" required="true"/>
                                       </span>
                                 </div>
                                 <div class="trans-button">

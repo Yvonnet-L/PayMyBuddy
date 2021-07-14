@@ -11,7 +11,11 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.annotation.Rollback;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.transaction.annotation.Transactional;
 
+import javax.persistence.Persistence;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -61,6 +65,29 @@ public class TransactionServiceTest {
         //THEN
         assertTrue(  wallePayertAfter <  wallePayertBefore );
         assertTrue(  walleBeneficiarytAfter ==  walleBeneficiarytBefore + 15 );
+    }
+    //-----------------------------------------------------------------------------------------------------
+    @Test
+    @Transactional
+    @DisplayName("Test addTransaction with Transactionnal")
+    public void addTransactionWithTransactionnalTest(){
+        //GIVEN
+        listUserDTO = userService.findAll();
+        User userPayer = factory.constructUser(listUserDTO.get(1));
+        User userBeneficiary = factory.constructUser(listUserDTO.get(2));
+        Double wallePayertBefore = userPayer.getWallet();
+        Double walleBeneficiarytBefore = userBeneficiary.getWallet();
+        List<TransactionDTO> allTransationListBefore = transactionService.findAll();
+        TransactionDTO transactionDTO = new TransactionDTO( userPayer, userBeneficiary, 15.0,"cinéma");
+        //WHEN
+        transactionDTO = transactionService.addTransaction(transactionDTO);
+        Double wallePayertAfter = userService.findUserById(userPayer.getId()).getWallet();
+        Double walleBeneficiarytAfter = userService.findUserById(userBeneficiary.getId()).getWallet();
+        List<TransactionDTO> allTransationListAfter = transactionService.findAll();
+        //THEN
+        assertTrue(  wallePayertAfter== wallePayertBefore );
+        assertTrue(  walleBeneficiarytAfter ==  walleBeneficiarytBefore );
+        assertEquals(allTransationListAfter.size(),allTransationListBefore.size());
     }
     //-----------------------------------------------------------------------------------------------------
     @Test

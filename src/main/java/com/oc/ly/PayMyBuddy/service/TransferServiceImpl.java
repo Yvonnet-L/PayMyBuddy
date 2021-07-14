@@ -60,6 +60,7 @@ public class TransferServiceImpl implements ITransferService{
                             transferRepository.save(transfer);
                             logger.info(" ------> transfer saved");
                             userService.saveUser(factory.constructUserDTO(transfer.getUser()));
+                            //userService.saveUser(null);
                             logger.info(" ------> user (new wallet) saved");
                         } else {
                             throw new DataNotConformException("the amount exceeds the wallet");

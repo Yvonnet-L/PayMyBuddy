@@ -1,6 +1,5 @@
 package com.oc.ly.PayMyBuddy.security;
 
-
 import com.oc.ly.PayMyBuddy.controller.HomeController;
 import com.oc.ly.PayMyBuddy.model.MyUserDetails;
 import com.oc.ly.PayMyBuddy.model.User;
@@ -22,21 +21,16 @@ public class MyUserDetailService implements UserDetailsService {
     @Autowired
     UserRepository userRepository;
 
-    private static Logger logger = LogManager.getLogger(HomeController.class);
+    private static Logger logger = LogManager.getLogger(MyUserDetailService.class);
 
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException, DataAccessException {
-
         logger.info("---> Identifier verification: " + email);
         Optional<User> user = userRepository.findByEmail(email);
-
         user.orElseThrow(() -> new UsernameNotFoundException("Not Found: " + email));
-
         logger.info("---> User "+ email + " Find ");
-
         return user.map(MyUserDetails::new).get();
     }
-
 }
 /*
     Pour parametrer SpringSecurity avec la DB nous avons besoin des 4 classes soit:
